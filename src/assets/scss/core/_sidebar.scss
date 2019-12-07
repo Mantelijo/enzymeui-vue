@@ -1,0 +1,32 @@
+.sidebar{
+
+    width: $sidebar-width;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    left: 0;
+    background-color: $sidebar-background ;
+    box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.1);
+
+    .sidebar-items{
+        line-height: 25px;
+        font-weight: 400;
+        letter-spacing: 0.8px;
+        color: $sidebar-color;
+
+        .sidebar-link{
+            cursor: pointer;
+            padding: 10px 0px;
+            padding-left: 25px;
+
+            &:hover{
+                background: rgba(0,0,0,0.1);
+            }
+
+            &.active{
+
+            }
+        }
+    }
+
+}
