@@ -1,0 +1,26 @@
+.btn{
+
+    transition: all $transition-base;
+    letter-spacing: 0.8px;
+    font-weight: bold;
+    box-shadow: ($btn-normal-box-shadow);
+
+    &:hover{
+        transform: translateY(-2px);
+        @include box-shadow($btn-box-shadow);
+    }
+
+    // Icons spacing
+    svg{
+        margin-right: 6px;
+        margin-left: 6px;
+    }
+
+}
+
+// Remove box shadow for outline
+@each $key, $val in $theme-colors{
+    .btn-outline-#{$key}{
+        box-shadow: none;
+    }
+}

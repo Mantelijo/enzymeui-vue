@@ -1,7 +1,8 @@
 <template>
     <div id="app">
         <Sidebar></Sidebar>
-        <div class="app-container">
+        <div :class="['app-container', sidebarClosed?'':'sidebar-open']">
+            <SidebarContentOverlay :show="!sidebarClosed"></SidebarContentOverlay>
             <Navbar></Navbar>
             <div class="container-fluid">
                 <div class="row">
@@ -15,11 +16,23 @@
 </template>
 
 <script>
-    import Sidebar from "./components/Sidebar";
     import Navbar from "./components/Navbar";
     export default {
         name: 'app',
-        components: {Navbar, Sidebar},
+        components: {Navbar},
+
+        data(){
+            return {
+                // State of sidebar
+                sidebarClosed:false,
+            }
+        },
+
+        watch:{
+            '$sidebar.sidebarVisible':function(val){
+                this.sidebarClosed = !val;
+            }
+        }
     }
 </script>
 

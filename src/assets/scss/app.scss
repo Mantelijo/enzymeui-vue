@@ -1,9 +1,27 @@
+// Loading fonts
+@font-face {
+    font-family: 'Roboto';
+    src: url("./../fonts/Roboto-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("./../fonts/Roboto-Bold.ttf");
+    font-style: normal;
+    font-weight: bold;
+}
 
+*{
+    font-family: 'Roboto';
+}
 
 @import "~bootstrap/scss/functions";
 
+// Custom modified bootrstap variables
 @import "core/variables";
 
+// Bootstrap library
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
@@ -40,8 +58,12 @@
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/print";
 
+
+// Custom library
+@import "core/sidebar";
 @import "core/sidebar";
 @import "core/navbar";
 @import "core/buttons";
 @import "core/inputs";
+@import "core/card";
 @import "core/main-container";

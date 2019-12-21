@@ -15,8 +15,12 @@ import Select from "../components/base/Select";
 // Misc
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+// Custom plugins
+import SidebarPlugin from "../components/sidebar/plugin";
+
 export default {
     install(Vue){
+        // Base components
         Vue.component(Alert.name, Alert);
         Vue.component(Badge.name, Badge);
         Vue.component(Button.name, Button);
@@ -29,5 +33,8 @@ export default {
 
         // Font awesome icon component
         Vue.component('fa', FontAwesomeIcon);
+
+        // Plugins
+        Vue.use(SidebarPlugin);
     }
 }
