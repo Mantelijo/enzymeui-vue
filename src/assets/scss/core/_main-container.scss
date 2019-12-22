@@ -5,6 +5,7 @@
     &.sidebar-open{
         margin-left: $sidebar-width;
 
+        // Mobile
         @media screen and (max-width: map_get($grid-breakpoints, 'md')) {
             margin-left: 0;
         }

@@ -1,19 +1,19 @@
 // Loading fonts
 @font-face {
-    font-family: 'Roboto';
-    src: url("./../fonts/Roboto-Regular.ttf");
+    font-family: 'Nunito';
+    src: url("./../fonts/Nunito-Regular.ttf");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
-    font-family: 'Roboto';
-    src: url("./../fonts/Roboto-Bold.ttf");
+    font-family: 'Nunito';
+    src: url("./../fonts/Nunito-Bold.ttf");
     font-style: normal;
     font-weight: bold;
 }
 
 *{
-    font-family: 'Roboto';
+    font-family: Nunito;
 }
 
 @import "~bootstrap/scss/functions";

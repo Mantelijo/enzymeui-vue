@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-3">
+    <div>
         <Card>
             <template v-slot:header>
                 Normal buttons

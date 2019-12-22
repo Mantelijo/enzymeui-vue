@@ -1,0 +1,30 @@
+.input{
+
+    &.error{
+        border-color:$danger;
+    }
+
+    &.valid{
+        border-color:$success;
+    }
+}
+
+.input-label{
+    font-size: $font-size-sm;
+    margin-bottom: $label-margin-bottom;
+
+    label{
+        margin: 0;
+    }
+}
+
+
+.input-error,
+.input-info{
+    margin-top:0.25rem;
+    font-size: $font-size-base*0.75;
+}
+
+.input-error{
+    color:$danger;
+}

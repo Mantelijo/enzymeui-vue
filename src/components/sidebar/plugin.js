@@ -1,4 +1,4 @@
-import Sidebar from "./Sidebar.vue";
+import Sidebar from "./Sidebar";
 import SidebarContentOverlay from "./SidebarContentOverlay";
 
 /**
@@ -6,13 +6,18 @@ import SidebarContentOverlay from "./SidebarContentOverlay";
  */
 const SidebarPlugin = {
     install(Vue){
+
+        // Components of sidebar
         Vue.component(Sidebar.name, Sidebar);
         Vue.component(SidebarContentOverlay.name, SidebarContentOverlay);
+
+        // Instance which will store information about visibility of sidebar
         let app = new Vue({
             data:{
                 sidebarVisible:true,
             },
             methods:{
+                // Sidebar state management methods
                 toggle(){
                     this.sidebarVisible = !this.sidebarVisible;
                 },
@@ -24,6 +29,8 @@ const SidebarPlugin = {
                 },
             }
         });
+
+        // Adding global $sidebar property to Vue object
         Vue.prototype.$sidebar = app;
     }
 };

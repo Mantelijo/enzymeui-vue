@@ -8,6 +8,10 @@
             </div>
         </div>
 
+        <div class="d-flex justify-content-center mt-2 mb-2">
+            <img src="@/assets/Logo.svg" style="max-width: 100px">
+        </div>
+
         <ul class="nav flex-column sidebar-items">
             <li class="nav-item sidebar-link" v-for="(link,i) in links" :key="i" @click="navigateTo(link.path)">
                 {{ link.name }}
@@ -39,7 +43,12 @@
                         name:'Buttons',
                         path:'/buttons',
                         icon:'',
-                    }
+                    },
+                    {
+                        name:'Forms',
+                        path:'/forms',
+                        icon:'',
+                    },
                 ]
             }
         },
@@ -47,7 +56,13 @@
         methods:{
             // Navigate to link
             navigateTo(path){
+                // Navigate to route
                 this.$router.push(path);
+
+                // And hide sidebar if we are on mobile
+                if(window.innerWidth < 768){
+                    this.$sidebar.close();
+                }
             }
         },
 
@@ -57,6 +72,7 @@
                 return this.$route.path;
             },
 
+            // Computed property of sidebar visibility
             sidebarVisible(){
                 return this.$sidebar.sidebarVisible;
             }
@@ -64,18 +80,23 @@
 
         watch:{
             // Watch if sidebar is being closed/opened and adjust visibility
-            '$sidebar.sidebarVisible':function(val){
-                this.closed = !val;
+            '$sidebar.sidebarVisible':function(visible){
+                this.closed = !visible;
+
+                // On mobile we want to hide overflow so there is no incorrect scrolling on content when we
+                // Interact with sidebar or SidebarContentOverlay
+                document.body.classList.remove('overflow-hidden');
+                if(window.innerWidth < 768 && visible === true){
+                    document.body.classList.add('overflow-hidden');
+                }
             }
         },
 
         mounted() {
-
             // Hide sidebar on mobile initially
             if(window.innerWidth < 768){
                 this.$sidebar.close();
             }
-
         }
     }
 </script>

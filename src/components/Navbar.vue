@@ -1,6 +1,8 @@
 <template>
-    <nav class="navbar">
-        <Button @click="toggleSidebar" type="primary" size="sm">Toggle sidebar</Button>
+    <nav class="navbar navigation-bar">
+        <Button @click="toggleSidebar">
+            Menu
+        </Button>
     </nav>
 </template>
 
