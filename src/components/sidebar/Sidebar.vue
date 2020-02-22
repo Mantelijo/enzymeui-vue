@@ -9,7 +9,6 @@
         </div>
 
         <div class="d-flex justify-content-center mt-2 mb-2">
-            <img src="@/assets/Logo.svg" style="max-width: 100px">
         </div>
 
         <ul class="nav flex-column sidebar-items">
