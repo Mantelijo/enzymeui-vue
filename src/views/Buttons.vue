@@ -7,6 +7,7 @@
             <div class="showcase-wrapper">
                 <Button class="demo-btn" type="default">Default</Button>
                 <Button class="demo-btn" type="primary">Primary</Button>
+                <Button class="demo-btn" type="secondary">Secondary</Button>
                 <Button class="demo-btn" type="success">Success</Button>
                 <Button class="demo-btn" type="info">Info</Button>
                 <Button class="demo-btn" type="warning">Warning</Button>
@@ -21,6 +22,7 @@
             <div class="showcase-wrapper">
                 <Button class="demo-btn" type="outline-default">Default</Button>
                 <Button class="demo-btn" type="outline-primary">Primary</Button>
+                <Button class="demo-btn" type="outline-secondary">Secondary</Button>
                 <Button class="demo-btn" type="outline-success">Success</Button>
                 <Button class="demo-btn" type="outline-info">Info</Button>
                 <Button class="demo-btn" type="outline-warning">Warning</Button>
@@ -35,6 +37,7 @@
             <div class="showcase-wrapper">
                 <Button class="demo-btn" type="default" size="lg">Default</Button>
                 <Button class="demo-btn" type="primary" size="lg">Primary</Button>
+                <Button class="demo-btn" type="secondary" size="lg">Secondary</Button>
                 <Button class="demo-btn" type="success" size="lg">Success</Button>
                 <Button class="demo-btn" type="info" size="lg">Info</Button>
                 <Button class="demo-btn" type="warning" size="lg">Warning</Button>
@@ -49,6 +52,7 @@
             <div class="showcase-wrapper">
                 <Button class="demo-btn" type="default" size="sm">Default</Button>
                 <Button class="demo-btn" type="primary" size="sm">Primary</Button>
+                <Button class="demo-btn" type="secondary" size="sm">Secondary</Button>
                 <Button class="demo-btn" type="success" size="sm">Success</Button>
                 <Button class="demo-btn" type="info" size="sm">Info</Button>
                 <Button class="demo-btn" type="warning" size="sm">Warning</Button>
@@ -67,6 +71,10 @@
                 <Button class="demo-btn" type="primary" >
                     <fa icon="book"></fa>
                     Primary
+                </Button>
+                <Button class="demo-btn" type="secondary" >
+                    <fa icon="book"></fa>
+                    Secondary
                 </Button>
                 <Button class="demo-btn" type="success" >
                     <fa icon="air-freshener"></fa>

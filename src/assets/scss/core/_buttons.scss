@@ -1,6 +1,6 @@
 .btn{
 
-    transition: all $transition-base;
+    transition: $transition-base !important;
     letter-spacing: 0.8px;
     font-weight: bold;
     box-shadow: ($btn-normal-box-shadow);
@@ -8,6 +8,10 @@
     &:hover{
         transform: translateY(-2px);
         @include box-shadow($btn-box-shadow);
+    }
+
+    &:active{
+        transform: translateY(0px);
     }
 
     // Icons spacing

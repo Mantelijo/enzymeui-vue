@@ -1,6 +1,13 @@
 <template>
     <div>
-        Dashboard view
+        <Card>
+            <template slot="header">Collapse test</template>
+            <Collapse>
+                <Card type="card-primary">
+                    <h1>Test</h1>
+                </Card>
+            </Collapse>
+        </Card>
     </div>
 </template>
 

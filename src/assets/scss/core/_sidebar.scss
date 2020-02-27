@@ -11,7 +11,8 @@
     z-index: $zindex-sidebar;
 
     &.closed{
-        left: -$sidebar-width;
+        // Adding -10px to fully hide all box-shadow
+        left: -$sidebar-width - 10px;
     }
 
     .sidebar-mobile-close{
@@ -37,9 +38,14 @@
             }
 
             &.active{
-
+                background: transparentize($secondary, 0.8);
             }
         }
+    }
+
+    .sidebar-brand{
+        height: $navbar-height;
+        padding: $navbar-padding;
     }
 
 }

@@ -41,16 +41,38 @@
                 </div>
             </div>
         </Card>
+        <Card class="mt-5">
+            <template v-slot:header>
+                Tag input
+            </template>
+            <div class="row">
+                <div class="col-6">
+                   <TagInput
+                           label="Tag input label"
+                           v-model="tags"
+                           info-text="Tag input info text"
+                           placeholder="Try to type something and hit enter..."
+                           type="secondary"
+                   ></TagInput>
+                </div>
+                <div class="col-6">
+                    <p>Tag input value:</p>
+                    <pre>{{tags}}</pre>
+                </div>
+            </div>
+        </Card>
     </div>
 </template>
 
 <script>
     export default {
         name: "Forms",
+
         data(){
             return {
+                tags:['JavaScript', 'Tag-input', 'JSX', 'Vue.js']
             }
-        }
+        },
     }
 </script>
 

@@ -8,11 +8,15 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center mt-2 mb-2">
+        <div class="sidebar-brand d-flex justify-content-center ">
+            <img src="../../assets/img/logo.png">
         </div>
 
         <ul class="nav flex-column sidebar-items">
-            <li class="nav-item sidebar-link" v-for="(link,i) in links" :key="i" @click="navigateTo(link.path)">
+            <li :class="['nav-item', 'sidebar-link', {'active':linkActive(link.path)}]" v-for="(link,i) in links" :key="i" @click="navigateTo(link.path)">
+                <span class="icon" v-if="link.icon !== ''">
+                    <fa :icon="link.icon"></fa>
+                </span>
                 {{ link.name }}
             </li>
         </ul>
@@ -22,7 +26,7 @@
 <script>
 
     import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faTimes} from '@fortawesome/free-solid-svg-icons';
+    import {faTimes, faFileAlt, faFont} from '@fortawesome/free-solid-svg-icons';
 
     library.add(faTimes);
 
@@ -34,8 +38,8 @@
                 closed:false,
                 links:[
                     {
-                        name:'Components',
-                        path:'/components',
+                        name:'Dashboard',
+                        path:'/',
                         icon:'',
                     },
                     {
@@ -46,7 +50,12 @@
                     {
                         name:'Forms',
                         path:'/forms',
-                        icon:'',
+                        icon:faFileAlt,
+                    },
+                    {
+                        name:'Typography',
+                        path:'/typography',
+                        icon:faFont,
                     },
                 ]
             }
@@ -62,6 +71,11 @@
                 if(window.innerWidth < 768){
                     this.$sidebar.close();
                 }
+            },
+
+            // Determine if link class should be set to active
+            linkActive(path){
+                return path === this.activePath;
             }
         },
 
@@ -100,6 +114,10 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+    .icon{
+        margin-right: 4px;
+    }
 
 </style>

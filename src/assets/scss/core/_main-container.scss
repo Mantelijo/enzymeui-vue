@@ -2,12 +2,19 @@
     z-index: $zindex-app-container;
     transition: $transition-base;
 
+    // When sidebar is open
     &.sidebar-open{
         margin-left: $sidebar-width;
 
-        // Mobile
+        // Mobile - shows sidebar overlay and content is hidden behind it
         @media screen and (max-width: map_get($grid-breakpoints, 'md')) {
             margin-left: 0;
         }
+    }
+
+    // Container which actually holds page content
+    .content-container{
+        padding-right: $navbar-content-padding;
+        padding-left: $navbar-content-padding;
     }
 }

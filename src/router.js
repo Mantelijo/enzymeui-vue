@@ -6,8 +6,10 @@ Vue.use(VueRouter);
 import Dashboard from "./views/Dashboard";
 import Buttons from "./views/Buttons";
 import Forms from "./views/Forms";
+import Typography from "./views/Typography";
 
 const router = new VueRouter({
+    mode: 'history',
     routes:[
         {
             path:'/',
@@ -20,6 +22,10 @@ const router = new VueRouter({
         {
             path:'/forms',
             component: Forms,
+        },
+        {
+            path:'/typography',
+            component: Typography,
         },
     ],
 });

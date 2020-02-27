@@ -1,22 +1,24 @@
 // Styles
 import '../assets/scss/app.scss';
 
-// Base components
-import Alert from "../components/base/Alert";
-import Badge from "../components/base/Badge";
-import Button from "../components/base/Button";
-import Card from "../components/base/Card";
-import Input from "../components/base/Input";
-import Modal from "../components/base/Modal";
-import Pagination from "../components/base/Pagination";
-import ProgressBar from "../components/base/ProgressBar";
-import Select from "../components/base/Select";
-
 // Misc
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Custom plugins
 import SidebarPlugin from "../components/sidebar/plugin";
+
+// Base components
+import Alert from "../components/base/Alert";
+import Badge from "../components/base/Badge";
+import Button from "../components/base/Button";
+import Card from "../components/base/Card";
+import Collapse from "../components/base/Collapse";
+import Input from "../components/base/Input";
+import Modal from "../components/base/Modal";
+import Pagination from "../components/base/Pagination";
+import ProgressBar from "../components/base/ProgressBar";
+import Select from "../components/base/Select";
+import TagInput from "../components/base/TagInput";
 
 export default {
     install(Vue){
@@ -25,10 +27,12 @@ export default {
         Vue.component(Badge.name, Badge);
         Vue.component(Button.name, Button);
         Vue.component(Card.name, Card);
+        Vue.component(Collapse.name, Collapse);
         Vue.component(Input.name, Input);
         Vue.component(Modal.name, Modal);
         Vue.component(Pagination.name, Pagination);
         Vue.component(ProgressBar.name, ProgressBar);
+        Vue.component(TagInput.name, TagInput);
         Vue.component(Select.name, Select);
 
         // Font awesome icon component

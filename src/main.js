@@ -7,7 +7,7 @@ Vue.use(loader);
 
 import router from './router';
 
-new Vue({
+window.app = new Vue({
   render: h => h(App),
   router,
 }).$mount('#app')

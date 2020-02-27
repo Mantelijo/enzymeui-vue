@@ -4,7 +4,7 @@
         <div :class="['app-container', {'sidebar-open':!sidebarClosed}]">
             <SidebarContentOverlay :show="!sidebarClosed"></SidebarContentOverlay>
             <Navbar></Navbar>
-            <div class="container-fluid mt-3">
+            <div class="content-container container-fluid mt-4 mb-5">
                 <div class="row">
                     <div class="col">
                         <router-view></router-view>
@@ -19,6 +19,7 @@
     import Navbar from "./components/Navbar";
     export default {
         name: 'app',
+
         components: {Navbar},
 
         data(){
@@ -29,7 +30,6 @@
         },
 
         watch:{
-
             // Watch if sidebar is being closed/opened and adjust visibility of overlay, content
             '$sidebar.sidebarVisible':function(val){
                 this.sidebarClosed = !val;

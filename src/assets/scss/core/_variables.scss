@@ -1,4 +1,5 @@
-// Custom variables
+// Content and navbar paddings (Space between sidebar)
+$navbar-content-padding:1.5rem;
 
 // Sidebar
 $sidebar-width:290px;
@@ -8,6 +9,9 @@ $sidebar-color:#444;
 // Navbar
 $navbar-bg-color:rgba(255,255,255,0.5);
 $navbar-border-color:#edeff3;
+$navbar-height:60px;
+$navbar-padding: 0.5rem 1rem;
+
 
 // Variables
 //
@@ -83,6 +87,16 @@ $gradients: (
         'red': '',
         'yellow': '',
 );
+
+$default: #3a4146 !default;
+$primary:       #27beaf !default;
+$secondary:     #703B9D !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       #ffd369 !default;
+$danger:        #fe346e !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
 
 $default: #3a4146 !default;
 $primary:       #27beaf !default;
@@ -1172,3 +1186,7 @@ $positions: static, relative, absolute, fixed, sticky !default;
 
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
+
+// Tag input
+$tag-input-tag-bg:$primary;
+$tag-input-tag-border-radius:4px;

@@ -28,3 +28,47 @@
 .input-error{
     color:$danger;
 }
+
+.tag-input{
+
+    cursor:text;
+
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    height: auto;
+
+    .tag{
+        background: $tag-input-tag-bg;
+        color: color-yiq($tag-input-tag-bg);
+        padding: 4px 10px;
+        margin-right: 6px;
+        margin-bottom: 3px;
+        margin-top: 3px;
+        cursor: pointer;
+        border-radius: $tag-input-tag-border-radius;
+        font-size: 0.8125rem;
+
+        .tag-close{
+            font-size: 0.75rem;
+            margin-left: 5px;
+        }
+
+        // Tag variations
+        @each $type, $color in $theme-colors{
+            &.tag-#{$type}{
+                background: $color;
+                color: color-yiq($color);
+            }
+        }
+    }
+
+    .input{
+        background: none;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        flex-grow: 1;
+    }
+
+}
