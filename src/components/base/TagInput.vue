@@ -5,13 +5,22 @@
                 <span v-if="label.length>0">{{label}}</span>
             </slot>
         </div>
-        <div class="tag-input form-control input" @click="focusInput">
+        <div :class="['tag-input', 'form-control', 'input', {'focused':inputFocused}]" @click="focusInput">
             <span :class="['tag', `tag-${type}`]" v-for="(tag,i) in tags" :key="key(i)">
                 <span class="tag-text">{{tag}}</span>
                 &nbsp;
                 <span class="tag-close" @click="remove(i)"><fa icon="times"></fa></span>
             </span>
-            <input :placeholder="showPlaceholder?placeholder:''" ref="input" class="input" type="text" v-on:keydown.enter="add" v-on:keydown.delete="removeLast" v-model="inputText">
+            <input
+                    @focus="inputFocused=true"
+                    @blur="inputFocused=false"
+                    :placeholder="showPlaceholder?placeholder:''"
+                    ref="input"
+                    class="input"
+                    type="text"
+                    v-on:keydown.enter="add"
+                    v-on:keydown.delete="removeLast"
+                    v-model="inputText">
         </div>
         <div class="input-info" v-if="$slots['info'] || infoText.length>0">
             <slot name="info">
@@ -62,7 +71,7 @@
                 type:String,
                 default:'primary',
                 required:false,
-                description: 'One of default theme types that will be used '
+                description: 'One of default theme types that will be used to apply color and background styles. Available types are: default, primary, secondary, success, info, warning, danger, light, dark',
             },
 
             placeholder:{
@@ -87,6 +96,7 @@
             return {
                 tags:[],
                 inputText:'',
+                inputFocused:false,
             }
         },
 
@@ -123,6 +133,8 @@
                 this.tags.splice(index, 1);
             },
 
+            // Used when delete button is pressed in empty input field
+            // Removes last tag
             removeLast(){
                 if(this.inputText.length === 0){
                     this.tags.pop();

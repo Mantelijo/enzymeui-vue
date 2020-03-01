@@ -1,6 +1,9 @@
 // Styles
 import '../assets/scss/app.scss';
 
+// Animate.css
+import 'animate.css/animate.css';
+
 // Misc
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 

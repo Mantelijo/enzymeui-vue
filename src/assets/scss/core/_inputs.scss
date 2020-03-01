@@ -32,11 +32,17 @@
 .tag-input{
 
     cursor:text;
-
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
     height: auto;
+    transition: $input-transition;
+
+    &.focused {
+        border-color: $input-focus-border-color;
+        outline: 0;
+        box-shadow: $input-focus-box-shadow;
+    }
 
     .tag{
         background: $tag-input-tag-bg;

@@ -7,6 +7,7 @@ import Dashboard from "./views/Dashboard";
 import Buttons from "./views/Buttons";
 import Forms from "./views/Forms";
 import Typography from "./views/Typography";
+import Alerts from "./views/Alerts";
 
 const router = new VueRouter({
     mode: 'history',
@@ -14,6 +15,10 @@ const router = new VueRouter({
         {
             path:'/',
             component:Dashboard,
+        },
+        {
+            path: '/alerts',
+            component: Alerts,
         },
         {
             path:'/buttons',

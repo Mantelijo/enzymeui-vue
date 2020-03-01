@@ -17,6 +17,21 @@
 
         <Card class="mt-5">
             <template v-slot:header>
+                Rounded buttons
+            </template>
+            <div class="showcase-wrapper">
+                <Button class="demo-btn" rounded type="default">Default</Button>
+                <Button class="demo-btn" rounded type="primary">Primary</Button>
+                <Button class="demo-btn" rounded type="secondary">Secondary</Button>
+                <Button class="demo-btn" rounded type="success">Success</Button>
+                <Button class="demo-btn" rounded type="info">Info</Button>
+                <Button class="demo-btn" rounded type="warning">Warning</Button>
+                <Button class="demo-btn" rounded type="danger">Danger</Button>
+            </div>
+        </Card>
+
+        <Card class="mt-5">
+            <template v-slot:header>
                 Outline buttons
             </template>
             <div class="showcase-wrapper">
