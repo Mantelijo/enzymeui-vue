@@ -68,11 +68,5 @@
 </script>
 
 <style scoped lang="scss">
-    .alert{
-        .close{
-            /*position: absolute;*/
-            /*top: 1rem;*/
-            /*right: 1rem;*/
-        }
-    }
+
 </style>

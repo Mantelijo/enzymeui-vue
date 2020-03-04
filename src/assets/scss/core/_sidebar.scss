@@ -38,7 +38,7 @@
             }
 
             &.active{
-                background: transparentize($secondary, 0.8);
+                background: transparentize($primary, 0.8);
             }
         }
     }

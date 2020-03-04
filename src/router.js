@@ -8,6 +8,7 @@ import Buttons from "./views/Buttons";
 import Forms from "./views/Forms";
 import Typography from "./views/Typography";
 import Alerts from "./views/Alerts";
+import Dropdowns from "./views/Dropdowns";
 
 const router = new VueRouter({
     mode: 'history',
@@ -15,6 +16,10 @@ const router = new VueRouter({
         {
             path:'/',
             component:Dashboard,
+        },
+        {
+            path:'/dropdowns',
+            component:Dropdowns,
         },
         {
             path: '/alerts',

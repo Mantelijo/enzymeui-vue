@@ -24,6 +24,16 @@
         border-radius: 25px !important;
     }
 
+    &.still{
+        &:hover{
+            transform: translateY(0px);
+        }
+
+        &:active{
+            transform: translateY(0px);
+        }
+    }
+
 }
 
 // Remove box shadow for outline

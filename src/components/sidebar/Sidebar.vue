@@ -43,6 +43,11 @@
                         icon:'',
                     },
                     {
+                        name:'Dropdowns',
+                        path:'/dropdowns',
+                        icon:'',
+                    },
+                    {
                         name:'Alerts',
                         path:'/alerts',
                         icon:'',

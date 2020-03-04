@@ -1,5 +1,5 @@
 <template>
-    <button @click="click" :class="['btn', `btn-${type}`, size !== undefined? `btn-${size}`:'', {'rounded':rounded} ]">
+    <button @click="click" :class="['btn', `btn-${type}`, size !== undefined? `btn-${size}`:'', {'rounded':rounded}, {'still':still}]">
         <slot></slot>
     </button>
 </template>
@@ -26,8 +26,14 @@
                 type:Boolean,
                 required:false,
                 default:false,
-                description: 'If set to true .rounded class will be added'
+                description: 'If set to true .rounded class will be added and button will have rounded borders'
             },
+            still:{
+                type:Boolean,
+                required:false,
+                default:false,
+                description: 'If set to true translateY animation will be disabled on hover and click and button will not bounce',
+            }
         },
 
         methods:{

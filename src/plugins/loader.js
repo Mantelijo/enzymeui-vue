@@ -23,6 +23,13 @@ import ProgressBar from "../components/base/ProgressBar";
 import Select from "../components/base/Select";
 import TagInput from "../components/base/TagInput";
 
+// Custom directives
+import '../directives/click-outside';
+
+import { createPopper } from '@popperjs/core';
+
+window.popper = createPopper;
+
 export default {
     install(Vue){
         // Base components

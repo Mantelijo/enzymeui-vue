@@ -46,7 +46,7 @@
                 Tag input
             </template>
             <div class="row">
-                <div class="col-6">
+                <div class="col-sm-6">
                    <TagInput
                            label="Tag input label"
                            v-model="tags"
@@ -55,7 +55,7 @@
                            type="secondary"
                    ></TagInput>
                 </div>
-                <div class="col-6">
+                <div class="col-sm-6">
                     <p>Tag input value:</p>
                     <pre>{{tags}}</pre>
                 </div>

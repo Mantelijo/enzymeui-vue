@@ -106,7 +106,6 @@
         },
 
         mounted() {
-            console.log(this.$listeners);
         }
     }
 </script>

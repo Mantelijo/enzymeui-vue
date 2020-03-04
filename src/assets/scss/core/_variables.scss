@@ -1,3 +1,5 @@
+
+
 // Content and navbar paddings (Space between sidebar)
 $navbar-content-padding:1.5rem;
 
@@ -98,15 +100,15 @@ $danger:        #fe346e !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
-$default: #3a4146 !default;
-$primary:       #27beaf !default;
-$secondary:     #9dd8c8 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       #ffd369 !default;
-$danger:        #fe346e !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+//$default: #3a4146 !default;
+//$primary:       #27beaf !default;
+//$secondary:     #9dd8c8 !default;
+//$success:       $green !default;
+//$info:          $cyan !default;
+//$warning:       #ffd369 !default;
+//$danger:        #fe346e !default;
+//$light:         $gray-100 !default;
+//$dark:          $gray-800 !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -830,6 +832,14 @@ $dropdown-item-padding-y:           .25rem !default;
 $dropdown-item-padding-x:           1.5rem !default;
 
 $dropdown-header-color:             $gray-600 !default;
+
+// Dropdown menu custom sizes
+$dropdown-menu-sizes: (
+    'lg': 430px,
+    'md': 300px,
+    'sm': 200px,
+    'xs': 160px,
+);
 
 
 // Pagination

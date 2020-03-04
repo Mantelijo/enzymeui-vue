@@ -16,6 +16,10 @@
     font-family: Nunito;
 }
 
+#app{
+    height: 100vh;
+}
+
 @import "~bootstrap/scss/functions";
 
 // Custom modified bootrstap variables
@@ -68,3 +72,4 @@
 @import "core/card";
 @import "core/main-container";
 @import "core/alert";
+@import "core/dropdown";
