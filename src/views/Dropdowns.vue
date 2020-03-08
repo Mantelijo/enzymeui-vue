@@ -32,19 +32,18 @@
 
             </Dropdown>
 
-            <Dropdown class="mr-5" :menu-classes="['dropdown-menu-md', 'p-2']" >
+            <Dropdown class="mr-5">
                 <template slot="button">
                     <Button type="primary" still>Dropdowns</Button>
                 </template>
                 <div>
-                    <b>Use any custom html inside the dropdown. There are multiple dropdown sizes to fit different content sizes</b>
-
-                    <ul>
-                        <li>dropdown-menu-xs: 160px</li>
-                        <li>dropdown-menu-sm: 200px</li>
-                        <li>dropdown-menu-md: 300px</li>
-                        <li>dropdown-menu-lg: 430px</li>
-                    </ul>
+                    <div class="dropdown-header">Available dropdown menu sizes</div>
+                    <div class="dropdown-item">dropdown-menu-xs: 160px</div>
+                    <div class="dropdown-item">dropdown-menu-sm: 200px</div>
+                    <div class="dropdown-item">dropdown-menu-md: 300px</div>
+                    <div class="dropdown-item">dropdown-menu-lg: 430px</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item"><b>Last item</b></div>
                 </div>
             </Dropdown>
         </Card>

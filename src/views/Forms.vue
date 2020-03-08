@@ -23,7 +23,6 @@
                         <template v-slot:label>
                             <label class="text-success">Success input label</label>
                         </template>
-
                     </Input>
                 </div>
             </div>
@@ -58,6 +57,24 @@
                 <div class="col-sm-6">
                     <p>Tag input value:</p>
                     <pre>{{tags}}</pre>
+                </div>
+            </div>
+        </Card>
+
+        <Card class="mt-5">
+            <template slot="header">Checkboxes & Radio inputs</template>
+            <div class="row">
+                <div class="col-sm-6">
+                    <Checkbox>Simple checkbox</Checkbox>
+                    <Checkbox checked>Simple checked checkbox</Checkbox>
+                    <Checkbox disabled>Disabled unchecked checkbox</Checkbox>
+                    <Checkbox disabled checked>Disabled checked checkbox</Checkbox>
+                </div>
+                <div class="col-sm-6">
+                    <Radio>Simple Radio</Radio>
+                    <Radio checked>Simple checked Radio</Radio>
+                    <Radio disabled>Disabled unchecked Radio</Radio>
+                    <Radio disabled checked>Disabled checked Radio</Radio>
                 </div>
             </div>
         </Card>

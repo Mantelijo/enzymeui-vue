@@ -22,6 +22,8 @@ import Pagination from "../components/base/Pagination";
 import ProgressBar from "../components/base/ProgressBar";
 import Select from "../components/base/Select";
 import TagInput from "../components/base/TagInput";
+import Checkbox from "../components/base/Checkbox";
+import Radio from "../components/base/Radio";
 
 // Custom directives
 import '../directives/click-outside';
@@ -44,6 +46,8 @@ export default {
         Vue.component(ProgressBar.name, ProgressBar);
         Vue.component(TagInput.name, TagInput);
         Vue.component(Select.name, Select);
+        Vue.component(Checkbox.name, Checkbox);
+        Vue.component(Radio.name, Radio);
 
         // Font awesome icon component
         Vue.component('fa', FontAwesomeIcon);
