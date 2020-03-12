@@ -1,12 +1,26 @@
 <template>
-    <div>
+    <component
+        :is="element"
+        :class="[
+            'badge',
+        ]"
+    >
 
-    </div>
+    </component>
 </template>
 
 <script>
     export default {
-        name: "Badge"
+        name: "Badge",
+
+        computed:{
+            element(){
+                return 'span';
+            },
+            classes(){
+
+            }
+        }
     }
 </script>
 

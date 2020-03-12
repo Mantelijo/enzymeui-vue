@@ -32,6 +32,21 @@
 
         <Card class="mt-5">
             <template v-slot:header>
+                Edgy buttons
+            </template>
+            <div class="showcase-wrapper">
+                <Button class="demo-btn" edgy type="default">Default</Button>
+                <Button class="demo-btn" edgy type="primary">Primary</Button>
+                <Button class="demo-btn" edgy type="secondary">Secondary</Button>
+                <Button class="demo-btn" edgy type="success">Success</Button>
+                <Button class="demo-btn" edgy type="info">Info</Button>
+                <Button class="demo-btn" edgy type="warning">Warning</Button>
+                <Button class="demo-btn" edgy type="danger">Danger</Button>
+            </div>
+        </Card>
+
+        <Card class="mt-5">
+            <template v-slot:header>
                 Outline buttons
             </template>
             <div class="showcase-wrapper">

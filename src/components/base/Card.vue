@@ -3,7 +3,7 @@
         <div class="card-header" v-if="this.$slots['header']">
             <slot name="header"></slot>
         </div>
-        <div :class="['card-body', bodyClasses]">
+        <div :class="['card-body']">
             <slot></slot>
         </div>
         <div class="card-footer" v-if="this.$slots['footer']">
@@ -20,11 +20,10 @@
                 type:String,
                 description:'Card type'
             },
-
             bodyClasses:{
                 type: String | Array,
                 required:false,
-                default:[],
+                default:()=>[],
                 description: 'Additional classes applied to card-body'
             }
         }

@@ -65,16 +65,16 @@
             <template slot="header">Checkboxes & Radio inputs</template>
             <div class="row">
                 <div class="col-sm-6">
-                    <Checkbox>Simple checkbox</Checkbox>
-                    <Checkbox checked>Simple checked checkbox</Checkbox>
-                    <Checkbox disabled>Disabled unchecked checkbox</Checkbox>
-                    <Checkbox disabled checked>Disabled checked checkbox</Checkbox>
+                    <Checkbox v-model="checkboxes" checkbox-value="first">Simple checkbox</Checkbox>
+                    <Checkbox v-model="checkboxes" checkbox-value="second">Simple checked checkbox</Checkbox>
+                    <Checkbox v-model="checkboxes" checkbox-value="third" disabled>Disabled unchecked checkbox</Checkbox>
+                    <Checkbox :value="true" checkbox-value="fourth" disabled >Disabled checked checkbox</Checkbox>
                 </div>
                 <div class="col-sm-6">
-                    <Radio>Simple Radio</Radio>
-                    <Radio checked>Simple checked Radio</Radio>
-                    <Radio disabled>Disabled unchecked Radio</Radio>
-                    <Radio disabled checked>Disabled checked Radio</Radio>
+                    <Radio v-model="radio" name="test" radio-value="first">Simple Radio</Radio>
+                    <Radio v-model="radio" name="test" radio-value="second" >Simple checked Radio</Radio>
+                    <Radio v-model="radio" name="test" radio-value="third" disabled>Disabled unchecked Radio</Radio>
+                    <Radio value="last" radio-value="last"  disabled >Disabled checked Radio</Radio>
                 </div>
             </div>
         </Card>
@@ -87,7 +87,9 @@
 
         data(){
             return {
-                tags:['JavaScript', 'Tag-input', 'JSX', 'Vue.js']
+                tags:['JavaScript', 'Tag-input', 'JSX', 'Vue.js'],
+                checkboxes:['second', 'fourth'],
+                radio:'first',
             }
         },
     }

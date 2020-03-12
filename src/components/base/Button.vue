@@ -1,5 +1,5 @@
 <template>
-    <button @click="click" :class="['btn', `btn-${type}`, size !== undefined? `btn-${size}`:'', {'rounded':rounded}, {'still':still}]">
+    <button @click="click" :class="['btn', `btn-${type}`, size !== undefined? `btn-${size}`:'', {'rounded':rounded},{'edgy':edgy}, {'still':still}]">
         <slot></slot>
     </button>
 </template>
@@ -27,6 +27,12 @@
                 required:false,
                 default:false,
                 description: 'If set to true .rounded class will be added and button will have rounded borders'
+            },
+            edgy:{
+                type:Boolean,
+                required:false,
+                default:false,
+                description: 'If set to true .edgy class will be added and button will have edgy borders'
             },
             still:{
                 type:Boolean,

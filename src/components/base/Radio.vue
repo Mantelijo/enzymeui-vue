@@ -1,6 +1,6 @@
 <template>
     <div :class="['radio', {'disabled':disabled}]">
-        <input :id="id" v-model="checked" :checked="checked" type="radio" :aria-checked="checked" :disabled="disabled"/>
+        <input :value="radioValue" :name="name" :id="id" v-model="model" type="radio" :aria-checked="model" :disabled="disabled"/>
         <label class="radio-label" :for="id">
             <span  class="radio-label-text">
                 <slot>{{label}}</slot>
@@ -17,23 +17,51 @@
             label:{
                 type:String,
                 default:'',
+                required:false,
                 description:'Label for radio',
             },
-            checked:{
-                type:Boolean,
+            value:{
+                type:Boolean | String,
                 default:false,
+                required:false,
                 description:'Is radio checked'
             },
             disabled:{
                 type:Boolean,
                 default:false,
+                required:false,
                 description:'If set to true - radio will be disabled'
+            },
+            name:{
+                type:String,
+                default:'',
+                required:false,
+                description: 'Name attribute for checkbox input'
+            },
+            radioValue:{
+                type:String,
+                default:'',
+                required:false,
+                description: 'Value attribute for radio input'
             }
         },
 
         data(){
             return{
                 id:'',
+            }
+        },
+
+        computed:{
+
+            // Radio value model
+            model:{
+                get(){
+                    return this.value;
+                },
+                set(value){
+                    this.$emit('input', value);
+                }
             }
         },
 
