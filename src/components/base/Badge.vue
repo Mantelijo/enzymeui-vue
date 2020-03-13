@@ -1,11 +1,14 @@
 <template>
     <component
         :is="element"
+        :[href]="link"
         :class="[
             'badge',
+            `badge-${type}`,
+            {'badge-pill':pill}
         ]"
     >
-
+        <slot></slot>
     </component>
 </template>
 
@@ -13,9 +16,43 @@
     export default {
         name: "Badge",
 
+        props:{
+            type:{
+                type:String,
+                default:'primary',
+                required:false,
+                description: 'One of available bootstrap button types: primary, secondary, default, success, info, warning, danger',
+            },
+            link:{
+                type:String,
+                default:'',
+                required:false,
+                description: 'Url of link, if link is provided the badge element will be set to <a>'
+            },
+            pill:{
+                type:Boolean,
+                default:false,
+                required:false,
+                description: 'If pill prop is provided and set to true then .badge-pill class will be applied'
+            }
+        },
+
         computed:{
             element(){
-                return 'span';
+                let el = 'span';
+
+                // Change element to a
+                if(this.link.length > 0){
+                    el = 'a';
+                }
+
+                return el;
+            },
+            href(){
+                if(this.link.length>0){
+                    return 'href';
+                }
+                return null;
             },
             classes(){
 

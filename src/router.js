@@ -9,6 +9,7 @@ import Forms from "./views/Forms";
 import Typography from "./views/Typography";
 import Alerts from "./views/Alerts";
 import Dropdowns from "./views/Dropdowns";
+import Components from "./views/Components";
 
 const router = new VueRouter({
     mode: 'history',
@@ -20,6 +21,10 @@ const router = new VueRouter({
         {
             path:'/dropdowns',
             component:Dropdowns,
+        },
+        {
+            path:'/components',
+            component:Components,
         },
         {
             path: '/alerts',

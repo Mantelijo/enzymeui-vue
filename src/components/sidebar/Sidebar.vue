@@ -58,6 +58,11 @@
                         icon:'',
                     },
                     {
+                        name:'Components',
+                        path:'/components',
+                        icon:'',
+                    },
+                    {
                         name:'Forms',
                         path:'/forms',
                         icon:faFileAlt,

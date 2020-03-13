@@ -444,7 +444,7 @@ $input-btn-font-size-sm:      0.75rem !default;
 $input-btn-line-height-sm:    $line-height-sm !default;
 
 $input-btn-padding-y-lg:      0.5rem !default;
-$input-btn-padding-x-lg:      2rem !default;
+$input-btn-padding-x-lg:      1rem !default;
 $input-btn-font-size-lg:      1.125rem !default;
 $input-btn-line-height-lg:    $line-height-lg !default;
 
@@ -981,9 +981,9 @@ $toast-header-border-color:         rgba(0, 0, 0, .05) !default;
 
 // Badges
 
-$badge-font-size:                   75% !default;
+$badge-font-size:                   0.75rem !default;
 $badge-font-weight:                 $font-weight-bold !default;
-$badge-padding-y:                   .25em !default;
+$badge-padding-y:                   .325em !default;
 $badge-padding-x:                   .4em !default;
 $badge-border-radius:               $border-radius !default;
 
