@@ -7,7 +7,9 @@
             <div class="content-container container-fluid mt-4 mb-5">
                 <div class="row">
                     <div class="col">
-                        <router-view></router-view>
+                        <transition mode="out-in" name="fade">
+                            <router-view></router-view>
+                        </transition>
                     </div>
                 </div>
             </div>
@@ -39,4 +41,16 @@
 </script>
 
 <style>
+    .fade-enter{
+        opacity: 0;
+    }
+
+    .fade-enter-active,
+    .fade-leave-active{
+        transition: all 0.2s ease;
+    }
+
+    .fade-leave-to{
+        opacity: 0;
+    }
 </style>
