@@ -65,11 +65,50 @@
                 <span slot="previous">Prev</span>
             </Pagination>
 
+            <h5 class="mt-4">Simple Pagination with Icons</h5>
+            <Pagination :pages="100" v-model="selectedPage4">
+                <span slot="previous"><fa icon="chevron-left" /></span>
+                <span slot="next"><fa icon="chevron-right" /></span>
+            </Pagination>
+        </Card>
+        <Card class="mt-5 progresses">
+            <template slot="header">Progress bars</template>
+
+            <h5>Simple progress bars</h5>
+
+            <Badge type="default">Default progress bar: {{progress.default}}% </Badge>
+            <ProgressBar type="default" :progress="progress.default"/>
+
+            <Badge type="primary">Primary progress bar: {{progress.primary}}% </Badge>
+            <ProgressBar type="primary" :progress="progress.primary"/>
+
+            <Badge type="secondary">Secondary progress bar: {{progress.secondary}}% </Badge>
+            <ProgressBar type="secondary" :progress="progress.secondary"/>
+
+            <Badge type="success">Success progress bar: {{progress.success}}% </Badge>
+            <ProgressBar type="success" :progress="progress.success"/>
+
+            <Badge type="info">Info progress bar: {{progress.info}}% </Badge>
+            <ProgressBar type="info" :progress="progress.info"/>
+
+            <Badge type="warning">Warning progress bar: {{progress.warning}}% </Badge>
+            <ProgressBar type="warning" :progress="progress.warning"/>
+
+            <Badge type="danger">Danger progress bar: {{progress.danger}}% </Badge>
+            <ProgressBar type="danger" :progress="progress.danger"/>
+
+            <Button @click="shuffleProgress" type="secondary" size="sm">Shuffle</Button>
         </Card>
     </div>
 </template>
 
 <script>
+
+    import {library} from '@fortawesome/fontawesome-svg-core';
+    import {faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons'
+
+    library.add(faChevronLeft, faChevronRight);
+
     export default {
         name: "Components",
         data(){
@@ -77,13 +116,41 @@
                 selectedPage1:30,
                 selectedPage2:50,
                 selectedPage3:40,
+                selectedPage4:40,
+                progress:{
+                    default:10,
+                    primary:20,
+                    secondary:30,
+                    success:40,
+                    info:50,
+                    warning:60,
+                    danger:70,
+                }
             };
         },
+
+        methods:{
+            shuffleProgress(){
+                Object.keys(this.progress).forEach((key)=>{
+                    this.progress[key] = parseInt(Math.random() * 100);
+                });
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .badge{
         margin-right: 10px;
+    }
+
+    .progress{
+        margin-bottom: 2rem;
+    }
+
+    .progresses{
+        .badge{
+            margin-bottom:0.5rem;
+        }
     }
 </style>

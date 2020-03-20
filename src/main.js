@@ -10,4 +10,4 @@ import router from './router';
 window.app = new Vue({
   render: h => h(App),
   router,
-}).$mount('#app')
+}).$mount('#app');

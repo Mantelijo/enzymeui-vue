@@ -125,6 +125,37 @@
             if(window.innerWidth < 768){
                 this.$sidebar.close();
             }
+
+            // Open/Close on touch
+            document.addEventListener('DOMContentLoaded', ()=>{
+
+                let body = document.body;
+                let start = {}, end = {};
+
+
+                body.addEventListener('touchstart', (touchEvent)=>{
+                    let t = touchEvent.changedTouches[0];
+                    start.x = t.clientX;
+                    start.y = t.clientY;
+                });
+                body.addEventListener('touchend', (touchEvent)=>{
+                    let t = touchEvent.changedTouches[0];
+                    end.x = t.clientX;
+                    end.y = t.clientY;
+
+                    let diffX = Math.abs(end.x-start.x);
+                    let diffY = Math.abs(end.y-start.y);
+
+                    // Slide open only near left edge
+                    if(diffX > diffY && start.x <= 100){
+                        this.$sidebar.open();
+                    }
+                    else{
+                        this.$sidebar.close();
+                    }
+                });
+
+            });
         }
     }
 </script>
