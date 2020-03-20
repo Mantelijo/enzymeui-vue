@@ -1,0 +1,34 @@
+$to-lighten:50%;
+
+// Inverse badges styles
+.badge{
+    @each $type, $color in $theme-colors{
+        $lightness: lightness($color);
+        &.badge-#{$type}{
+            &.badge-inverse{
+                color:$color;
+                @if $lightness >= 50% and $lightness <= 90{
+                    background: lighten($color, min(30%+$lightness%100, $to-lighten/3));
+                    color:darken($color, 30%);
+                    &:hover{
+                        background: darken(lighten($color, min(30%+$lightness%100, $to-lighten/3)), 10%);
+                        color:darken($color, 30%);
+                    }
+                }
+                @else if $lightness >= 90{
+                    background: darken($color, $to-lighten/3);
+                    color:lighten($color, 30%);
+                    &:hover{
+                        background: darken($color, $to-lighten/2);
+                    }
+                }
+                @else{
+                    background: lighten($color, $to-lighten);
+                    &:hover{
+                        background: lighten($color, $to-lighten/1.25);
+                    }
+                }
+            }
+        }
+    }
+}

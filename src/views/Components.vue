@@ -46,6 +46,17 @@
                 <Badge pill type="danger" link="#">A danger badge</Badge>
                 <Badge pill type="light" link="#">A light badge</Badge>
             </div>
+            <div class="mt-4">
+                <h5>Link inverse badges</h5>
+                <Badge inverse type="default" link="#">A default badge</Badge>
+                <Badge inverse type="primary" link="#">A primary badge</Badge>
+                <Badge inverse type="secondary" link="#">A secondary badge</Badge>
+                <Badge inverse  type="success" link="#">A success badge</Badge>
+                <Badge inverse type="info" link="#">A info badge</Badge>
+                <Badge inverse type="warning" link="#">A warning badge</Badge>
+                <Badge inverse type="danger" link="#">A danger badge</Badge>
+                <Badge inverse type="light" link="#">A light badge</Badge>
+            </div>
         </Card>
         <Card class="mt-5">
             <template slot="header">Pagination</template>
@@ -67,6 +78,16 @@
 
             <h5 class="mt-4">Simple Pagination with Icons</h5>
             <Pagination :pages="100" v-model="selectedPage4">
+                <span slot="previous"><fa icon="chevron-left" /></span>
+                <span slot="next"><fa icon="chevron-right" /></span>
+            </Pagination>
+            <h5 class="mt-4">Simple Pagination with Icons and no first and last pages</h5>
+            <Pagination :pages="100" v-model="selectedPage5" :show-first-page="false" :show-last-page="false">
+                <span slot="previous"><fa icon="chevron-left" /></span>
+                <span slot="next"><fa icon="chevron-right" /></span>
+            </Pagination>
+            <h5 class="mt-4">Simple Pagination with Icons and disabled pages</h5>
+            <Pagination :pages="100" v-model="selectedPage6" :disabled-pages="[14, 16]">
                 <span slot="previous"><fa icon="chevron-left" /></span>
                 <span slot="next"><fa icon="chevron-right" /></span>
             </Pagination>
@@ -99,6 +120,28 @@
 
             <Button @click="shuffleProgress" type="secondary" size="sm">Shuffle</Button>
         </Card>
+        <Card class="mt-5">
+            <template slot="header">Navs</template>
+            <Nav>
+                <NavItem title="First tab">
+                    <div>
+                        <h2>This is the first tab</h2>
+                    </div>
+                </NavItem>
+                <NavItem title="second tab">
+                    <div>
+                        <h2>This is the second tab</h2>
+                    </div>
+                </NavItem>
+                <NavItem title="Third tab">
+                    <div>
+                        <h2>This is the third tab</h2>
+                        <b>WIth some more stuff</b>
+                        <Alert closable type="secondary">Hello</Alert>
+                    </div>
+                </NavItem>
+            </Nav>
+        </Card>
     </div>
 </template>
 
@@ -117,6 +160,8 @@
                 selectedPage2:50,
                 selectedPage3:40,
                 selectedPage4:40,
+                selectedPage5: 15,
+                selectedPage6: 15,
                 progress:{
                     default:10,
                     primary:20,

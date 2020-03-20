@@ -5,7 +5,8 @@
         :class="[
             'badge',
             `badge-${type}`,
-            {'badge-pill':pill}
+            {'badge-pill':pill},
+            {'badge-inverse':inverse}
         ]"
     >
         <slot></slot>
@@ -34,6 +35,12 @@
                 default:false,
                 required:false,
                 description: 'If pill prop is provided and set to true then .badge-pill class will be applied'
+            },
+            inverse:{
+                type:Boolean,
+                default: false,
+                required:false,
+                description: 'If set to true .badge-inverse class will be added',
             }
         },
 

@@ -10,6 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // Custom plugins
 import SidebarPlugin from "../components/sidebar/plugin";
 
+// Custom directives
+import '../directives/click-outside';
+
+import { createPopper } from '@popperjs/core';
+
 // Base components
 import Alert from "../components/base/Alert";
 import Badge from "../components/base/Badge";
@@ -24,11 +29,8 @@ import Select from "../components/base/Select";
 import TagInput from "../components/base/TagInput";
 import Checkbox from "../components/base/Checkbox";
 import Radio from "../components/base/Radio";
-
-// Custom directives
-import '../directives/click-outside';
-
-import { createPopper } from '@popperjs/core';
+import Nav from "../components/base/Navs/Nav";
+import NavItem from "../components/base/Navs/NavItem";
 
 window.popper = createPopper;
 
@@ -48,6 +50,8 @@ export default {
         Vue.component(Select.name, Select);
         Vue.component(Checkbox.name, Checkbox);
         Vue.component(Radio.name, Radio);
+        Vue.component(Nav.name, Nav);
+        Vue.component(NavItem.name, NavItem);
 
         // Font awesome icon component
         Vue.component('fa', FontAwesomeIcon);

@@ -43,6 +43,17 @@
                 border-color: transparent;
             }
         }
+
+        &.disabled{
+            .page-link{
+                color: $gray-400;
+            }
+            &:hover{
+                .page-link{
+                    background-color: #f0f0f0;
+                }
+            }
+        }
     }
 
 }

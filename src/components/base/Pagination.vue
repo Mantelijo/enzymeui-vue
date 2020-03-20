@@ -14,7 +14,7 @@
             <span class="page-link disabled">...</span>
         </div>
         <div
-                :class="['page-item', {'active': i === parseInt(currentPage)}]"
+                :class="['page-item', {'active': i === parseInt(currentPage) && !disabledPages.includes(i)}, {'disabled': disabledPages.includes(i)}]"
                 v-for="i in displayPages"
                 :key="i"
         >
@@ -66,9 +66,30 @@
             },
             threshold:{
                 type:Number,
-                default:3,
+                default:2,
                 required:false,
                 description: 'Threshold defines how many page buttons should be shown around the current page button when it is in the middle',
+            },
+            showFirstPage:{
+                type:Boolean,
+                required:false,
+                default:true,
+                description: 'If set to true first page button will be shown always',
+            },
+            showLastPage:{
+                type:Boolean,
+                required:false,
+                default:true,
+                description: 'If set to true last page button will be shown always',
+            },
+            disabledPages:{
+                type:Array,
+                required:false,
+                default:()=>[],
+                validator(val){
+                    return Array.isArray(val);
+                },
+                description: 'Array of page numbers which should be disabled',
             }
         },
 
@@ -82,12 +103,12 @@
         computed:{
             // First block for pagination
             showFirst(){
-                return !this.displayPages.includes(1);
+                return !this.displayPages.includes(1) && this.showFirstPage;
             },
 
             // Last block for pagination
             showLast(){
-                return !this.displayPages.includes(this.pages);
+                return !this.displayPages.includes(this.pages) && this.showLastPage;
             },
 
             currentPage(){
