@@ -13,7 +13,7 @@
                 <Badge type="danger">A danger badge</Badge>
                 <Badge type="light">A light badge</Badge>
             </div>
-            <div class="mt-4">
+            <div class="mt-5">
                 <h5>Simple pill badges</h5>
                 <Badge pill type="default">A default badge</Badge>
                 <Badge pill type="primary">A primary badge</Badge>
@@ -24,7 +24,7 @@
                 <Badge pill type="danger">A danger badge</Badge>
                 <Badge pill type="light">A light badge</Badge>
             </div>
-            <div class="mt-4">
+            <div class="mt-5">
                 <h5>Link badges</h5>
                 <Badge type="default" link="#">A default badge</Badge>
                 <Badge type="primary" link="#">A primary badge</Badge>
@@ -35,7 +35,7 @@
                 <Badge type="danger" link="#">A danger badge</Badge>
                 <Badge type="light" link="#">A light badge</Badge>
             </div>
-            <div class="mt-4">
+            <div class="mt-5">
                 <h5>Link pill badges</h5>
                 <Badge pill type="default" link="#">A default badge</Badge>
                 <Badge pill type="primary" link="#">A primary badge</Badge>
@@ -46,7 +46,7 @@
                 <Badge pill type="danger" link="#">A danger badge</Badge>
                 <Badge pill type="light" link="#">A light badge</Badge>
             </div>
-            <div class="mt-4">
+            <div class="mt-5">
                 <h5>Link inverse badges</h5>
                 <Badge inverse type="default" link="#">A default badge</Badge>
                 <Badge inverse type="primary" link="#">A primary badge</Badge>
@@ -65,28 +65,28 @@
                 <span slot="next">Next</span>
                 <span slot="previous">Prev</span>
             </Pagination>
-            <h5 class="mt-4">Small Pagination with 100 pages</h5>
+            <h5 class="mt-5">Small Pagination with 100 pages</h5>
             <Pagination size="sm" :pages="100" v-model="selectedPage2">
                 <span slot="next">Next</span>
                 <span slot="previous">Prev</span>
             </Pagination>
-            <h5 class="mt-4">Large Pagination with 100 pages</h5>
+            <h5 class="mt-5">Large Pagination with 100 pages</h5>
             <Pagination size="lg" :pages="100" v-model="selectedPage3">
                 <span slot="next">Next</span>
                 <span slot="previous">Prev</span>
             </Pagination>
 
-            <h5 class="mt-4">Simple Pagination with Icons</h5>
+            <h5 class="mt-5">Simple Pagination with Icons</h5>
             <Pagination :pages="100" v-model="selectedPage4">
                 <span slot="previous"><fa icon="chevron-left" /></span>
                 <span slot="next"><fa icon="chevron-right" /></span>
             </Pagination>
-            <h5 class="mt-4">Simple Pagination with Icons and no first and last pages</h5>
+            <h5 class="mt-5">Simple Pagination with Icons and no first and last pages</h5>
             <Pagination :pages="100" v-model="selectedPage5" :show-first-page="false" :show-last-page="false">
                 <span slot="previous"><fa icon="chevron-left" /></span>
                 <span slot="next"><fa icon="chevron-right" /></span>
             </Pagination>
-            <h5 class="mt-4">Simple Pagination with Icons and disabled pages</h5>
+            <h5 class="mt-5">Simple Pagination with Icons and disabled pages</h5>
             <Pagination :pages="100" v-model="selectedPage6" :disabled-pages="[14, 16]">
                 <span slot="previous"><fa icon="chevron-left" /></span>
                 <span slot="next"><fa icon="chevron-right" /></span>
@@ -122,7 +122,9 @@
         </Card>
         <Card class="mt-5">
             <template slot="header">Navs</template>
-            <Nav>
+
+            <h5>Tab navs with full width tabs</h5>
+            <Nav nav-fill :init-active-tab="1">
                 <NavItem title="First tab">
                     <div>
                         <h2>This is the first tab</h2>
@@ -136,8 +138,50 @@
                 <NavItem title="Third tab">
                     <div>
                         <h2>This is the third tab</h2>
-                        <b>WIth some more stuff</b>
-                        <Alert closable type="secondary">Hello</Alert>
+                    </div>
+                </NavItem>
+            </Nav>
+
+            <h5 class="mt-5">Tab navs with auto width tabs</h5>
+            <Nav :init-active-tab="1">
+                <NavItem title="First tab">
+                    <div>
+                        <h2>This is the first tab</h2>
+                    </div>
+                </NavItem>
+                <NavItem title="second tab">
+                    <div>
+                        <h2>This is the second tab</h2>
+                    </div>
+                </NavItem>
+                <NavItem title="Third tab">
+                    <div>
+                        <h2>This is the third tab</h2>
+                    </div>
+                </NavItem>
+            </Nav>
+
+            <h5 class="mt-5">Tab navs with column placed tabs</h5>
+            <Nav :init-active-tab="1" nav-column>
+                <NavItem title="First tab">
+                    <div>
+                        <h2>This is the first tab</h2>
+                    </div>
+                </NavItem>
+                <NavItem title="second tab">
+                    <div>
+                        <h2>This is the second tab</h2>
+                    </div>
+                </NavItem>
+                <NavItem title="Third tab">
+                    <div>
+                        <h2>This is the third tab</h2>
+                        <p>
+                            It has some random text and small pagination
+                        </p>
+                        <div>
+                            <Pagination :pages="25" size="sm" v-model="fakePagination"/>
+                        </div>
                     </div>
                 </NavItem>
             </Nav>
@@ -170,7 +214,8 @@
                     info:50,
                     warning:60,
                     danger:70,
-                }
+                },
+                fakePagination:1,
             };
         },
 

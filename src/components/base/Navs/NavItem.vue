@@ -1,6 +1,6 @@
 <template>
     <div>
-        <transition name="shift" mode="out-in">
+        <transition name="shift" mode="out-in">C
             <slot name="default" v-if="active"></slot>
         </transition>
     </div>
@@ -14,7 +14,7 @@
             title:{
                 type:String,
                 required:true,
-                description: 'Title of Nav tab'
+                description: 'Title of Nav tab. Can be a string of html'
             },
         },
 
@@ -35,12 +35,15 @@
 
 <style scoped>
     .shift-enter{
-        transform: translateX(-10px);
+        transform: translateX(-1000px);
     }
-    .shift-enter-active, .shift-leave-active{
+    .shift-enter-active{
         transition: transform 200ms;
     }
+    .shift-leave-active{
+        transition: transform 0s;
+    }
     .shift-leave-to{
-        transform: translateX(-10px);
+        transform: translateX(1000px);
     }
 </style>
