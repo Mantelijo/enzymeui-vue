@@ -55,7 +55,6 @@
         },
 
         computed:{
-
             // Index of currently active child from this.children array
             activeTab:{
                 get(){
@@ -72,7 +71,6 @@
         },
 
         methods:{
-
             // Perform some actions when tab link is clicked
             clickedTab(i){
                 this.activateTab(i);
@@ -98,12 +96,9 @@
                 // Loop through children and activate provided child
                 this.children.forEach(compareFunc);
             }
-
         },
 
         mounted() {
-            console.log("Mounted NAV, children count:", this.children, "And their refs", this.children[0].$refs);
-
             // Activate first tab initially
             this.activateTab(this.activeTab);
         }

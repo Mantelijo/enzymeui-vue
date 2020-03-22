@@ -1114,10 +1114,11 @@ $figure-caption-color:              $gray-600 !default;
 
 // Breadcrumbs
 
-$breadcrumb-font-size:              null !default;
+$breadcrumb-font-size:              $font-size-sm !default;
+$breadcrumb-line-height:            24px !default;
 
-$breadcrumb-padding-y:              .75rem !default;
-$breadcrumb-padding-x:              1rem !default;
+$breadcrumb-padding-y:              .25rem !default;
+$breadcrumb-padding-x:              0.75rem !default;
 $breadcrumb-item-padding:           .5rem !default;
 
 $breadcrumb-margin-bottom:          1rem !default;
@@ -1125,7 +1126,7 @@ $breadcrumb-margin-bottom:          1rem !default;
 $breadcrumb-bg:                     $gray-200 !default;
 $breadcrumb-divider-color:          $gray-600 !default;
 $breadcrumb-active-color:           $gray-600 !default;
-$breadcrumb-divider:                quote("/") !default;
+$breadcrumb-divider:                quote(">") !default;
 
 $breadcrumb-border-radius:          $border-radius !default;
 

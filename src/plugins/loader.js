@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Custom plugins
 import SidebarPlugin from "../components/sidebar/plugin";
+import TooltipPlugin from "../components/tooltip/plugin";
 
 // Custom directives
 import '../directives/click-outside';
@@ -31,6 +32,7 @@ import Checkbox from "../components/base/Checkbox";
 import Radio from "../components/base/Radio";
 import Nav from "../components/base/Navs/Nav";
 import NavItem from "../components/base/Navs/NavItem";
+import Breadcrumb from "../components/base/Breadcrumb";
 
 window.popper = createPopper;
 
@@ -52,11 +54,13 @@ export default {
         Vue.component(Radio.name, Radio);
         Vue.component(Nav.name, Nav);
         Vue.component(NavItem.name, NavItem);
+        Vue.component(Breadcrumb.name, Breadcrumb);
 
         // Font awesome icon component
         Vue.component('fa', FontAwesomeIcon);
 
         // Plugins
         Vue.use(SidebarPlugin);
+        Vue.use(TooltipPlugin);
     }
 }

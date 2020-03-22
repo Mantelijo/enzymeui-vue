@@ -121,7 +121,7 @@
             <Button @click="shuffleProgress" type="secondary" size="sm">Shuffle</Button>
         </Card>
         <Card class="mt-5">
-            <template slot="header">Navs</template>
+            <template slot="header">Tab Navs</template>
 
             <h5>Tab navs with full width tabs</h5>
             <Nav nav-fill :init-active-tab="1">
@@ -180,11 +180,68 @@
                             It has some random text and small pagination
                         </p>
                         <div>
-                            <Pagination :pages="25" size="sm" v-model="fakePagination"/>
+                            <Pagination size="sm" :pages="25" v-model="fakePagination">
+                                <span slot="next">Next</span>
+                                <span slot="previous">Prev</span>
+                            </Pagination>
                         </div>
                     </div>
                 </NavItem>
             </Nav>
+        </Card>
+        <Card>
+            <template slot="header">Some tooltips</template>
+            <Button v-tooltip="'a12'">Tooltip</Button>
+            <Tooltip id="a1">
+                <b>Fancy tooltip</b>
+                You can put any stuff in it
+                <Button type="warning">Test</Button>
+                <Pagination :pages="25" v-model="fakePagination"/>
+            </Tooltip>
+            <Button v-tooltip="'a142'">Tooltip</Button>
+            <Button v-tooltip="'a1'">Tooltip</Button>
+            <Button v-tooltip="'a1'">Tooltip</Button>
+        </Card>
+        <Card class="mt-5">
+            <template slot="header">Breadcrumb</template>
+            <h5>Breadcrumb with last page active</h5>
+            <Breadcrumb :items="[
+                {
+                    page:'Home',
+                    link:'/'
+                },
+                {
+                    page:'Product',
+                    link: '/product'
+                },
+                {
+                    page:'Checkout',
+                    link: '/checkout',
+                    active:true,
+                },
+            ]" />
+            <h5 class="mt-5">Breadcrumb with no page active</h5>
+            <Breadcrumb :items="[
+                {
+                    page:'Home',
+                    link:'/'
+                },
+                {
+                    page:'First page',
+                    link: '/first-page'
+                },
+                {
+                    page:'Second page',
+                    link: '/second-page',
+                },
+                {
+                    page:'Page without a link',
+                },
+                {
+                    page:'Last page',
+                    link: '/last-page',
+                },
+            ]" />
         </Card>
     </div>
 </template>
@@ -192,12 +249,14 @@
 <script>
 
     import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons'
+    import {faChevronLeft, faChevronRight, faHome} from '@fortawesome/free-solid-svg-icons'
+    import Tooltip from "../components/tooltip/Tooltip";
 
-    library.add(faChevronLeft, faChevronRight);
+    library.add(faChevronLeft, faChevronRight, faHome);
 
     export default {
         name: "Components",
+        components: {Tooltip},
         data(){
             return{
                 selectedPage1:30,

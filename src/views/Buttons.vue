@@ -144,6 +144,7 @@
                     <fa icon="keyboard"></fa>
                 </Button>
             </div>
+            <fa icon="chevron-right"></fa>
         </Card>
 
     </div>
@@ -152,9 +153,9 @@
 <script>
 
     import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faBurn, faBook, faAirFreshener, faShoePrints, faCalculator, faKeyboard} from '@fortawesome/free-solid-svg-icons';
+    import {faBurn, faBook, faAirFreshener, faShoePrints, faCalculator, faKeyboard, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
-    library.add(faBurn, faBook, faAirFreshener, faShoePrints, faCalculator, faKeyboard);
+    library.add(faBurn, faBook, faAirFreshener, faShoePrints, faCalculator, faKeyboard, faChevronRight);
 
 
     export default {
