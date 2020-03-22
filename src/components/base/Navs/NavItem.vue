@@ -35,10 +35,11 @@
 
 <style scoped>
     .shift-enter{
-        transform: translateX(-1000px);
+        transform: translateX(-20px);
+        opacity: 0;
     }
     .shift-enter-active{
-        transition: transform 200ms;
+        transition: all 300ms;
     }
     .shift-leave-active{
         transition: transform 0s;
