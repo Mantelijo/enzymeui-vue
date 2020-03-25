@@ -1,12 +1,10 @@
 <template>
     <transition
-        v-on:leave="leave"
-        v-on:before-leave="beforeLeave"
-        v-on:after-leave="afterEnterLeave"
+        @enter="enter"
+        @before-enter="beforeEnter"
 
-        v-on:enter="enter"
-        v-on:before-enter="beforeEnter"
-        v-on:after-enter="afterEnterLeave"
+        @leave="leave"
+        @before-leave="beforeLeave"
     >
         <div v-show="show" class="collapse-holder">
             <slot></slot>
@@ -19,6 +17,9 @@
      * 1. Using v-collapse directive and providing collapse element id
      * 2. By using collapse component instance and utilizing toggle, open, close methods
      */
+
+    // Animation time in miliseconds
+    const ANIMATION_TIME = 200;
     export default {
         name: "Collapse",
 
@@ -46,11 +47,21 @@
         methods:{
             enter(el, done){
                 // Set to animate height
+                // requestAnimationFrame is called 2 times because it does the trick on other browsers
+                // We need to wait for browser to recalculate the element box otherwise transition does not work
                 requestAnimationFrame(()=>{
-                    el.style.height = this.height + 'px';
+                    requestAnimationFrame(()=>{
+                        el.style.height = this.height + 'px';
+
+                        // Remove css height property because for some reason after-enter does not get called
+                        setTimeout(()=>{
+                            el.style.height = null;
+                        }, ANIMATION_TIME);
+                    });
                 });
             },
-            beforeEnter(el, done){
+
+            beforeEnter(el){
                 // Getting box height even if display is set to none
                 let initVisibility = el.style.visibility;
                 let initDisplay = el.style.display;
@@ -71,19 +82,18 @@
             },
 
             beforeLeave(el){
+                // Set initial height
+                el.style.height = this.height + 'px';
+                el.style.display = 'block';
             },
 
-            afterEnterLeave(el){
-                // Remove height styling
-                requestAnimationFrame(()=>{
-                    el.style.height = null;
-
-                    console.log(el);
-                });
-            },
             leave(el){
                 // Shrink to 0px when leaving
-                el.style.height = '0px';
+                requestAnimationFrame(()=>{
+                    requestAnimationFrame(()=>{
+                        el.style.height = '0px';
+                    })
+                });
             },
 
             /* Methods for manual control of collapse */
@@ -91,10 +101,12 @@
             open(){
                 this.show = true;
             },
+
             // Close collapse
             close(){
                 this.show = false;
             },
+
             // Toggle collapse
             toggle(){
                 this.show = !this.show;

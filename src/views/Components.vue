@@ -365,6 +365,20 @@
                         <h1>
                             Collapsed body 4
                         </h1>
+                        <Accordion>
+                            <AccordionItem>
+                                <b slot="default">Accordion inside accordion</b>
+                                <div slot="body">
+                                    It's real
+                                </div>
+                            </AccordionItem>
+                            <AccordionItem>
+                                <b slot="default">Accordion inside accordion</b>
+                                <div slot="body">
+                                    It's real, I am not lying!
+                                </div>
+                            </AccordionItem>
+                        </Accordion>
                     </div>
                 </AccordionItem>
             </Accordion>

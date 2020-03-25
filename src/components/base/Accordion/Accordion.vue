@@ -1,5 +1,5 @@
 <template>
-    <div class="accordion" @click="test">
+    <div class="accordion" >
         <slot></slot>
     </div>
 </template>
@@ -23,11 +23,7 @@
         },
 
         methods:{
-            test(){
-                console.log(this.$children);
-            },
-
-            // Close
+            // Close other accordion-items
             closeOthers(currentChild, isCollapseOpen){
                 if(isCollapseOpen){
                     this.$children.forEach(child=>{
@@ -40,10 +36,10 @@
         },
 
         mounted() {
+            // Listen for changes and close other accordion-items if needed
             if(this.alwaysOne){
                 this.$children.forEach((child) => {
                     child.$on('change', (state)=>{
-                        console.log("Change listener fired in accordion", state)
                         this.closeOthers(child, state);
                     });
                 });
