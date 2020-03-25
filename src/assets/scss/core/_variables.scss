@@ -737,7 +737,7 @@ $zindex-fixed:                      1030 !default;
 $zindex-modal-backdrop:             1040 !default;
 $zindex-modal:                      1050 !default;
 $zindex-popover:                    1060 !default;
-$zindex-tooltip:                    1070 !default;
+$zindex-tooltip:                    9070 !default;
 $zindex-app-container: 10 !default;
 $zindex-sidebar: 9000 !default;
 $zindex-sidebar-overlay: 8000 !default;
@@ -916,15 +916,16 @@ $card-columns-margin:               $card-spacer-y !default;
 
 $tooltip-font-size:                 $font-size-sm !default;
 $tooltip-max-width:                 200px !default;
-$tooltip-color:                     $white !default;
-$tooltip-bg:                        $black !default;
+$tooltip-color:                     #444 !default;
+$tooltip-bg:                        $gray-100 !default;
 $tooltip-border-radius:             $border-radius !default;
 $tooltip-opacity:                   .9 !default;
 $tooltip-padding-y:                 .25rem !default;
 $tooltip-padding-x:                 .5rem !default;
 $tooltip-margin:                    0 !default;
+$tooltip-box-shadow: 0px 0px 4px -2px #444;
 
-$tooltip-arrow-width:               .8rem !default;
+$tooltip-arrow-width:               2.8rem !default;
 $tooltip-arrow-height:              .4rem !default;
 $tooltip-arrow-color:               $tooltip-bg !default;
 

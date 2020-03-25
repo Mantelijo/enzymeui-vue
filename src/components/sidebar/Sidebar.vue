@@ -147,7 +147,8 @@
                     let diffY = Math.abs(end.y-start.y);
 
                     // Slide open only near left edge
-                    if(diffX > diffY && start.x <= 100){
+                    // diffX > 50 prevents accidental small touches of being treated as swipes for sidebar
+                    if(diffX > diffY && start.x <= 50 && diffX > 50){
                         this.$sidebar.open();
                     }
                     else{

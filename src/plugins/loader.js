@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // Custom plugins
 import SidebarPlugin from "../components/sidebar/plugin";
 import TooltipPlugin from "../components/tooltip/plugin";
+import CollapsePlugin from "../components/collapse/plugin";
 
 // Custom directives
 import '../directives/click-outside';
@@ -21,7 +22,7 @@ import Alert from "../components/base/Alert";
 import Badge from "../components/base/Badge";
 import Button from "../components/base/Button";
 import Card from "../components/base/Card";
-import Collapse from "../components/base/Collapse";
+import Collapse from "../components/collapse/Collapse";
 import Input from "../components/base/Input";
 import Modal from "../components/base/Modal";
 import Pagination from "../components/base/Pagination";
@@ -33,6 +34,8 @@ import Radio from "../components/base/Radio";
 import Nav from "../components/base/Navs/Nav";
 import NavItem from "../components/base/Navs/NavItem";
 import Breadcrumb from "../components/base/Breadcrumb";
+import Accordion from "../components/base/Accordion/Accordion";
+import AccordionItem from "../components/base/Accordion/AccordionItem";
 
 window.popper = createPopper;
 
@@ -55,6 +58,9 @@ export default {
         Vue.component(Nav.name, Nav);
         Vue.component(NavItem.name, NavItem);
         Vue.component(Breadcrumb.name, Breadcrumb);
+        Vue.component(Collapse.name, Collapse);
+        Vue.component(Accordion.name, Accordion);
+        Vue.component(AccordionItem.name, AccordionItem);
 
         // Font awesome icon component
         Vue.component('fa', FontAwesomeIcon);
@@ -62,5 +68,6 @@ export default {
         // Plugins
         Vue.use(SidebarPlugin);
         Vue.use(TooltipPlugin);
+        Vue.use(CollapsePlugin);
     }
 }

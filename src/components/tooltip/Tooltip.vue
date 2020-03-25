@@ -1,10 +1,12 @@
 <template>
-    <div v-show="show" class="tooltip bs-tooltip-auto" role="tooltip">
-        <div class="arrow"></div>
-        <div class="tooltip-inner">
-            <slot/>
+    <transition name="tooltip-fade">
+        <div v-show="show" class="tooltip" role="tooltip">
+            <div class="arrow"></div>
+            <div class="tooltip-inner">
+                <slot/>
+            </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -42,5 +44,19 @@
 </script>
 
 <style scoped>
+
+    .tooltip-fade-enter{
+        opacity: 0;
+    }
+
+    .tooltip-fade-enter-active,
+    .tooltip-fade-leave-active{
+        transition: opacity 400ms ease;
+    }
+
+    .tooltip-fade-leave-to{
+        opacity: 0;
+    }
+
 
 </style>

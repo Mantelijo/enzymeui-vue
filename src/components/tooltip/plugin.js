@@ -1,7 +1,16 @@
 import Vue from 'vue';
 import { createPopper } from '@popperjs/core';
 
-
+/**
+ * Tooltip plugin usage:
+ * 1. Create tooltip component and bind unique id parameter to it or you can pass an object with id of tooltip and placement
+ * {id:tooltip-id, placement:top|right|bottom|left}
+ * Any valid html or other components can be used inside
+ * tooltip. Tooltip will be registered to Vue.$tooltips global property in beforeMount hook.
+ * 2. Add v-tooltip directive to any component you want to have the tooltip that was created. Specify the id of tooltip
+ * that was created in the first step when binding value to v-tooltip.
+ * @type {{install(*): void}}
+ */
 const TooltipPlugin = {
     install(Vue){
 
@@ -11,9 +20,14 @@ const TooltipPlugin = {
                 // v-tooltip should provide the id
                 let tooltipObject = null;
                 let tooltipId = null;
+                let placement = 'bottom';
                 if(typeof value === 'object'){
                     tooltipObject = value;
                     tooltipId = tooltipObject.id;
+
+                    if('placement' in tooltipObject){
+                        placement = tooltipObject.placement;
+                    }
                 }
                 else{
                     // Only id is provided
@@ -26,17 +40,27 @@ const TooltipPlugin = {
                     return;
                 }
 
+                // Create popper and set tooltip to display on mouseover
                 el.addEventListener('mouseover', ()=>{
                     tooltip.show = true;
-                    createPopper(el, tooltip.$el, {
-                        placement:'bottom',
+                    const p = createPopper(el, tooltip.$el, {
+                        placement:placement,
+                        modifiers:[
+                            {
+                                name: 'offset',
+                                options:{
+                                    offset:[0, 10],
+                                }
+                            }
+                        ]
                     });
-                    console.log("creating popper");
+                    vnode.context.$nextTick(p.update);
                 });
+
+                // Hide tooltip when mouse leaves the main element
                 el.addEventListener('mouseout', ()=>{
                     tooltip.show = false;
                 });
-
             }
         });
 
@@ -49,7 +73,6 @@ const TooltipPlugin = {
 
                 // Tooltip registration function. Should be used in Tooltip.vue component beforeMount()
                 add(tooltipId, tooltip){
-                    console.log("registering tooltip", tooltipId);
                     // Only unique ids should be added
                     if(tooltipId in this.tooltips){
                         console.error("Duplicate tooltip with id: ", tooltipId)
@@ -60,7 +83,7 @@ const TooltipPlugin = {
                     }
                 },
 
-                // Unregister tooltip
+                // Unregister tooltip (when main component is destroyed)
                 remove(tooltipId){
                     delete this.tooltips[tooltipId];
                 }

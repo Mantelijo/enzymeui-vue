@@ -7,3 +7,16 @@
         background: $card-header-bg;
     }
 }
+
+.accordion{
+
+    .accordion-item{
+        .card-header{
+            cursor: pointer;
+            &:hover{
+                background: $gray-100;
+            }
+        }
+    }
+
+}

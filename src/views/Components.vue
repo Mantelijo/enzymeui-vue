@@ -189,18 +189,27 @@
                 </NavItem>
             </Nav>
         </Card>
-        <Card>
+        <Card class="mt-5 tooltip-showcase">
             <template slot="header">Some tooltips</template>
-            <Button v-tooltip="'a12'">Tooltip</Button>
+            <Button type="success" v-tooltip="{id:'a2', placement:'left'}">Tooltip left</Button>
+            <Button type="primary"  v-tooltip="{id:'a1', placement:'top'}">Tooltip top</Button>
+            <Button type="info"  v-tooltip="{id:'a4', placement:'bottom'}">Tooltip bottom</Button>
+            <Button type="secondary"  v-tooltip="{id:'a3', placement:'right'}">Tooltip right</Button>
+
             <Tooltip id="a1">
-                <b>Fancy tooltip</b>
-                You can put any stuff in it
-                <Button type="warning">Test</Button>
-                <Pagination :pages="25" v-model="fakePagination"/>
+                <b>Fancy tooltip top</b>
             </Tooltip>
-            <Button v-tooltip="'a142'">Tooltip</Button>
-            <Button v-tooltip="'a1'">Tooltip</Button>
-            <Button v-tooltip="'a1'">Tooltip</Button>
+            <Tooltip id="a2">
+                <b>Fancy tooltip left</b>
+            </Tooltip>
+            <Tooltip id="a3">
+                <b>Fancy tooltip right</b>
+            </Tooltip>
+            <Tooltip id="a4">
+                <b>Fancy tooltip bottom</b>
+                <p>You can put any html in tooltip</p>
+                <Button class="mb-2" size="sm" type="default">Even components</Button>
+            </Tooltip>
         </Card>
         <Card class="mt-5">
             <template slot="header">Breadcrumb</template>
@@ -221,7 +230,7 @@
                 },
             ]" />
             <h5 class="mt-5">Breadcrumb with no page active</h5>
-            <Breadcrumb :items="[
+            <Breadcrumb  :items="[
                 {
                     page:'Home',
                     link:'/'
@@ -243,10 +252,129 @@
                 },
             ]" />
         </Card>
+
+        <Card class="mt-5">
+            <template slot="header">Collapse</template>
+
+            <p class="mb-3">Collapse with <code>v-collapse</code> directive</p>
+            <Button v-collapse="'collapse'">
+                Collapse
+            </Button>
+            <Collapse id="collapse">
+                <Card class="mt-4" slot="default">
+                    <template slot="header">
+                        Collapsed card
+                        <Badge type="secondary" inverse>It's cool</Badge>
+                    </template>
+                    Some great collapse stuff
+                    <Button v-tooltip="{id:'tooltip', placement:'top'}" type="secondary" size="sm">Hover over me</Button>
+                    <Tooltip id="tooltip">
+                        Tooltip inside collapse
+                    </Tooltip>
+                </Card>
+            </Collapse>
+
+            <p class="mb-3 mt-5">Collapse with manual control via <code>$refs</code> and <code>toggle()</code> method</p>
+            <Button @click="$refs['referenced-collapse'].toggle()">
+                Collapse
+            </Button>
+            <Collapse ref="referenced-collapse" >
+                <Card class="mt-4" slot="default">
+                    <template slot="header">
+                        Collapsed card
+                        <Badge type="secondary" inverse>It's cool</Badge>
+                    </template>
+                    Some great collapse stuff
+                    <Button v-tooltip="{id:'tooltip2', placement:'top'}" type="secondary" size="sm">Hover over me</Button>
+                    <Tooltip id="tooltip2">
+                        Tooltip inside collapse
+                    </Tooltip>
+                </Card>
+            </Collapse>
+        </Card>
+
+        <Card class="mt-5">
+            <template slot="header">
+                Accordion example
+            </template>
+            <h5 class="mt-1 mb-3">Simple accordion</h5>
+            <Accordion>
+                <AccordionItem>
+                    <b slot="default">Test accordion item</b>
+                    <div slot="body">
+                        <h1>
+                            Collapsed body 1
+                        </h1>
+                    </div>
+                </AccordionItem>
+                <AccordionItem>
+                    <b slot="default">Test accordion item 2</b>
+                    <div slot="body">
+                        <h1>
+                            Collapsed body 2
+                        </h1>
+                    </div>
+                </AccordionItem>
+                <AccordionItem>
+                    <b slot="default">Test accordion item 3</b>
+                    <div slot="body">
+                        <h1>
+                            Collapsed body 3
+                        </h1>
+                    </div>
+                </AccordionItem>
+                <AccordionItem>
+                    <b slot="default">Test accordion item 4</b>
+                    <div slot="body">
+                        <h1>
+                            Collapsed body 4
+                        </h1>
+                    </div>
+                </AccordionItem>
+            </Accordion>
+
+            <h5 class="mt-5  mb-3">Accordion with always one item open</h5>
+            <Accordion always-one>
+                <AccordionItem>
+                    <b slot="default">Test accordion item</b>
+                    <div slot="body">
+                        <h1>
+                            Collapsed body 1
+                        </h1>
+                    </div>
+                </AccordionItem>
+                <AccordionItem>
+                    <b slot="default">Test accordion item 2</b>
+                    <div slot="body">
+                        <h1>
+                            Collapsed body 2
+                        </h1>
+                    </div>
+                </AccordionItem>
+                <AccordionItem>
+                    <b slot="default">Test accordion item 3</b>
+                    <div slot="body">
+                        <h1>
+                            Collapsed body 3
+                        </h1>
+                    </div>
+                </AccordionItem>
+                <AccordionItem>
+                    <b slot="default">Test accordion item 4</b>
+                    <div slot="body">
+                        <h1>
+                            Collapsed body 4
+                        </h1>
+                    </div>
+                </AccordionItem>
+            </Accordion>
+        </Card>
     </div>
 </template>
 
 <script>
+
+    // Uses directives/plugin.js
 
     import {library} from '@fortawesome/fontawesome-svg-core';
     import {faChevronLeft, faChevronRight, faHome} from '@fortawesome/free-solid-svg-icons'
@@ -300,6 +428,13 @@
     .progresses{
         .badge{
             margin-bottom:0.5rem;
+        }
+    }
+
+    .tooltip-showcase{
+        .btn{
+            margin-right: 10px;
+            margin-top: 5px;
         }
     }
 </style>
