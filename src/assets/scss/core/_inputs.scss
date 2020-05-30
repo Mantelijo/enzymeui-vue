@@ -55,10 +55,25 @@
         cursor: pointer;
         border-radius: $tag-input-tag-border-radius;
         font-size: 0.8125rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
 
         .tag-close{
-            font-size: 0.75rem;
+            font-size: $tag-input-close-size;
             margin-left: 5px;
+            width: $tag-input-close-size + 0.25rem;
+            height: $tag-input-close-size + 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .tag-text{
+            line-height: 1.25rem;
         }
 
         // Tag variations
@@ -66,6 +81,10 @@
             &.tag-#{$type}{
                 background: $color;
                 color: color-yiq($color);
+
+                .tag-close{
+                    background: change_color($color, $lightness:30%);
+                }
             }
         }
     }
@@ -115,6 +134,20 @@
                 position: absolute;
                 left: 0;
             }
+
+            &:hover{
+                &::before{
+                    background-color: change_color($checkbox-color, $lightness:90%);
+                    border-color:change_color($checkbox-color, $lightness:85%);
+                }
+            }
+
+            &:focus, &:active{
+                &::before{
+                    border-color:change_color($checkbox-color, $lightness:85%);
+                    box-shadow:0px 0px 0px 2px change_color($checkbox-color, $lightness:75%);
+                }
+            }
         }
 
         // Different styling for radio
@@ -127,7 +160,7 @@
         &:checked{
             &~.checkbox-label, &~.radio-label{
                 &::before{
-                    background-color: $primary;
+                    background-color: $checkbox-color;
                 }
                 &::after{
                     display: block;
@@ -147,7 +180,7 @@
             &~.radio-label{
                 &::before{
                     background-color: #fff;
-                    border-color: $primary;
+                    border-color: $checkbox-color;
                     border-radius: 50%;
                     outline: none;
                     border-width: $checkbox-size*0.1;
@@ -155,7 +188,7 @@
                 &::after{
                     border:none;
                     transform: initial;
-                    background-color: $primary;
+                    background-color: $checkbox-color;
                     width: $checkbox-size/2;
                     height: $checkbox-size/2;
                     border-radius: 50%;
@@ -168,6 +201,10 @@
         .checkbox-label{
             &::before {
                 background-color: $gray-400 !important;
+
+                // Remove effects of focus,hover and active
+                box-shadow:none !important;
+                border:none !important;
             }
             &::after{
                 border-color: $gray-200 !important;;
@@ -178,11 +215,26 @@
             &::before {
                 background-color: $gray-400 !important;
                 border-color: $gray-400 !important;
+
+                // Remove effects of focus,hover and active
+                box-shadow:none !important;
+                border:none !important;
             }
             &::after{
                 background-color: $gray-200 !important;;
             }
         }
     }
+}
 
+// Styled select dropdown
+.select-dropdown{
+
+}
+
+// switch styles
+.switch{
+    .checkbox-label-text{
+        font-size: $font-size-sm;
+    }
 }

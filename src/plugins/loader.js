@@ -37,6 +37,8 @@ import Breadcrumb from "../components/base/Breadcrumb";
 import Accordion from "../components/base/Accordion/Accordion";
 import AccordionItem from "../components/base/Accordion/AccordionItem";
 
+
+
 window.popper = createPopper;
 
 export default {

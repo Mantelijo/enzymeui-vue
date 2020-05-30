@@ -51,7 +51,6 @@
                            v-model="tags"
                            info-text="Tag input info text"
                            placeholder="Try to type something and hit enter..."
-                           type="secondary"
                    ></TagInput>
                 </div>
                 <div class="col-sm-6">
@@ -76,6 +75,14 @@
                     <Radio v-model="radio" name="test" radio-value="third" disabled>Disabled unchecked Radio</Radio>
                     <Radio value="last" radio-value="last"  disabled >Disabled checked Radio</Radio>
                 </div>
+                <div class="col-sm-12">
+                    <h5 class="mt-5">Switch checkboxes</h5>
+                    <Checkbox show-as-switch v-model="checkboxes" checkbox-value="first">Simple switch checkbox</Checkbox>
+                    <Checkbox show-as-switch v-model="checkboxes" checkbox-value="second">Simple switch checked checkbox</Checkbox>
+                    <Checkbox show-as-switch v-model="checkboxes" checkbox-value="third" disabled>Disabled switch unchecked checkbox</Checkbox>
+                    <Checkbox show-as-switch :value="true" checkbox-value="fourth" disabled >Disabled switch checked checkbox</Checkbox>
+                </div>
+
             </div>
         </Card>
     </div>

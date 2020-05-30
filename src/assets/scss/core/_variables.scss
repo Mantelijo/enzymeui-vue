@@ -95,7 +95,9 @@ $gradients: (
 );
 
 $default: #3a4146 !default;
-$primary:       #27beaf !default;
+//$primary:       #27beaf !default;
+//$primary:       #17c0eb !default;
+$primary:       #F2522E !default;
 $secondary:     #703B9D !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -612,6 +614,7 @@ $custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicato
 $custom-radio-indicator-border-radius:          50% !default;
 $custom-radio-indicator-icon-checked:           url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'><circle r='3' fill='#{$custom-control-indicator-checked-color}'/></svg>") !default;
 
+// Custom switch styling
 $custom-switch-width:                           $custom-control-indicator-size * 1.75 !default;
 $custom-switch-indicator-border-radius:         $custom-control-indicator-size / 2 !default;
 $custom-switch-indicator-size:                  subtract($custom-control-indicator-size, $custom-control-indicator-border-width * 4) !default;
@@ -1208,3 +1211,11 @@ $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
 // Tag input
 $tag-input-tag-bg:$primary;
 $tag-input-tag-border-radius:4px;
+$tag-input-close-size:0.75rem;
+
+
+// Checkbox Switch
+$switch-bg:$primary;
+
+// Checkbox
+$checkbox-color:$primary;

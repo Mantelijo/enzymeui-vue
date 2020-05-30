@@ -376,6 +376,16 @@
                                 <b slot="default">Accordion inside accordion</b>
                                 <div slot="body">
                                     It's real, I am not lying!
+                                    <Accordion>
+                                        <AccordionItem>
+                                            <b slot="default">Clickable 1</b>
+                                            <b slot="body">Clickable 1 content</b>
+                                        </AccordionItem>
+                                        <AccordionItem>
+                                            <b slot="default">Clickable 2</b>
+                                            <b slot="body">Clickable 2 content</b>
+                                        </AccordionItem>
+                                    </Accordion>
                                 </div>
                             </AccordionItem>
                         </Accordion>

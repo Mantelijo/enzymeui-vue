@@ -144,7 +144,6 @@
                     <fa icon="keyboard"></fa>
                 </Button>
             </div>
-            <fa icon="chevron-right"></fa>
         </Card>
 
     </div>

@@ -1,5 +1,5 @@
 <template>
-    <div :class="['checkbox', {'disabled':disabled}]">
+    <div :class="[...containerClassList, {'disabled':disabled},]">
         <input
                 :name="name"
                 :value="checkboxValue"
@@ -7,8 +7,9 @@
                 v-model="checked"
                 :aria-checked="checked"
                 :disabled="disabled"
+                :class="{'custom-control-input':showAsSwitch}"
         />
-        <label class="checkbox-label" :for="id">
+        <label :class="labelClassList" :for="id">
             <span  class="checkbox-label-text">
                 <slot>{{label}}</slot>
             </span>
@@ -79,6 +80,17 @@
                 required:false,
                 description: 'Value attribute for checkbox input'
             },
+            showAsSwitch:{
+                type:Boolean,
+                required:false,
+                description: 'If set to true - checkbox will appear as switch'
+            },
+            edgySwitch:{
+                type:Boolean,
+                required:false,
+                default:false,
+                description: 'If set to true - edgy styles will be used and border radius will be removed for switch',
+            }
         },
 
         data(){
@@ -88,17 +100,47 @@
         },
 
         computed:{
-
             // Checkbox value model
             checked:{
                 get(){
                     return this.value;
                 },
                 set(value){
-                    console.log("Checkbox:", value);
                     this.$emit('input', value);
                 }
-            }
+            },
+
+            containerClassList(){
+                let classes = [
+                    'checkbox'
+                ];
+
+                // Show as switch
+                if(this.showAsSwitch){
+                    classes = [
+                        'custom-control',
+                        'custom-switch',
+                        'switch',
+                    ];
+                }
+
+                return classes
+            },
+
+            labelClassList(){
+                let classes = [
+                    'checkbox-label'
+                ];
+
+                // Show as switch
+                if(this.showAsSwitch){
+                    classes = [
+                        'custom-control-label',
+                    ];
+                }
+
+                return classes
+            },
         },
 
         mounted(){

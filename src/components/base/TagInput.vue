@@ -8,8 +8,7 @@
         <div :class="['tag-input', 'form-control', 'input', {'focused':inputFocused}]" @click="focusInput">
             <span :class="['tag', `tag-${type}`]" v-for="(tag,i) in tags" :key="key(i)">
                 <span class="tag-text">{{tag}}</span>
-                &nbsp;
-                <span class="tag-close" @click="remove(i)"><fa icon="times"></fa></span>
+                <span ref="close" class="tag-close" @click="remove($event, i)"><fa icon="times"></fa></span>
             </span>
             <input
                     @focus="inputFocused=true"
@@ -124,12 +123,16 @@
             },
 
             // Focus underlying input when clicked on component
-            focusInput(){
+            focusInput(e){
                 this.$refs.input.focus();
             },
 
             // Remove tag from data array based on provided index
-            remove(index){
+            remove(e, index){
+                // Prevent event bubbling up and focusing on input
+                // if unstopped  - causes a need to double click in order to click event to work on other tags
+                e.stopPropagation();
+
                 this.tags.splice(index, 1);
             },
 
