@@ -59,20 +59,17 @@
         name: "TagInput",
 
         props:{
-
             value:{
                 type:Array,
                 required:false,
                 description: 'Initial value of tags used for v-model'
             },
-
             type:{
                 type:String,
                 default:'primary',
                 required:false,
                 description: 'One of default theme types that will be used to apply color and background styles. Available types are: default, primary, secondary, success, info, warning, danger, light, dark',
             },
-
             placeholder:{
                 type:String,
                 required:false,
@@ -88,7 +85,6 @@
                 default:'',
                 description:'Label text'
             },
-
         },
 
         data(){

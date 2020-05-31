@@ -50,6 +50,21 @@
                 Outline buttons
             </template>
             <div class="showcase-wrapper">
+                <Button class="demo-btn" type="outline-lightbg-default">Default</Button>
+                <Button class="demo-btn" type="outline-lightbg-primary">Primary</Button>
+                <Button class="demo-btn" type="outline-lightbg-secondary">Secondary</Button>
+                <Button class="demo-btn" type="outline-lightbg-success">Success</Button>
+                <Button class="demo-btn" type="outline-lightbg-info">Info</Button>
+                <Button class="demo-btn" type="outline-lightbg-warning">Warning</Button>
+                <Button class="demo-btn" type="outline-lightbg-danger">Danger</Button>
+            </div>
+        </Card>
+
+        <Card class="mt-5">
+            <template v-slot:header>
+                Outline buttons
+            </template>
+            <div class="showcase-wrapper">
                 <Button class="demo-btn" type="outline-default">Default</Button>
                 <Button class="demo-btn" type="outline-primary">Primary</Button>
                 <Button class="demo-btn" type="outline-secondary">Secondary</Button>

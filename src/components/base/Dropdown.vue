@@ -11,7 +11,7 @@
             <slot name="button"></slot>
         </div>
 
-        <transition enter-active-class="animated fadeIn faster " leave-active-class="animated fadeOut faster ">
+        <transition :enter-active-class="noAnimation?'':'animated fadeIn faster'" :leave-active-class="noAnimation?'':'animated fadeOut faster' ">
             <div ref="menu" v-if="!closed" :class="['dropdown-menu', {'show':!closed}, menuClasses]">
                 <slot></slot>
             </div>
@@ -52,6 +52,24 @@
                 Useful when you want to display something like form, or other content that should be clickable but should not close
                 the dropdown menu`
             },
+            noOffset:{
+                type:Boolean,
+                required:false,
+                default:false,
+                description: 'If provided as true - popper offset will be 0 and dropdown will be positioned with no offset',
+            },
+            yOffset:{
+                type:Number|String,
+                required:false,
+                default:5,
+                description: 'Y offset of popper in pixels',
+            },
+            noAnimation:{
+                type:Boolean,
+                required:false,
+                default:false,
+                description: 'If provided as true - no animation for dropdown menu will be made',
+            }
         },
 
         methods:{
@@ -79,6 +97,9 @@
             // Position dropdown menu correctly when it's opened
             position(){
                 if(this.closed === false) {
+                    let yOffset = this.noOffset? 0:this.yOffset;
+                    let xOffset = 0;
+
                     // On next tick (to make sure $refs are instantiated) recalculate position of dropdown
                     this.$nextTick(() => {
                         createPopper(this.$refs["button"], this.$refs["menu"], {
@@ -87,7 +108,7 @@
                                 {
                                     name: 'offset',
                                     options: {
-                                        offset: [0, 5],
+                                        offset: [xOffset, yOffset],
                                     },
                                 },
                             ],

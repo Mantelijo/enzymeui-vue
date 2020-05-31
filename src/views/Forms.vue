@@ -82,7 +82,23 @@
                     <Checkbox show-as-switch v-model="checkboxes" checkbox-value="third" disabled>Disabled switch unchecked checkbox</Checkbox>
                     <Checkbox show-as-switch :value="true" checkbox-value="fourth" disabled >Disabled switch checked checkbox</Checkbox>
                 </div>
+            </div>
+        </Card>
 
+        <Card class="mt-5">
+            <template slot="header">Select dropdown</template>
+            <div class="row">
+                <div class="col">
+                    <Select :list="selectData" :selected="selectedItem" @change="selectedItem = $event">
+                    </Select>
+                    <p>Selected item: {{selectedItem}}</p>
+                </div>
+                <div class="col">
+                    <Select :list="selectData1" :selected="selectedItem1" @change="selectedItem1 = $event">
+                        <template v-slot:default="{item}">{{item.name}}</template>
+                    </Select>
+                    <p>Selected item: {{selectedItem1}}</p>
+                </div>
             </div>
         </Card>
     </div>
@@ -97,8 +113,15 @@
                 tags:['JavaScript', 'Tag-input', 'JSX', 'Vue.js'],
                 checkboxes:['second', 'fourth'],
                 radio:'first',
+                selectData:['Vue.js', 'Svelte', 'React', 'Angular', "jQuery", 'Ember.js', 'Lodash', 'Bootstrap'],
+                selectData1:[{test:true, name:'John'},{test:true, name:'Doe'}],
+                selectedItem:null,
+                selectedItem1:null,
             }
         },
+
+        methods:{
+        }
     }
 </script>
 

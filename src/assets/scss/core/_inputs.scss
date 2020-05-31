@@ -29,6 +29,15 @@
     color:$danger;
 }
 
+// Wrapper for input component, used to structure input group add-ons, buttons
+.input-wrapper{
+
+    .right-addon{
+
+    }
+
+}
+
 .tag-input{
 
     word-break: break-word;
@@ -229,6 +238,11 @@
 
 // Styled select dropdown
 .select-dropdown{
+
+    .dropdown-menu{
+        overflow: auto;
+        max-height: 200px;
+    }
 
 }
 

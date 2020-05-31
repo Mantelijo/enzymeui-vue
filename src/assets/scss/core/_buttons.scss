@@ -38,6 +38,15 @@
         border-radius: 0px;
     }
 
+    @each $key, $val in $theme-colors{
+        &.btn-outline-lightbg-#{$key}{
+            background-color: change_color($val, $lightness:95%);
+            color:$val;
+            border-color:$val;
+            box-shadow: none;
+        }
+    }
+
 }
 
 // Remove box shadow for outline

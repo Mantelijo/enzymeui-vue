@@ -5,7 +5,8 @@
                 <span v-if="label.length>0">{{label}}</span>
             </slot>
         </div>
-        <input
+        <div class="input-wrapper input-group">
+            <input
                 :class="[
                     'form-control',
                     'input',
@@ -16,7 +17,8 @@
                 ]"
                 :placeholder="placeholder"
                 :value="value"
-               v-on="events">
+                v-on="events">
+        </div>
         <div class="input-info" v-if="$slots['info'] || infoText.length>0">
             <slot name="info">
                 <span v-if="infoText.length > 0">{{infoText}}</span>
@@ -31,6 +33,14 @@
 </template>
 
 <script>
+    /**
+     * Simple input component.
+     * Slots:
+     * info - informative text slot
+     * error - error text slot
+     * append-addon - input group right addon
+     * prepend-addon - input group left addon
+     */
     export default {
         name: "Input",
         data(){

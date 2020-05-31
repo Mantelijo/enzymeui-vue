@@ -47,7 +47,7 @@
         methods:{
             enter(el, done){
                 // Set to animate height
-                // requestAnimationFrame is called 2 times because it does the trick on other browsers
+                // requestAnimationFrame is used 2 times because it does the trick on other browsers
                 // We need to wait for browser to recalculate the element box otherwise transition does not work
                 requestAnimationFrame(()=>{
                     requestAnimationFrame(()=>{
