@@ -3,9 +3,9 @@ import Vue from 'vue';
 Vue.directive('click-outside', {
     bind: function (el, binding, vnode) {
         el.clickOutsideEvent = function (event) {
-            // here I check that click was outside the el and his children
+            // Check if click was made outside element and it's children
             if (!(el == event.target || el.contains(event.target))) {
-                // and if it did, call method provided in attribute value
+                // and if so, call method provided in attribute value
                 vnode.context[binding.expression](event);
             }
         };

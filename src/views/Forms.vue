@@ -88,16 +88,46 @@
         <Card class="mt-5">
             <template slot="header">Select dropdown</template>
             <div class="row">
-                <div class="col">
-                    <Select :list="selectData" :selected="selectedItem" @change="selectedItem = $event">
+                <div class="col-12">
+                    <h5 class="mb-3">Select for array of strings</h5>
+                    <Select :data="selectData" :selected="selectedItem" @change="selectedItem = $event">
+                        <template v-slot:placeholder="{selectedItem}">
+                            <span v-if="selectedItem !== null">
+                                <span>{{selectedItem}}</span>
+                            </span>
+                            <span v-else>Select a technology</span>
+                        </template>
+                        <template v-slot:default="{item}">
+                            <span v-if="item === null">Select nothing</span>
+                        </template>
                     </Select>
-                    <p>Selected item: {{selectedItem}}</p>
+                    <div class="mt-3">Selected item: <pre>{{selectedItem}}</pre></div>
                 </div>
-                <div class="col">
-                    <Select :list="selectData1" :selected="selectedItem1" @change="selectedItem1 = $event">
-                        <template v-slot:default="{item}">{{item.name}}</template>
+                <div class="col-12">
+                    <h5 class="mb-3">Select for array of objects</h5>
+                    <Select :data="selectData1" @change="selectedItem1 = $event">
+                        <template v-slot:placeholder="{selectedItem}">
+                            <div v-if="selectedItem !== null" class="d-flex flex-row align-items-center">
+                                <img :src="selectedItem.img" class="img-fluid rounded-circle mr-4">
+                                <div>{{selectedItem.name}}</div>
+                            </div>
+                            <span v-else>Select something</span>
+                        </template>
+                        <template v-slot:default="{item}">
+                            <div class="d-flex flex-row align-items-center">
+                                <img :src="item.img" class="img-fluid rounded-circle mr-4">
+                                <div class="w-75">{{item.name}}</div>
+                                <div class="small">({{item.role}})</div>
+                            </div>
+                        </template>
                     </Select>
-                    <p>Selected item: {{selectedItem1}}</p>
+                    <div class="mt-3">Selected item: <pre>{{selectedItem1}}</pre></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <Select :data="selectData1" @change="selectedItem1 = $event">
+                    </Select>
                 </div>
             </div>
         </Card>
@@ -113,8 +143,27 @@
                 tags:['JavaScript', 'Tag-input', 'JSX', 'Vue.js'],
                 checkboxes:['second', 'fourth'],
                 radio:'first',
-                selectData:['Vue.js', 'Svelte', 'React', 'Angular', "jQuery", 'Ember.js', 'Lodash', 'Bootstrap'],
-                selectData1:[{test:true, name:'John'},{test:true, name:'Doe'}],
+                selectData:[null, 'Vue.js', 'Svelte', 'React', 'Angular', "jQuery", 'Ember.js', 'Lodash', 'Bootstrap'],
+                selectData1:[
+                    {
+                        test:true,
+                        img:'https://source.unsplash.com/TAGFNCnw7f4/25x25',
+                        name:'John',
+                        role:'user',
+                    },
+                    {
+                        test:true,
+                        img:'https://source.unsplash.com/0jSd5XW58Ak/25x25',
+                        name:'Nick',
+                        role:'user',
+                    },
+                    {
+                        test:true,
+                        img:'https://source.unsplash.com/JTj_ein28zo/25x25',
+                        name:'Tracy',
+                        role:'admin',
+                    },
+                ],
                 selectedItem:null,
                 selectedItem1:null,
             }

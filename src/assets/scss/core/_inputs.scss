@@ -7,6 +7,14 @@
     &.valid{
         border-color:$success;
     }
+
+    &.invisible{
+        border:none;
+        background-color: transparent;
+        outline: none;
+        border-radius: 0px;
+        box-shadow: none;
+    }
 }
 
 .input-label{
@@ -239,9 +247,19 @@
 // Styled select dropdown
 .select-dropdown{
 
+    // Remove tabindex outline
+    .dropdown{
+        outline: none;
+    }
+
     .dropdown-menu{
         overflow: auto;
         max-height: 200px;
+        user-select: none;
+    }
+
+    .select-dropdown-placeholder{
+        user-select: none;
     }
 
 }

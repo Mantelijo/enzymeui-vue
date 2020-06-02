@@ -125,6 +125,7 @@
 
             // Remove tag from data array based on provided index
             remove(e, index){
+                console.log("testulis");
                 // Prevent event bubbling up and focusing on input
                 // if unstopped  - causes a need to double click in order to click event to work on other tags
                 e.stopPropagation();
