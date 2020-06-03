@@ -1,5 +1,5 @@
 <template>
-    <div v-if="show" class="sidebar-content-overlay" @click="hideSidebar"></div>
+    <div v-if="show" class="sidebar-content-overlay" @click=""></div>
 </template>
 
 <script>

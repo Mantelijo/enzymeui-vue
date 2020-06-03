@@ -86,6 +86,7 @@
             // Automatically open/close menu on click
             toggle(){
                 // If manual close is enabled dropdown menu will open, but closing must be handled manually
+                // Basically it prevents the click-outside close by reopening the dropdown
                 if(this.manualClose === true && this.closed === false) {
                     this.open();
                 }

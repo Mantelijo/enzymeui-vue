@@ -79,6 +79,8 @@
         methods:{
             // Navigate to link
             navigateTo(path){
+                console.log(path);
+
                 // Navigate to route
                 this.$router.push(path);
 

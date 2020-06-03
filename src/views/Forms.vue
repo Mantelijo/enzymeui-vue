@@ -89,8 +89,8 @@
             <template slot="header">Select dropdown</template>
             <div class="row">
                 <div class="col-12">
-                    <h5 class="mb-3">Select for array of strings</h5>
-                    <Select :data="selectData" :selected="selectedItem" @change="selectedItem = $event">
+                    <h5 class="mb-3">Select for array of strings with <code>is-searchable</code></h5>
+                    <Select is-searchable :data="selectData" :selected="selectedItem" @change="selectedItem = $event">
                         <template v-slot:placeholder="{selectedItem}">
                             <span v-if="selectedItem !== null">
                                 <span>{{selectedItem}}</span>
@@ -103,7 +103,7 @@
                     </Select>
                     <div class="mt-3">Selected item: <pre>{{selectedItem}}</pre></div>
                 </div>
-                <div class="col-12">
+                <div class="col-12 mt-3">
                     <h5 class="mb-3">Select for array of objects</h5>
                     <Select :data="selectData1" @change="selectedItem1 = $event">
                         <template v-slot:placeholder="{selectedItem}">
@@ -123,13 +123,16 @@
                     </Select>
                     <div class="mt-3">Selected item: <pre>{{selectedItem1}}</pre></div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <Select :data="selectData1" @change="selectedItem1 = $event">
+                <div class="col-12 mt-3">
+                    <h5 class="mb-3">Select for array of numbers</h5>
+                    <Select :data="[1,2,3,4,5,7,8,9,10,11,12,13,14,15]">
+                        <template v-slot:placeholder="{selectedItem}">
+                            <span>{{selectedItem === null?"Select a number":selectedItem}}</span>
+                        </template>
                     </Select>
                 </div>
             </div>
+
         </Card>
     </div>
 </template>
