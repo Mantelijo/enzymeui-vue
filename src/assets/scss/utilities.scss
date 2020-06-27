@@ -1,0 +1,8 @@
+@import "core/variables";
+
+// Gray color utilities
+@each $number, $color in $grays{
+    .color-gray-#{$number}{
+        color:$color;
+    }
+}

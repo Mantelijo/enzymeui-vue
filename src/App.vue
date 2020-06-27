@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <ToastNotificationsContainer/>
         <Sidebar></Sidebar>
         <div :class="['app-container', {'sidebar-open':!sidebarClosed}]">
             <SidebarContentOverlay :show="!sidebarClosed"></SidebarContentOverlay>

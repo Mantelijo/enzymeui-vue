@@ -70,11 +70,11 @@
                 <span slot="next">Next</span>
                 <span slot="previous">Prev</span>
             </Pagination>
-            <h5 class="mt-5">Large Pagination with 100 pages</h5>
-            <Pagination size="lg" :pages="100" v-model="selectedPage3">
-                <span slot="next">Next</span>
-                <span slot="previous">Prev</span>
-            </Pagination>
+<!--            <h5 class="mt-5">Large Pagination with 100 pages</h5>-->
+<!--            <Pagination size="lg" :pages="100" v-model="selectedPage3">-->
+<!--                <span slot="next">Next</span>-->
+<!--                <span slot="previous">Prev</span>-->
+<!--            </Pagination>-->
 
             <h5 class="mt-5">Simple Pagination with Icons</h5>
             <Pagination :pages="100" v-model="selectedPage4">
@@ -393,6 +393,44 @@
                 </AccordionItem>
             </Accordion>
         </Card>
+
+        <Card class="mt-5">
+            <template slot="header">
+                Toast notifications
+            </template>
+            <div class="row">
+                <div class="col-sm-6">
+                    <Input v-model="toastHeader" label="Notification header title"/>
+                    <Input tag="textarea" v-model="toastBody" label="Notification body"/>
+                    <Input v-model="toastAutoHideTimeout" label="Auto hide timeout in milliseconds" info-text="Automatically hides toast after provided amount of milliseconds. If -1 is provided, toast will not be hidden"/>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row mb-2">
+                        <div class="col-sm-12">
+                            <h5>Positioning</h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <Radio v-model="toastPosition" radio-value="bottom-center" >Bottom Center</Radio>
+                            <Radio v-model="toastPosition" radio-value="bottom-right" >Bottom Right</Radio>
+                            <Radio v-model="toastPosition" radio-value="bottom-left" >Bottom Left</Radio>
+                        </div>
+                        <div class="col-sm-6">
+                            <Radio v-model="toastPosition" radio-value="top-center" >Top Center</Radio>
+                            <Radio v-model="toastPosition" radio-value="top-right" >Top Right</Radio>
+                            <Radio v-model="toastPosition" radio-value="top-left" >Top Left</Radio>
+                        </div>
+                        <div class="col-sm-12 mt-4">
+                            <h5>Other settings</h5>
+                        </div>
+                        <div class="col-sm-12">
+                            <Checkbox v-model="toastShowCloseButton">Show close button</Checkbox>
+                            <Checkbox v-model="toastCloseOnClick">Close on click</Checkbox>
+                        </div>
+                    </div>
+                    <Button @click="showToast">Show toast</Button>
+                </div>
+            </div>
+        </Card>
     </div>
 </template>
 
@@ -427,6 +465,13 @@
                     danger:70,
                 },
                 fakePagination:1,
+
+                toastHeader:'Notification title',
+                toastBody:'Notification body text',
+                toastPosition:'top-center',
+                toastAutoHideTimeout: 5000,
+                toastShowCloseButton:true,
+                toastCloseOnClick:false,
             };
         },
 
@@ -434,6 +479,17 @@
             shuffleProgress(){
                 Object.keys(this.progress).forEach((key)=>{
                     this.progress[key] = parseInt(Math.random() * 100);
+                });
+            },
+
+            showToast(){
+                this.$toasts.add({
+                    body:this.toastBody,
+                    title:this.toastHeader,
+                    position:this.toastPosition,
+                    timeout:this.toastAutoHideTimeout,
+                    showCloseButton: this.toastShowCloseButton,
+                    closeOnClick: this.toastCloseOnClick,
                 });
             }
         }

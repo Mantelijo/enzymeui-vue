@@ -40,12 +40,12 @@
 }
 
 // Wrapper for input component, used to structure input group add-ons, buttons
-.input-wrapper{
-
-    .right-addon{
-
+.input-group{
+    .input-group-prepend, .input-group-append{
+        .input-group-text{
+             background-color: $gray-100;
+        }
     }
-
 }
 
 .tag-input{
@@ -196,6 +196,12 @@
                 }
             }
 
+
+            // Non gray border for checkbox
+            &~.checkbox-label::before{
+                border-color:change_color($checkbox-color, $lightness:85%);
+            }
+
             &~.radio-label{
                 &::before{
                     background-color: #fff;
@@ -208,8 +214,10 @@
                     border:none;
                     transform: initial;
                     background-color: $checkbox-color;
-                    width: $checkbox-size/2;
-                    height: $checkbox-size/2;
+                    width: $checkbox-size/2.5;
+                    height: $checkbox-size/2.5;
+                    // Left for dot - half outer size minus half inner size
+                    left: calc(#{$checkbox-size/2} - #{0.5 * $checkbox-size/2.5});
                     border-radius: 50%;
                 }
             }

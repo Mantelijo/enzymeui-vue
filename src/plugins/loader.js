@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import SidebarPlugin from "../components/sidebar/plugin";
 import TooltipPlugin from "../components/tooltip/plugin";
 import CollapsePlugin from "../components/collapse/plugin";
+import ToastNotificationsPlugin from "../components/toast/plugin";
 
 // Custom directives
 import '../directives/click-outside';
@@ -73,5 +74,6 @@ export default {
         Vue.use(SidebarPlugin);
         Vue.use(TooltipPlugin);
         Vue.use(CollapsePlugin);
+        Vue.use(ToastNotificationsPlugin);
     }
 }

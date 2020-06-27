@@ -12,16 +12,62 @@
                     <Input  placeholder="Basic input with info text" info-text="Some basic informative info text"  label="Input label"></Input>
                 </div>
                 <div class="col-6">
-                    <Input  placeholder="Basic input with error" :valid="false" error-text="Sample error text" >
+                    <Input  placeholder="Basic input with error" invalid error-text="Sample error text" >
                         <template v-slot:label>
                             <label class="text-danger">Error input label</label>
                         </template>
                     </Input>
                 </div>
                 <div class="col-6">
-                    <Input  placeholder="Basic input with success" :valid="true">
+                    <Input  placeholder="Basic input with success" :invalid="false">
                         <template v-slot:label>
                             <label class="text-success">Success input label</label>
+                        </template>
+                    </Input>
+                </div>
+                <div class="col-sm-12">
+                    <Input v-model="textarea" tag="textarea"  placeholder="Basic textarea">
+                        <template v-slot:label>
+                            <label>Input with textarea tag</label>
+                        </template>
+                    </Input>
+                </div>
+            </div>
+        </Card>
+        <Card class="mt-5">
+            <template v-slot:header>
+                Input fields with prepend/append
+            </template>
+            <div class="row">
+                <div class="col-12">
+                    <Input  placeholder="Basic input"  label="Input with prepend and icon">
+                        <template v-slot:prepend>
+                            <div class="input-group-text">
+                                <fa icon="user-check" class="text-primary"></fa>
+                            </div>
+                        </template>
+                    </Input>
+                </div>
+                <div class="col-12">
+                    <Input  placeholder="Basic input"  label="Input with append and icon">
+                        <template v-slot:append>
+                            <div class="input-group-text">
+                                <fa icon="user-check" class="text-primary"></fa>
+                            </div>
+                        </template>
+                    </Input>
+                </div>
+                <div class="col-12">
+                    <Input placeholder="Basic input with info text" info-text="Some basic informative info text"  label="Input with prepend and append">
+                        <template v-slot:prepend>
+                            <div class="input-group-text">
+                                <fa icon="user-check" class="text-primary"></fa>
+                            </div>
+                        </template>
+                        <template v-slot:append>
+                            <div class="input-group-text">
+                                <fa icon="user-check" class="text-primary"></fa>
+                            </div>
                         </template>
                     </Input>
                 </div>
@@ -88,7 +134,7 @@
         <Card class="mt-5">
             <template slot="header">Select dropdown</template>
             <div class="row">
-                <div class="col-12">
+                <div class="col-6">
                     <h5 class="mb-3">Select for array of strings with <code>is-searchable</code></h5>
                     <Select is-searchable :data="selectData" :selected="selectedItem" @change="selectedItem = $event">
                         <template v-slot:placeholder="{selectedItem}">
@@ -103,7 +149,7 @@
                     </Select>
                     <div class="mt-3">Selected item: <pre>{{selectedItem}}</pre></div>
                 </div>
-                <div class="col-12 mt-3">
+                <div class="col-6">
                     <h5 class="mb-3">Select for array of objects</h5>
                     <Select :data="selectData1" @change="selectedItem1 = $event">
                         <template v-slot:placeholder="{selectedItem}">
@@ -113,11 +159,14 @@
                             </div>
                             <span v-else>Select something</span>
                         </template>
-                        <template v-slot:default="{item}">
-                            <div class="d-flex flex-row align-items-center">
+                        <template v-slot:default="{item, isSelected}">
+                            <div class="d-flex flex-row align-items-center text-">
                                 <img :src="item.img" class="img-fluid rounded-circle mr-4">
                                 <div class="w-75">{{item.name}}</div>
                                 <div class="small">({{item.role}})</div>
+                                <div v-if="isSelected" class="ml-auto">
+                                    <fa icon="check" class="color-gray-500"></fa>
+                                </div>
                             </div>
                         </template>
                     </Select>
@@ -138,15 +187,19 @@
 </template>
 
 <script>
+    import {library} from '@fortawesome/fontawesome-svg-core';
+    import {faCheck, faUserCheck} from '@fortawesome/free-solid-svg-icons'
+    library.add(faCheck, faUserCheck);
     export default {
         name: "Forms",
 
         data(){
             return {
+                textarea:'',
                 tags:['JavaScript', 'Tag-input', 'JSX', 'Vue.js'],
                 checkboxes:['second', 'fourth'],
                 radio:'first',
-                selectData:[null, 'Vue.js', 'Svelte', 'React', 'Angular', "jQuery", 'Ember.js', 'Lodash', 'Bootstrap'],
+                selectData:[null, 'Vue.js', 'Svelte', 'React', 'Angular', "jQuery", 'Ember.js', 'Lodash', 'Bootstrap', 'Laravel'],
                 selectData1:[
                     {
                         test:true,
@@ -165,6 +218,12 @@
                         img:'https://source.unsplash.com/JTj_ein28zo/25x25',
                         name:'Tracy',
                         role:'admin',
+                    },
+                    {
+                        test:true,
+                        img:'https://source.unsplash.com/kKXBw9Exn30/25x25',
+                        name:'Tasty Hotdog',
+                        role:'food',
                     },
                 ],
                 selectedItem:null,

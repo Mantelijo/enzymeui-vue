@@ -523,7 +523,7 @@ $input-bg:                              $white !default;
 $input-disabled-bg:                     $gray-200 !default;
 
 $input-color:                           $gray-700 !default;
-$input-border-color:                    $gray-200 !default;
+$input-border-color:                    $gray-300 !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      0 1px 1px rgba($black, .75) !default;
 
@@ -745,6 +745,7 @@ $zindex-app-container: 10 !default;
 $zindex-sidebar: 9000 !default;
 $zindex-sidebar-overlay: 8000 !default;
 $zindex-navbar: 1000 !default;
+$zindex-toasts: 9001 !default;
 
 
 
@@ -969,6 +970,8 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default
 
 
 // Toasts
+$toast-container-width:             calc(350px + map-get($spacers, 2) * 2) !default;
+$toast-container-padding:           map-get($spacers, 2) !default;
 
 $toast-max-width:                   350px !default;
 $toast-padding-x:                   .75rem !default;

@@ -5,19 +5,26 @@
                 <span v-if="label.length>0">{{label}}</span>
             </slot>
         </div>
-        <div class="input-wrapper input-group">
-            <input
+        <div class="input-group">
+            <div v-if="$slots['prepend']" class="input-group-prepend">
+                <slot name="prepend"></slot>
+            </div>
+            <component :is="tag"
                 :class="[
                     'form-control',
                     'input',
-                    {'valid':valid === true},
-                    {'error':valid === false},
+                    {'valid':invalid === false},
+                    {'error':invalid === true},
                     {'form-control-lg': size === 'lg'},
                     {'form-control-sm': size === 'sm'},
                 ]"
                 :placeholder="placeholder"
                 :value="value"
-                v-on="events">
+                       v-model="value"
+                v-on="events"></component>
+            <div v-if="$slots['append']" class="input-group-append">
+                <slot name="append"></slot>
+            </div>
         </div>
         <div class="input-info" v-if="$slots['info'] || infoText.length>0">
             <slot name="info">
@@ -54,7 +61,7 @@
                 description: 'Input type attribute'
             },
             value:{
-                type:String,
+                type:String|Number,
                 description: 'Input value attribute'
             },
             name:{
@@ -66,10 +73,10 @@
                 default:'',
                 description: 'Input placeholder value'
             },
-            valid:{
+            invalid:{
                 type:Boolean,
                 default:null,
-                description:'Whether input is valid and error message must be shown'
+                description:'Whether input is invalid and error message must be shown'
             },
             errorText:{
                 type:String,
@@ -96,7 +103,11 @@
                 default:true,
                 description:'Whether filling input is required or no'
             },
-
+            tag:{
+                type:String,
+                default:'input',
+                description: 'Tag for input element. Can be either input or textarea',
+            }
         },
         computed:{
             // Input field events
@@ -114,9 +125,6 @@
                 this.$emit('input', val);
             },
         },
-
-        mounted() {
-        }
     }
 </script>
 

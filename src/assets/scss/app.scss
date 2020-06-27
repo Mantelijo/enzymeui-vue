@@ -68,7 +68,6 @@
 @import "core/mixins/loadmixins";
 
 @import "core/sidebar";
-@import "core/sidebar";
 @import "core/navbar";
 @import "core/buttons";
 @import "core/inputs";
@@ -82,3 +81,6 @@
 @import "core/badge";
 @import "core/breadcrumb";
 @import "core/tooltip";
+@import "core/toasts";
+
+@import "utilities";
