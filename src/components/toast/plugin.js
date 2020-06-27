@@ -36,7 +36,7 @@ const ToastNotifications = {
                  */
                 optionsDefault(){
                     return {
-                        // String for toast body text
+                        // String for toast body text. Can include html
                         body:'',
                         // String for toasts head title
                         title:'',
@@ -50,6 +50,17 @@ const ToastNotifications = {
                         classes:[],
                         // Whether close button should be shown or not
                         showCloseButton:true,
+                        // One of available bootstrap theme-colors:
+                        // default
+                        // primary
+                        // secondary
+                        // success
+                        // info
+                        // warning
+                        // danger
+                        // light
+                        // dark
+                        type:'primary',
                     }
                 },
 

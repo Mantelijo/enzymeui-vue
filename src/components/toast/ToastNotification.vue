@@ -2,7 +2,7 @@
     <transition enter-active-class="animated fadeIn faster">
         <div
             @click="clicked"
-            :class="['toast show', ...this.data.classes]"
+            :class="['toast show', ...this.data.classes, `toast-${this.data.type}`]"
             role="alert"
             aria-live="assertive"
             aria-atomic="true">
@@ -21,9 +21,7 @@
                 </span>
                 </button>
             </div>
-            <div class="toast-body" v-if="data.body">
-                {{data.body}}
-            </div>
+            <div class="toast-body" v-if="data.body" v-html="data.body"></div>
         </div>
     </transition>
 </template>

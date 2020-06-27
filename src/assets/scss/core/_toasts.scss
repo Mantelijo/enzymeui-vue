@@ -43,7 +43,7 @@
     color: $toast-color;
     background-color: $toast-background-color;
     background-clip: padding-box;
-    border: $toast-border-width solid $toast-border-color;
+    //border: $toast-border-width solid $toast-border-color;
     box-shadow: $toast-box-shadow;
     backdrop-filter: blur(10px);
     opacity: 0;
@@ -64,6 +64,14 @@
 
     &.hide {
         display: none;
+    }
+
+    // Hider borders so left border does not look weird
+    border:none;
+    @each $name, $color in $theme-colors{
+        &.toast-#{$name}{
+            border-left:#{$toast-border-left-width} solid #{$color}
+        }
     }
 }
 

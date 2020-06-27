@@ -426,6 +426,10 @@
                             <Checkbox v-model="toastShowCloseButton">Show close button</Checkbox>
                             <Checkbox v-model="toastCloseOnClick">Close on click</Checkbox>
                         </div>
+                        <div class="col-sm-12 mt-4">
+                            <h5>Toast notification type</h5>
+                            <Select @change="toastType = $event" :data="toastTypes" :selected="toastType" is-searchable/>
+                        </div>
                     </div>
                     <Button @click="showToast">Show toast</Button>
                 </div>
@@ -472,6 +476,19 @@
                 toastAutoHideTimeout: 5000,
                 toastShowCloseButton:true,
                 toastCloseOnClick:false,
+                toastType:'default',
+
+                toastTypes: [
+                    'default',
+                    'primary',
+                    'secondary',
+                    'success',
+                    'info',
+                    'warning',
+                    'danger',
+                    'light',
+                    'dark',
+                ],
             };
         },
 
@@ -490,6 +507,7 @@
                     timeout:this.toastAutoHideTimeout,
                     showCloseButton: this.toastShowCloseButton,
                     closeOnClick: this.toastCloseOnClick,
+                    type:this.toastType,
                 });
             }
         }
