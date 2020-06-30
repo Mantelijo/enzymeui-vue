@@ -31,13 +31,10 @@
     }
 }
 
-.toast-close-icon{
-    font-size: 0.85rem;
-}
 
 .toast {
-    max-width: $toast-max-width;
-    width: 100%;
+    max-width: 100%;
+    width: $toast-max-width;
     overflow: hidden; // cheap rounded corners on nested items
     @include font-size($toast-font-size);
     color: $toast-color;
@@ -45,8 +42,8 @@
     background-clip: padding-box;
     //border: $toast-border-width solid $toast-border-color;
     box-shadow: $toast-box-shadow;
-    backdrop-filter: blur(10px);
-    opacity: 0;
+    //backdrop-filter: blur(10px);
+    //opacity: 0;
     @include border-radius($toast-border-radius);
 
     &:not(:last-child) {
@@ -73,18 +70,31 @@
             border-left:#{$toast-border-left-width} solid #{$color}
         }
     }
+
+    .close{
+        outline: none;
+
+        .toast-close-icon{
+            font-size: 0.85rem;
+        }
+    }
 }
 
 .toast-header {
     display: flex;
     align-items: center;
     padding: $toast-padding-y $toast-padding-x;
+    padding-bottom:0;
     color: $toast-header-color;
-    background-color: $toast-header-background-color;
+    //background-color: $toast-header-background-color;
     background-clip: padding-box;
-    border-bottom: $toast-border-width solid $toast-header-border-color;
+    //border-bottom: $toast-border-width solid $toast-header-border-color;
+    border:none;
+    font-size:$toast-header-font-size;
 }
 
 .toast-body {
     padding: $toast-padding-x; // apply to both vertical and horizontal
+    padding-bottom: $toast-padding-y;
+    padding-top:$toast-font-size/2;
 }

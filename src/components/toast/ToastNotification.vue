@@ -1,12 +1,12 @@
 <template>
-    <transition enter-active-class="animated fadeIn faster">
+    <transition enter-active-class="animated fadeIn faster" v-if="!destroyed">
         <div
             @click="clicked"
             :class="['toast show', ...this.data.classes, `toast-${this.data.type}`]"
             role="alert"
             aria-live="assertive"
             aria-atomic="true">
-            <div class="toast-header">
+            <div :class="['toast-header', {'no-border':data.title.toString().length ===0}]">
                 <strong class="mr-auto" v-if="data.title">{{data.title}}</strong>
                 <small v-if="data.time">{{data.time}}</small>
                 <button
@@ -43,6 +43,11 @@
             }
         },
 
+        data(){
+            return {
+                destroyed:false,
+            }
+        },
 
         methods:{
             remove(){
@@ -50,20 +55,19 @@
             },
 
             clicked(){
-                console.log('clicked',this.data.closeOnClick);
                 if(this.data.closeOnClick === true){
                     this.remove();
                 }
-            }
-        },
+            },
 
-        created(){
-            console.log(this.$toasts);
         },
 
         mounted() {
+            // if timeout option is provided - remove after given timeout
             if(this.data.timeout !== -1){
-                setTimeout(()=>this.$toasts.remove(this.data), this.data.timeout);
+                setTimeout(()=>{
+                    this.$toasts.remove(this.data);
+                }, this.data.timeout);
             }
         }
     }

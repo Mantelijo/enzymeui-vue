@@ -20,8 +20,11 @@
                 ]"
                 :placeholder="placeholder"
                 :value="value"
-                       v-model="value"
-                v-on="events"></component>
+                v-on="events">
+                <template v-if="tag==='textarea'">
+                    {{value}}
+                </template>
+            </component>
             <div v-if="$slots['append']" class="input-group-append">
                 <slot name="append"></slot>
             </div>

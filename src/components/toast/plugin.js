@@ -1,7 +1,6 @@
 import ToastNotification from './ToastNotification'
 import ToastNotificationContainer from './ToastNotificationsContainer'
 
-
 /**
  * Toast notification plugin. Prepares component of notifications and initializes control object
  */
@@ -14,10 +13,15 @@ const ToastNotifications = {
         Vue.prototype.$toasts = new Vue({
             data(){
                 return {
-                    // Array of toast notifications that are currently displayed
-                    displayed: [],
-
+                    // Array of toast notifications that are currently added
                     all: [],
+
+                    // Time based id used to force redraw
+                    lastRenderKey:null,
+
+                    // Time when the lastRenderKey was last generated
+                    // Used for performance reasons
+                    lastRenderKeyTime:0,
                 }
             },
 
@@ -50,16 +54,7 @@ const ToastNotifications = {
                         classes:[],
                         // Whether close button should be shown or not
                         showCloseButton:true,
-                        // One of available bootstrap theme-colors:
-                        // default
-                        // primary
-                        // secondary
-                        // success
-                        // info
-                        // warning
-                        // danger
-                        // light
-                        // dark
+                        // One of available bootstrap theme-colors:  default primary secondary success info warning danger light dark
                         type:'primary',
                     }
                 },
@@ -93,23 +88,30 @@ const ToastNotifications = {
                             options[key] = transformers[key](options[key]);
                         }
                     }
-                    // Replace body for \n and \r
-                    // options.body = options.body.replace(/(?:\r\n|\r|\n)/g, '<br>')
 
-                    console.log("added toast with data:", options);
                     this.all.push(options);
+                    this.$nextTick(this.updateRerenderTime);
                 },
 
                 // Removes toast notification
                 // OptionsObject is options object provided in this.add()
                 remove(optionsObject){
                     this.all = this.all.filter((options)=>options !== optionsObject);
+                    this.$nextTick(this.updateRerenderTime);
                 },
 
                 // Getter for this.all
                 getAll() {
                     return this.all;
                 },
+
+                updateRerenderTime(){
+                    // Prevent key regeneration for multiple times per second
+                    if(this.lastRenderKeyTime + 1000 < (new Date).getTime()) {
+                        this.lastRenderKey = (new Date).getTime().toString() + (Math.random() * 100).toString();
+                        this.lastRenderKeyTime = (new Date).getTime();
+                    }
+                }
             }
         });
     }

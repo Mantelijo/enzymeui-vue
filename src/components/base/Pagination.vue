@@ -66,7 +66,7 @@
             },
             threshold:{
                 type:Number,
-                default:2,
+                default:1,
                 required:false,
                 description: 'Threshold defines how many page buttons should be shown around the current page button when it is in the middle',
             },

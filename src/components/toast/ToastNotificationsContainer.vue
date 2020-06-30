@@ -1,5 +1,5 @@
 <template>
-    <div :class="['toast-notifications-container', $toasts.containerPosition]" v-if="toasts.length > 0">
+    <div :key="key" :class="['toast-notifications-container', $toasts.containerPosition]" v-if="toasts.length > 0">
         <ToastNotification
             v-for="toast in toasts"
             :data="toast"
@@ -13,6 +13,10 @@
         computed:{
             toasts(){
                 return this.$toasts.getAll();
+            },
+
+            key(){
+                return this.$toasts.lastRenderKey;
             }
         },
 

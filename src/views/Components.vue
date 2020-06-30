@@ -428,7 +428,20 @@
                         </div>
                         <div class="col-sm-12 mt-4">
                             <h5>Toast notification type</h5>
-                            <Select @change="toastType = $event" :data="toastTypes" :selected="toastType" is-searchable/>
+                            <Select @change="toastType = $event" :data="toastTypes" :selected="toastType" is-searchable>
+                                <template v-slot:placeholder="{selectedItem}">
+                                    <div class="d-flex flex-row justify-content-between align-items-center">
+                                        <div :class="[`bg-${selectedItem.toString().toLowerCase()}`, 'rounded', 'mr-2']" style="width: 16px;height: 16px;"></div>
+                                        {{selectedItem}}
+                                    </div>
+                                </template>
+                                <template v-slot:default="{item}">
+                                    <div class="d-flex flex-row justify-content-between align-items-center">
+                                        <div :class="[`bg-${item.toString().toLowerCase()}`, 'rounded', 'mr-2']" style="width: 16px;height: 16px;"></div>
+                                        <span class="mr-auto">{{item}}</span>
+                                    </div>
+                                </template>
+                            </Select>
                         </div>
                     </div>
                     <Button @click="showToast">Show toast</Button>
