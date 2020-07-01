@@ -3,6 +3,7 @@ import ToastNotificationContainer from './ToastNotificationsContainer'
 
 /**
  * Toast notification plugin. Prepares component of notifications and initializes control object
+ *
  */
 const ToastNotifications = {
     install(Vue) {

@@ -1,0 +1,19 @@
+.datatable{
+    max-width: 100%;
+
+    table{
+        border-collapse: collapse;
+
+        tr{
+            td.datatable-cell{
+
+
+
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md){
+        overflow-x: auto;
+    }
+}

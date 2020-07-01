@@ -448,6 +448,16 @@
                 </div>
             </div>
         </Card>
+        <Card class="mt-5">
+            <template v-slot:header>
+                Data Tables
+            </template>
+            <div>
+                <DataTable :data="dataTable">
+                    <template v-slot:default="{row}">{{row}}</template>
+                </DataTable>
+            </div>
+        </Card>
     </div>
 </template>
 
@@ -501,6 +511,13 @@
                     'danger',
                     'light',
                     'dark',
+                ],
+
+                dataTable:[
+                    ['John', 'Doe', 45, 'Manager', 500, ' $4500'],
+                    ['Anne', 'Mass', 23, 'Developer', 0, ' $3500'],
+                    ['Nick', 'Percy', 29, 'UI/UX', 2300, ' $2650'],
+                    ['Adam', 'Lincoln', 31, 'HR', 500, ' $650'],
                 ],
             };
         },
