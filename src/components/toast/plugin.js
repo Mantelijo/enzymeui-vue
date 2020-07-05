@@ -1,5 +1,6 @@
 import ToastNotification from './ToastNotification'
 import ToastNotificationContainer from './ToastNotificationsContainer'
+import {generateKey} from "../../helpers/helpers";
 
 /**
  * Toast notification plugin. Prepares component of notifications and initializes control object
@@ -109,8 +110,7 @@ const ToastNotifications = {
                 updateRerenderTime(){
                     // Prevent key regeneration for multiple times per second
                     if(this.lastRenderKeyTime + 1000 < (new Date).getTime()) {
-                        this.lastRenderKey = (new Date).getTime().toString() + (Math.random() * 100).toString();
-                        this.lastRenderKeyTime = (new Date).getTime();
+                        this.lastRenderKeyTime = generateKey();
                     }
                 }
             }

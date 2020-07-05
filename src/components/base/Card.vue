@@ -1,12 +1,12 @@
 <template>
     <div :class="['card', type]">
-        <div class="card-header" v-if="this.$slots['header']">
+        <div class="card-header" v-if="$slots['header']">
             <slot name="header"></slot>
         </div>
-        <div :class="['card-body']">
+        <div :class="['card-body', ...bodyClasses]">
             <slot></slot>
         </div>
-        <div class="card-footer" v-if="this.$slots['footer']">
+        <div class="card-footer" v-if="$slots['footer']">
             <slot name="footer"></slot>
         </div>
     </div>

@@ -40,7 +40,7 @@
                 <Badge pill type="default" link="#">A default badge</Badge>
                 <Badge pill type="primary" link="#">A primary badge</Badge>
                 <Badge pill type="secondary" link="#">A secondary badge</Badge>
-                <Badge pill  type="success" link="#">A success badge</Badge>
+                <Badge pill type="success" link="#">A success badge</Badge>
                 <Badge pill type="info" link="#">A info badge</Badge>
                 <Badge pill type="warning" link="#">A warning badge</Badge>
                 <Badge pill type="danger" link="#">A danger badge</Badge>
@@ -51,7 +51,7 @@
                 <Badge inverse type="default" link="#">A default badge</Badge>
                 <Badge inverse type="primary" link="#">A primary badge</Badge>
                 <Badge inverse type="secondary" link="#">A secondary badge</Badge>
-                <Badge inverse  type="success" link="#">A success badge</Badge>
+                <Badge inverse type="success" link="#">A success badge</Badge>
                 <Badge inverse type="info" link="#">A info badge</Badge>
                 <Badge inverse type="warning" link="#">A warning badge</Badge>
                 <Badge inverse type="danger" link="#">A danger badge</Badge>
@@ -70,26 +70,26 @@
                 <span slot="next">Next</span>
                 <span slot="previous">Prev</span>
             </Pagination>
-<!--            <h5 class="mt-5">Large Pagination with 100 pages</h5>-->
-<!--            <Pagination size="lg" :pages="100" v-model="selectedPage3">-->
-<!--                <span slot="next">Next</span>-->
-<!--                <span slot="previous">Prev</span>-->
-<!--            </Pagination>-->
+            <!--            <h5 class="mt-5">Large Pagination with 100 pages</h5>-->
+            <!--            <Pagination size="lg" :pages="100" v-model="selectedPage3">-->
+            <!--                <span slot="next">Next</span>-->
+            <!--                <span slot="previous">Prev</span>-->
+            <!--            </Pagination>-->
 
             <h5 class="mt-5">Simple Pagination with Icons</h5>
             <Pagination :pages="100" v-model="selectedPage4">
-                <span slot="previous"><fa icon="chevron-left" /></span>
-                <span slot="next"><fa icon="chevron-right" /></span>
+                <span slot="previous"><fa icon="chevron-left"/></span>
+                <span slot="next"><fa icon="chevron-right"/></span>
             </Pagination>
             <h5 class="mt-5">Simple Pagination with Icons and no first and last pages</h5>
             <Pagination :pages="100" v-model="selectedPage5" :show-first-page="false" :show-last-page="false">
-                <span slot="previous"><fa icon="chevron-left" /></span>
-                <span slot="next"><fa icon="chevron-right" /></span>
+                <span slot="previous"><fa icon="chevron-left"/></span>
+                <span slot="next"><fa icon="chevron-right"/></span>
             </Pagination>
             <h5 class="mt-5">Simple Pagination with Icons and disabled pages</h5>
             <Pagination :pages="100" v-model="selectedPage6" :disabled-pages="[14, 16]">
-                <span slot="previous"><fa icon="chevron-left" /></span>
-                <span slot="next"><fa icon="chevron-right" /></span>
+                <span slot="previous"><fa icon="chevron-left"/></span>
+                <span slot="next"><fa icon="chevron-right"/></span>
             </Pagination>
         </Card>
         <Card class="mt-5 progresses">
@@ -97,25 +97,25 @@
 
             <h5>Simple progress bars</h5>
 
-            <Badge type="default">Default progress bar: {{progress.default}}% </Badge>
+            <Badge type="default">Default progress bar: {{progress.default}}%</Badge>
             <ProgressBar type="default" :progress="progress.default"/>
 
-            <Badge type="primary">Primary progress bar: {{progress.primary}}% </Badge>
+            <Badge type="primary">Primary progress bar: {{progress.primary}}%</Badge>
             <ProgressBar type="primary" :progress="progress.primary"/>
 
-            <Badge type="secondary">Secondary progress bar: {{progress.secondary}}% </Badge>
+            <Badge type="secondary">Secondary progress bar: {{progress.secondary}}%</Badge>
             <ProgressBar type="secondary" :progress="progress.secondary"/>
 
-            <Badge type="success">Success progress bar: {{progress.success}}% </Badge>
+            <Badge type="success">Success progress bar: {{progress.success}}%</Badge>
             <ProgressBar type="success" :progress="progress.success"/>
 
-            <Badge type="info">Info progress bar: {{progress.info}}% </Badge>
+            <Badge type="info">Info progress bar: {{progress.info}}%</Badge>
             <ProgressBar type="info" :progress="progress.info"/>
 
-            <Badge type="warning">Warning progress bar: {{progress.warning}}% </Badge>
+            <Badge type="warning">Warning progress bar: {{progress.warning}}%</Badge>
             <ProgressBar type="warning" :progress="progress.warning"/>
 
-            <Badge type="danger">Danger progress bar: {{progress.danger}}% </Badge>
+            <Badge type="danger">Danger progress bar: {{progress.danger}}%</Badge>
             <ProgressBar type="danger" :progress="progress.danger"/>
 
             <Button @click="shuffleProgress" type="secondary" size="sm">Shuffle</Button>
@@ -192,9 +192,9 @@
         <Card class="mt-5 tooltip-showcase">
             <template slot="header">Some tooltips</template>
             <Button type="success" v-tooltip="{id:'a2', placement:'left'}">Tooltip left</Button>
-            <Button type="primary"  v-tooltip="{id:'a1', placement:'top'}">Tooltip top</Button>
-            <Button type="info"  v-tooltip="{id:'a4', placement:'bottom'}">Tooltip bottom</Button>
-            <Button type="secondary"  v-tooltip="{id:'a3', placement:'right'}">Tooltip right</Button>
+            <Button type="primary" v-tooltip="{id:'a1', placement:'top'}">Tooltip top</Button>
+            <Button type="info" v-tooltip="{id:'a4', placement:'bottom'}">Tooltip bottom</Button>
+            <Button type="secondary" v-tooltip="{id:'a3', placement:'right'}">Tooltip right</Button>
 
             <Tooltip id="a1">
                 <b>Fancy tooltip top</b>
@@ -228,9 +228,9 @@
                     link: '/checkout',
                     active:true,
                 },
-            ]" />
+            ]"/>
             <h5 class="mt-5">Breadcrumb with no page active</h5>
-            <Breadcrumb  :items="[
+            <Breadcrumb :items="[
                 {
                     page:'Home',
                     link:'/'
@@ -250,7 +250,7 @@
                     page:'Last page',
                     link: '/last-page',
                 },
-            ]" />
+            ]"/>
         </Card>
 
         <Card class="mt-5">
@@ -267,25 +267,28 @@
                         <Badge type="secondary" inverse>It's cool</Badge>
                     </template>
                     Some great collapse stuff
-                    <Button v-tooltip="{id:'tooltip', placement:'top'}" type="secondary" size="sm">Hover over me</Button>
+                    <Button v-tooltip="{id:'tooltip', placement:'top'}" type="secondary" size="sm">Hover over me
+                    </Button>
                     <Tooltip id="tooltip">
                         Tooltip inside collapse
                     </Tooltip>
                 </Card>
             </Collapse>
 
-            <p class="mb-3 mt-5">Collapse with manual control via <code>$refs</code> and <code>toggle()</code> method</p>
+            <p class="mb-3 mt-5">Collapse with manual control via <code>$refs</code> and <code>toggle()</code> method
+            </p>
             <Button @click="$refs['referenced-collapse'].toggle()">
                 Collapse
             </Button>
-            <Collapse ref="referenced-collapse" >
+            <Collapse ref="referenced-collapse">
                 <Card class="mt-4" slot="default">
                     <template slot="header">
                         Collapsed card
                         <Badge type="secondary" inverse>It's cool</Badge>
                     </template>
                     Some great collapse stuff
-                    <Button v-tooltip="{id:'tooltip2', placement:'top'}" type="secondary" size="sm">Hover over me</Button>
+                    <Button v-tooltip="{id:'tooltip2', placement:'top'}" type="secondary" size="sm">Hover over me
+                    </Button>
                     <Tooltip id="tooltip2">
                         Tooltip inside collapse
                     </Tooltip>
@@ -394,6 +397,53 @@
             </Accordion>
         </Card>
 
+        <Card class="mt-5" body-classes="">
+            <template v-slot:header>
+                <div class="d-flex align-items-center justify-content-between">
+                    <span>Data Tables</span>
+                    <Input v-model="dataTableSearch" size="sm" placeholder="Filter table data" class="mb-0 w-25"/>
+                </div>
+            </template>
+            <div>
+                <DataTable class="table-bordered" show-filter-buttons :data="dataTable" :headers="dataTableHeaders"
+                           :search-keyword="dataTableSearch" :per-page="dataTablePerPage" :current-page="dataTablePage">
+                    <template v-slot:default="{row, rowKey, rowKeyViewport}">
+                        <Cell
+                                v-for="(cellData, key) in row"
+                                :cell-classes="[key.toString().toLowerCase() === 'status'?'d-flex justify-content-center':'']"
+                                :class="[
+                                    {'bg-info-light':dataTable[rowKey].Selected===true},
+                                ]">
+                            <Badge v-if="key.toString().toLowerCase() === 'status' || key === 4" pill :type="getPillByStatus(cellData)">
+                                {{cellData}}
+                            </Badge>
+                            <Checkbox v-else-if="key.toString().toLowerCase() === 'selected'"
+                                      v-model="dataTable[rowKey].Selected"></Checkbox>
+                            <span v-else>{{cellData}}</span>
+                        </Cell>
+                    </template>
+                </DataTable>
+            </div>
+            <div class="d-flex flex-wrap pt-3 pb-4 align-items-end mx-4 justify-content-end">
+
+                <div class="mr-4">
+                    <p class="mb-2 small">Rows per page</p>
+                    <Select  :data="[5, 10, 15, 25, 100]" :selected="dataTablePerPage"
+                            @change="dataTablePerPage = $event,dataTablePage = 1"></Select>
+                </div>
+                <div>
+                    <Pagination v-model="dataTablePage" :pages="Math.ceil(dataTable.length/dataTablePerPage)">
+                        <template v-slot:next>
+                            Next
+                        </template>
+                        <template v-slot:previous>
+                            Prev
+                        </template>
+                    </Pagination>
+                </div>
+            </div>
+        </Card>
+
         <Card class="mt-5">
             <template slot="header">
                 Toast notifications
@@ -402,7 +452,8 @@
                 <div class="col-sm-6">
                     <Input v-model="toastHeader" label="Notification header title"/>
                     <Input tag="textarea" v-model="toastBody" label="Notification body"/>
-                    <Input v-model="toastAutoHideTimeout" label="Auto hide timeout in milliseconds" info-text="Automatically hides toast after provided amount of milliseconds. If -1 is provided, toast will not be hidden"/>
+                    <Input v-model="toastAutoHideTimeout" label="Auto hide timeout in milliseconds"
+                           info-text="Automatically hides toast after provided amount of milliseconds. If -1 is provided, toast will not be hidden"/>
                 </div>
                 <div class="col-sm-6">
                     <div class="row mb-2">
@@ -410,14 +461,14 @@
                             <h5>Positioning</h5>
                         </div>
                         <div class="col-sm-6">
-                            <Radio v-model="toastPosition" radio-value="bottom-center" >Bottom Center</Radio>
-                            <Radio v-model="toastPosition" radio-value="bottom-right" >Bottom Right</Radio>
-                            <Radio v-model="toastPosition" radio-value="bottom-left" >Bottom Left</Radio>
+                            <Radio v-model="toastPosition" radio-value="bottom-center">Bottom Center</Radio>
+                            <Radio v-model="toastPosition" radio-value="bottom-right">Bottom Right</Radio>
+                            <Radio v-model="toastPosition" radio-value="bottom-left">Bottom Left</Radio>
                         </div>
                         <div class="col-sm-6">
-                            <Radio v-model="toastPosition" radio-value="top-center" >Top Center</Radio>
-                            <Radio v-model="toastPosition" radio-value="top-right" >Top Right</Radio>
-                            <Radio v-model="toastPosition" radio-value="top-left" >Top Left</Radio>
+                            <Radio v-model="toastPosition" radio-value="top-center">Top Center</Radio>
+                            <Radio v-model="toastPosition" radio-value="top-right">Top Right</Radio>
+                            <Radio v-model="toastPosition" radio-value="top-left">Top Left</Radio>
                         </div>
                         <div class="col-sm-12 mt-4">
                             <h5>Other settings</h5>
@@ -431,13 +482,15 @@
                             <Select @change="toastType = $event" :data="toastTypes" :selected="toastType" is-searchable>
                                 <template v-slot:placeholder="{selectedItem}">
                                     <div class="d-flex flex-row justify-content-between align-items-center">
-                                        <div :class="[`bg-${selectedItem.toString().toLowerCase()}`, 'rounded', 'mr-2']" style="width: 16px;height: 16px;"></div>
+                                        <div :class="[`bg-${selectedItem.toString().toLowerCase()}`, 'rounded', 'mr-2']"
+                                             style="width: 16px;height: 16px;"></div>
                                         {{selectedItem}}
                                     </div>
                                 </template>
                                 <template v-slot:default="{item}">
                                     <div class="d-flex flex-row justify-content-between align-items-center">
-                                        <div :class="[`bg-${item.toString().toLowerCase()}`, 'rounded', 'mr-2']" style="width: 16px;height: 16px;"></div>
+                                        <div :class="[`bg-${item.toString().toLowerCase()}`, 'rounded', 'mr-2']"
+                                             style="width: 16px;height: 16px;"></div>
                                         <span class="mr-auto">{{item}}</span>
                                     </div>
                                 </template>
@@ -448,16 +501,6 @@
                 </div>
             </div>
         </Card>
-        <Card class="mt-5">
-            <template v-slot:header>
-                Data Tables
-            </template>
-            <div>
-                <DataTable :data="dataTable">
-                    <template v-slot:default="{row}">{{row}}</template>
-                </DataTable>
-            </div>
-        </Card>
     </div>
 </template>
 
@@ -466,40 +509,41 @@
     // Uses directives/plugin.js
 
     import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faChevronLeft, faChevronRight, faHome} from '@fortawesome/free-solid-svg-icons'
+    import {faChevronLeft, faChevronRight, faHome, faCaretUp, faCaretDown} from '@fortawesome/free-solid-svg-icons'
     import Tooltip from "../components/tooltip/Tooltip";
+    import tableData from '@/data/tables.js'
 
-    library.add(faChevronLeft, faChevronRight, faHome);
+    library.add(faChevronLeft, faChevronRight, faHome, faCaretUp, faCaretDown);
 
     export default {
         name: "Components",
         components: {Tooltip},
-        data(){
-            return{
-                selectedPage1:30,
-                selectedPage2:50,
-                selectedPage3:40,
-                selectedPage4:40,
+        data() {
+            return {
+                selectedPage1: 30,
+                selectedPage2: 50,
+                selectedPage3: 40,
+                selectedPage4: 40,
                 selectedPage5: 15,
                 selectedPage6: 15,
-                progress:{
-                    default:10,
-                    primary:20,
-                    secondary:30,
-                    success:40,
-                    info:50,
-                    warning:60,
-                    danger:70,
+                progress: {
+                    default: 10,
+                    primary: 20,
+                    secondary: 30,
+                    success: 40,
+                    info: 50,
+                    warning: 60,
+                    danger: 70,
                 },
-                fakePagination:1,
+                fakePagination: 1,
 
-                toastHeader:'Notification title',
-                toastBody:'Notification body text',
-                toastPosition:'top-center',
+                toastHeader: 'Notification title',
+                toastBody: 'Notification body text',
+                toastPosition: 'top-center',
                 toastAutoHideTimeout: 5000,
-                toastShowCloseButton:true,
-                toastCloseOnClick:false,
-                toastType:'default',
+                toastShowCloseButton: true,
+                toastCloseOnClick: false,
+                toastType: 'default',
 
                 toastTypes: [
                     'default',
@@ -513,54 +557,73 @@
                     'dark',
                 ],
 
-                dataTable:[
-                    ['John', 'Doe', 45, 'Manager', 500, ' $4500'],
-                    ['Anne', 'Mass', 23, 'Developer', 0, ' $3500'],
-                    ['Nick', 'Percy', 29, 'UI/UX', 2300, ' $2650'],
-                    ['Adam', 'Lincoln', 31, 'HR', 500, ' $650'],
+                dataTableHeaders: [
+                    null,
+                    'Name',
+                    'Surname',
+                    'Phone',
+                    'Website',
+                    'Status',
+                    'Income',
                 ],
+                dataTable: tableData,
+                dataTableSearch: '',
+                dataTablePage: 1,
+                dataTablePerPage: 10,
             };
         },
 
-        methods:{
-            shuffleProgress(){
-                Object.keys(this.progress).forEach((key)=>{
+        methods: {
+            shuffleProgress() {
+                Object.keys(this.progress).forEach((key) => {
                     this.progress[key] = parseInt(Math.random() * 100);
                 });
             },
 
-            showToast(){
+            showToast() {
                 this.$toasts.add({
-                    body:this.toastBody,
-                    title:this.toastHeader,
-                    position:this.toastPosition,
-                    timeout:this.toastAutoHideTimeout,
+                    body: this.toastBody,
+                    title: this.toastHeader,
+                    position: this.toastPosition,
+                    timeout: this.toastAutoHideTimeout,
                     showCloseButton: this.toastShowCloseButton,
                     closeOnClick: this.toastCloseOnClick,
-                    type:this.toastType,
+                    type: this.toastType,
                 });
+            },
+
+            // Presentational helper
+            getPillByStatus(cellData) {
+                switch (cellData) {
+                    case 'Lead':
+                        return 'info';
+                    case 'Ongoing':
+                        return 'warning';
+                    case 'Closed':
+                        return 'success';
+                }
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
-    .badge{
+    .badge {
         margin-right: 10px;
     }
 
-    .progress{
+    .progress {
         margin-bottom: 2rem;
     }
 
-    .progresses{
-        .badge{
-            margin-bottom:0.5rem;
+    .progresses {
+        .badge {
+            margin-bottom: 0.5rem;
         }
     }
 
-    .tooltip-showcase{
-        .btn{
+    .tooltip-showcase {
+        .btn {
             margin-right: 10px;
             margin-top: 5px;
         }

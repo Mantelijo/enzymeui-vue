@@ -1,15 +1,58 @@
 .datatable{
     max-width: 100%;
+    margin: 0;
+    padding: 0;
+    // hide border on div even if we add table-bordered (as we would get double border)
+    border:none !important;
 
     table{
         border-collapse: collapse;
+        min-width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+
+        thead{
+            th{
+                font-size: $font-size-base;
+
+                .sort-icon{
+                    background-color: $gray-200;
+                    color: $gray-500;
+                    border-radius:$border-radius/2;
+                    width: 1rem;
+                    height:1rem;
+                    padding:0.05rem;
+                    transition: $transition-base;
+                    cursor: pointer;
+                    &:hover, &.active{
+                        color:$gray-800;
+                    }
+                }
+
+            }
+        }
 
         tr{
             td.datatable-cell{
+                font-size:$font-size-sm;
+                color:$gray-900;
+                padding: 0;
+                vertical-align: middle;
 
-
-
+                .datable-cell-content{
+                    vertical-align: middle;
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    padding: map_get($spacers, 1);
+                }
             }
+            //&:hover{
+            //    td.datatable-cell{
+            //        background-color:change_color($gray-100, $alpha:0.55);
+            //    }
+            //}
         }
     }
 

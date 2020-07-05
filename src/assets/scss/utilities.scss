@@ -5,4 +5,15 @@
     .color-gray-#{$number}{
         color:$color;
     }
+    .bg-gray-#{$number}{
+        color:color-yiq($color);
+        background-color: $color;
+    }
+}
+
+// Light backgrounds
+@each $name, $color in $theme-colors{
+    .bg-#{$name}-light{
+        background-color: change_color($color, $lightness:85%);
+    }
 }
