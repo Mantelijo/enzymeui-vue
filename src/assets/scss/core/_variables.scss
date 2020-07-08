@@ -742,8 +742,8 @@ $zindex-modal:                      1050 !default;
 $zindex-popover:                    1060 !default;
 $zindex-tooltip:                    9070 !default;
 $zindex-app-container: 10 !default;
-$zindex-sidebar: 9000 !default;
-$zindex-sidebar-overlay: 8000 !default;
+$zindex-sidebar: 1030 !default; // Should be less than modal
+$zindex-sidebar-overlay: 1029 !default; // Should be less than sidebar normal
 $zindex-navbar: 1000 !default;
 $zindex-toasts: 9001 !default;
 

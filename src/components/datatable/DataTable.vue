@@ -54,6 +54,12 @@
      *      row - current row object data,
      *      rowKey - key (index) of row in original data
      *      rowKeyViewport - row number based on displayed data
+     * header slot props:
+     *      sortAsc(header): function -  where header is element from headers array, header represents the column that should be sorted. Can be used to build custom appearance of sorting/ordering buttons in ascending order. If selected column is
+     *          already sorted, but sortAsc function is called one more time, ordering will be unset.
+     *      sortDesc(header): function - same as sortAsc but for descending sorting
+     *      sortNone(header): function - removes sorting for column
+     *      sortedHeaders: object which will contain header string as key and 'asc', 'desc', null as value. Values indicate how column is sorted.
      */
     export default {
         name: "DataTable",

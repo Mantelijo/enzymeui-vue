@@ -16,6 +16,33 @@
     font-family: Nunito;
 }
 
+// Scrollbar
+$scrollbar-border-radius:5px;
+$scrollbar-bg-color: #9b9b9b;
+$scrollbar-size:0.6rem;
+::-webkit-scrollbar {
+    width: $scrollbar-size;
+    height: $scrollbar-size;
+    background-color: transparent;
+    border-radius: $scrollbar-border-radius;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $scrollbar-bg-color;
+    border-radius: $scrollbar-border-radius;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: $scrollbar-border-radius;
+    background: change_color($scrollbar-bg-color, $lightness:90%);
+}
+
+// For Internet Explorer
+*{
+    scrollbar-face-color: $scrollbar-bg-color;
+    scrollbar-track-color: $scrollbar-bg-color;
+}
+
 #app{
     height: 100vh;
 }
@@ -55,7 +82,7 @@
 @import "~bootstrap/scss/list-group";
 @import "~bootstrap/scss/close";
 @import "~bootstrap/scss/toasts";
-@import "~bootstrap/scss/modal";
+//@import "~bootstrap/scss/modal";
 //@import "~bootstrap/scss/tooltip";
 @import "~bootstrap/scss/popover";
 @import "~bootstrap/scss/carousel";
@@ -83,5 +110,6 @@
 @import "core/tooltip";
 @import "core/toasts";
 @import "core/datatables";
+@import "core/modal";
 
 @import "utilities";
