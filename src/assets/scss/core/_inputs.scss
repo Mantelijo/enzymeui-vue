@@ -118,10 +118,12 @@
 }
 
 // Custom checkbox styles
+$padding-left: $checkbox-text-margin + $checkbox-size;
+$input-left: $checkbox-text-margin + $checkbox-size;
 .checkbox, .radio{
 
-    position: relative;
-    padding-left: calc(#{$checkbox-text-margin} + #{$checkbox-size});
+    //position: relative;
+    padding-left: $padding-left;
 
     input[type='checkbox'], input[type='radio']{
         opacity: 0;
@@ -151,7 +153,7 @@
                 content:'';
                 border-radius: $checkbox-border-radius;
                 position: absolute;
-                left: 0;
+                left: $input-left;
             }
 
             &:hover{
@@ -187,12 +189,11 @@
                     height: $checkbox-size/1.25;
                     content:'';
                     position: absolute;
-                    left: $checkbox-size/4;
+                    left: $checkbox-size/4 + $input-left;
                     border: #{$checkbox-size*0.2} solid #fff;
                     border-right: 0;
                     border-top: 0;
                     transform: scalex(-1) translateY(-1px) scale(0.65) rotate(-45deg);
-                    //transform: translateY(-1px) scale(0.8) rotate(140deg)
                 }
             }
 
@@ -217,7 +218,8 @@
                     width: $checkbox-size/2.5;
                     height: $checkbox-size/2.5;
                     // Left for dot - half outer size minus half inner size
-                    left: calc(#{$checkbox-size/2} - #{0.5 * $checkbox-size/2.5});
+                    //left: calc(#{$checkbox-size/2} - #{0.5 * $checkbox-size/2.5});
+                    left: $checkbox-size/2 - (0.5 * $checkbox-size/2.5) + $input-left;
                     border-radius: 50%;
                 }
             }
