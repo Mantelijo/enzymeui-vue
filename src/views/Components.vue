@@ -409,7 +409,10 @@
                     <template v-slot:default="{row, rowKey, rowKeyViewport}">
                         <Cell
                                 v-for="(cellData, key) in row"
-                                :cell-classes="[key.toString().toLowerCase() === 'status'?'d-flex justify-content-center':'']"
+                                :cell-classes="[
+                                    // Center
+                                    ['selected', 'status'].indexOf(key.toString().toLowerCase()) !== -1?'d-flex justify-content-center':'',
+                                ]"
                                 :class="[
                                     {'bg-info-light':dataTable[rowKey].Selected===true},
                                 ]">

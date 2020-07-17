@@ -38,7 +38,7 @@
                 closed:false,
                 links:[
                     {
-                        name:'Dashboard',
+                        name:'Charts',
                         path:'/',
                         icon:'',
                     },

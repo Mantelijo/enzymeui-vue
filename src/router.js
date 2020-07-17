@@ -10,13 +10,14 @@ import Typography from "./views/Typography";
 import Alerts from "./views/Alerts";
 import Dropdowns from "./views/Dropdowns";
 import Components from "./views/Components";
+import Charts from "./views/Charts";
 
 const router = new VueRouter({
     mode: 'history',
     routes:[
         {
             path:'/',
-            component:Dashboard,
+            component:Charts,
         },
         {
             path:'/dropdowns',

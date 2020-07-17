@@ -299,7 +299,8 @@ $caret-width:                 .3em !default;
 $caret-vertical-align:        $caret-width * .85 !default;
 $caret-spacing:               $caret-width * .85 !default;
 
-$transition-base:             all .1s ease-in-out !default;
+$transition-base-no-all:      .1s ease-in-out !default;
+$transition-base:             all #{$transition-base-no-all} !default;
 $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
 
@@ -1225,4 +1226,5 @@ $tag-input-close-size:0.75rem;
 $switch-bg:$primary;
 
 // Checkbox
-$checkbox-color:$primary;
+$checkbox-color:$danger;
+$checkbox-tick-transition: $transition-base-no-all;

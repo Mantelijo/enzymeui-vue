@@ -40,7 +40,8 @@ import Accordion from "../components/base/Accordion/Accordion";
 import AccordionItem from "../components/base/Accordion/AccordionItem";
 import Dropdown from "../components/base/Dropdown";
 
-
+// Charts
+import ChartsComponent from '../components/charts/Chart';
 
 window.popper = createPopper;
 
@@ -67,6 +68,7 @@ export default {
         Vue.component(Accordion.name, Accordion);
         Vue.component(AccordionItem.name, AccordionItem);
         Vue.component(Dropdown.name, Dropdown);
+        Vue.component(ChartsComponent.name, ChartsComponent);
 
         // Font awesome icon component
         Vue.component('fa', FontAwesomeIcon);

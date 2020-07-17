@@ -9,11 +9,14 @@
                 :disabled="disabled"
                 :class="{'custom-control-input':showAsSwitch}"
         />
-        <label :class="labelClassList" :for="id">
-            <span  class="checkbox-label-text">
-                <slot>{{label}}</slot>
-            </span>
-        </label>
+        <div class="input-container">
+            <span :class="['checkbox-indicator', {'m-0':noLabel}]" @click="indicatorClick"></span>
+            <label :class="labelClassList" :for="id" ref="label">
+                <span  class="checkbox-label-text">
+                    <slot name="default">{{label}}</slot>
+                </span>
+            </label>
+        </div>
     </div>
 </template>
 
@@ -98,6 +101,7 @@ import {generateKey} from "../../helpers/helpers";
         data(){
             return{
                 id:'',
+                noLabel: false,
             }
         },
 
@@ -145,11 +149,21 @@ import {generateKey} from "../../helpers/helpers";
             },
         },
 
-        mounted(){
+        methods:{
+            indicatorClick(){
+                // Imitate label click on indicator click
+                this.$refs.label.click();
+            }
+        },
 
+        mounted(){
             // Generate random id
             this.id = generateKey();
 
+            // Check if label is not empty
+            if(!this.$scopedSlots.hasOwnProperty('default') && this.label.length === 0){
+                this.noLabel = true;
+            }
         }
     }
 </script>

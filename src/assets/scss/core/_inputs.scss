@@ -1,57 +1,57 @@
-.input{
+.input {
 
-    &.error{
-        border-color:$danger;
+    &.error {
+        border-color: $danger;
     }
 
-    &.valid{
-        border-color:$success;
+    &.valid {
+        border-color: $success;
     }
 
-    &.blank{
-        border:none;
+    &.blank {
+        border: none;
         background-color: transparent;
         outline: none;
         border-radius: 0px;
         box-shadow: none;
         padding: 0;
-        margin:0;
+        margin: 0;
     }
 }
 
-.input-label{
+.input-label {
     font-size: $font-size-sm;
     margin-bottom: $label-margin-bottom;
 
-    label{
+    label {
         margin: 0;
     }
 }
 
 
 .input-error,
-.input-info{
-    margin-top:0.25rem;
+.input-info {
+    margin-top: 0.25rem;
     font-size: $font-size-base*0.75;
 }
 
-.input-error{
-    color:$danger;
+.input-error {
+    color: $danger;
 }
 
 // Wrapper for input component, used to structure input group add-ons, buttons
-.input-group{
-    .input-group-prepend, .input-group-append{
-        .input-group-text{
-             background-color: $gray-100;
+.input-group {
+    .input-group-prepend, .input-group-append {
+        .input-group-text {
+            background-color: $gray-100;
         }
     }
 }
 
-.tag-input{
+.tag-input {
 
     word-break: break-word;
-    cursor:text;
+    cursor: text;
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
@@ -64,7 +64,7 @@
         box-shadow: $input-focus-box-shadow;
     }
 
-    .tag{
+    .tag {
         background: $tag-input-tag-bg;
         color: color-yiq($tag-input-tag-bg);
         padding: 4px 10px;
@@ -80,7 +80,7 @@
         align-items: center;
 
 
-        .tag-close{
+        .tag-close {
             font-size: $tag-input-close-size;
             margin-left: 5px;
             width: $tag-input-close-size + 0.25rem;
@@ -91,24 +91,24 @@
             border-radius: 50%;
         }
 
-        .tag-text{
+        .tag-text {
             line-height: 1.25rem;
         }
 
         // Tag variations
-        @each $type, $color in $theme-colors{
-            &.tag-#{$type}{
+        @each $type, $color in $theme-colors {
+            &.tag-#{$type} {
                 background: $color;
                 color: color-yiq($color);
 
-                .tag-close{
-                    background: change_color($color, $lightness:30%);
+                .tag-close {
+                    background: change_color($color, $lightness: 30%);
                 }
             }
         }
     }
 
-    .input{
+    .input {
         background: none;
         border: none;
         box-shadow: none;
@@ -120,167 +120,194 @@
 // Custom checkbox styles
 $padding-left: $checkbox-text-margin + $checkbox-size;
 $input-left: $checkbox-text-margin + $checkbox-size;
-.checkbox, .radio{
-
-    //position: relative;
-    padding-left: $padding-left;
-
-    input[type='checkbox'], input[type='radio']{
+.checkbox, .radio {
+    input[type='checkbox'], input[type='radio'] {
         opacity: 0;
         z-index: -1000;
         position: absolute;
 
-        &~.checkbox-label, &~.radio-label{
-            cursor: pointer;
-
-            // Align label box with text
-            display: inline-flex;
-            align-items: center;
+        // Initial state
+        & ~ .input-container {
+            display: flex;
             flex-direction: row;
+            justify-content: left;
+            align-items: center;
 
-            .checkbox-label-text, .radio-label-text{
-                font-size: $font-size-sm;
-            }
-
-            // Stylish label
-            &::before{
-                display: inline-block;
+            .checkbox-indicator, .radio-indicator {
+                display: block;
                 transition: all 0.2s ease-in;
                 width: $checkbox-size;
                 height: $checkbox-size;
                 background-color: #fff;
-                border:1px solid $input-border-color;
-                content:'';
+                border: 1px solid $input-border-color;
                 border-radius: $checkbox-border-radius;
-                position: absolute;
-                left: $input-left;
+                cursor: pointer;
+                position: relative;
+
+                // If we put margin-left for label instead of indicator - we will have label filling space even when it's empty
+                margin-right: 0.5rem;
+
+                &::before{
+                    transition: transform #{$checkbox-tick-transition};
+                    content: '';
+                    transform: scale(0);
+                }
+            }
+
+            .radio-indicator{
+                border-radius: 50%;
+            }
+
+            .checkbox-label, .radio-label{
+                margin: 0;
+                display: block;
+                cursor: pointer;
             }
 
             &:hover{
-                &::before{
-                    background-color: change_color($checkbox-color, $lightness:90%);
-                    border-color:change_color($checkbox-color, $lightness:85%);
+                .checkbox-indicator, .radio-indicator {
+                    background-color: change_color($checkbox-color, $lightness: 90%);
+                    border-color: change_color($checkbox-color, $lightness: 85%);
                 }
             }
 
-            &:focus, &:active{
-                &::before{
-                    border-color:change_color($checkbox-color, $lightness:85%);
-                    box-shadow:0px 0px 0px 2px change_color($checkbox-color, $lightness:75%);
+            &:focus, &:active {
+                .checkbox-indicator, .radio-indicator {
+                    border-color: change_color($checkbox-color, $lightness: 85%);
+                    box-shadow: 0px 0px 0px 2px change_color($checkbox-color, $lightness: 75%);
                 }
             }
         }
 
-        // Different styling for radio
-        &~.radio-label{
-            &::before{
-                border-radius: 50%;
-            }
-        }
+        // Checked - active state
+        &:checked {
+            & ~ .input-container {
 
-        &:checked{
-            &~.checkbox-label, &~.radio-label{
-                &::before{
+                .checkbox-indicator {
                     background-color: $checkbox-color;
+                    border-color: change_color($checkbox-color, $lightness: 85%);
+
+                    // Center tick
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    // Tick
+                    &::before {
+                        display: block;
+                        width: $checkbox-size/2;
+                        height: $checkbox-size/1.25;
+                        content: '';
+                        position: relative;
+                        //left: $checkbox-size/4;
+                        border: #{$checkbox-size*0.2} solid #fff;
+                        border-right: 0;
+                        border-top: 0;
+                        transform: translateY(-1px) scaleX(-1) scale(0.65) rotate(-45deg) ;
+                    }
                 }
-                &::after{
-                    display: block;
-                    width: $checkbox-size/2;
-                    height: $checkbox-size/1.25;
-                    content:'';
-                    position: absolute;
-                    left: $checkbox-size/4 + $input-left;
-                    border: #{$checkbox-size*0.2} solid #fff;
-                    border-right: 0;
-                    border-top: 0;
-                    transform: scalex(-1) translateY(-1px) scale(0.65) rotate(-45deg);
-                }
-            }
 
-
-            // Non gray border for checkbox
-            &~.checkbox-label::before{
-                border-color:change_color($checkbox-color, $lightness:85%);
-            }
-
-            &~.radio-label{
-                &::before{
+                .radio-indicator{
                     background-color: #fff;
                     border-color: $checkbox-color;
                     border-radius: 50%;
                     outline: none;
                     border-width: $checkbox-size*0.1;
+
+                    // Center circle
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    // Radio circle
+                    &::before {
+                        border: none;
+                        transform: initial;
+                        background-color: $checkbox-color;
+                        width: $checkbox-size/3;
+                        height: $checkbox-size/3;
+                        border-radius: 50%;
+                        display: block;
+                        content: '';
+                        position: static;
+                    }
                 }
-                &::after{
-                    border:none;
-                    transform: initial;
-                    background-color: $checkbox-color;
-                    width: $checkbox-size/2.5;
-                    height: $checkbox-size/2.5;
-                    // Left for dot - half outer size minus half inner size
-                    //left: calc(#{$checkbox-size/2} - #{0.5 * $checkbox-size/2.5});
-                    left: $checkbox-size/2 - (0.5 * $checkbox-size/2.5) + $input-left;
-                    border-radius: 50%;
+                // Effect on active style
+                &:active{
+                    .checkbox-indicator{
+                        background-color: change_color($checkbox-color, $lightness:80%);
+                        &::before{
+                            border-color: $gray-100;
+                        }
+                    }
+                    .radio-indicator{
+                        border-color: change_color($checkbox-color, $lightness:80%);
+                        &::before{
+                            background-color: change_color($checkbox-color, $lightness:80%);
+                        }
+                    }
                 }
             }
         }
-    }
 
-    &.disabled{
-        .checkbox-label{
-            &::before {
-                background-color: $gray-400 !important;
+        // Disabled state
+        &:disabled{
+            & ~ .input-container{
+                .checkbox-indicator {
+                    background-color: $gray-400 !important;
 
-                // Remove effects of focus,hover and active
-                box-shadow:none !important;
-                border:none !important;
-            }
-            &::after{
-                border-color: $gray-200 !important;;
-            }
-        }
+                    // Remove effects of focus,hover and active
+                    box-shadow: none !important;
+                    // Border must persist because of box-sizing: border-box
+                    border-color: $gray-400 !important;
 
-        .radio-label{
-            &::before {
-                background-color: $gray-400 !important;
-                border-color: $gray-400 !important;
+                    &::before {
+                        border-color: $gray-200 !important;;
+                    }
+                }
 
-                // Remove effects of focus,hover and active
-                box-shadow:none !important;
-                border:none !important;
-            }
-            &::after{
-                background-color: $gray-200 !important;;
+                .radio-indicator {
+                    background-color: $gray-400 !important;
+                    // Border must persist because of box-sizing: border-box
+                    border-color: $gray-400 !important;
+
+                    // Remove effects of focus,hover and active
+                    box-shadow: none !important;
+
+                    &::before {
+                        background-color: $gray-200 !important;;
+                    }
+                }
             }
         }
     }
 }
 
 // Styled select dropdown
-.select-dropdown{
+.select-dropdown {
 
     // Remove tabindex outline
-    .dropdown{
+    .dropdown {
         outline: none;
     }
 
-    .dropdown-menu{
+    .dropdown-menu {
         overflow: auto;
         max-height: 200px;
         user-select: none;
     }
 
-    .select-dropdown-placeholder{
+    .select-dropdown-placeholder {
         user-select: none;
     }
 
-    .select-dropdown-handle{
-        color:$gray-500;
+    .select-dropdown-handle {
+        color: $gray-500;
         transition: $transition-base;
     }
 
-    &.menu-open{
-        .select-dropdown-handle{
+    &.menu-open {
+        .select-dropdown-handle {
             transform: rotate(180deg);
         }
     }
@@ -288,8 +315,8 @@ $input-left: $checkbox-text-margin + $checkbox-size;
 }
 
 // switch styles
-.switch{
-    .checkbox-label-text{
+.switch {
+    .checkbox-label-text {
         font-size: $font-size-sm;
     }
 }
