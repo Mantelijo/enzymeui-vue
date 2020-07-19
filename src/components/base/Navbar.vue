@@ -1,6 +1,8 @@
 <template>
     <nav class="navbar navigation-bar">
-        <fa class="menu-toggle" icon="bars" @click="toggleSidebar"></fa>
+        <slot name="default" :toggle-sidebar="toggleSidebar">
+            <fa class="menu-toggle" icon="bars" @click="toggleSidebar"></fa>
+        </slot>
     </nav>
 </template>
 

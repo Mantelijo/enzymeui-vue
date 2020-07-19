@@ -3,6 +3,10 @@
      *  Simple ChartJS wrapper
      */
     import ChartJS from 'chart.js';
+
+    // Hide legend by default
+    ChartJS.defaults.global.legend.display = false;
+
     export default {
         name: "Chart",
 
@@ -10,7 +14,7 @@
             config:{
                 type:Object,
                 required:true,
-                description: 'Chart.js constructor config properties. Please see chartjs.org for more information.'
+                description: 'Chart.js constructor configuration object. Please see chartjs.org for more information.'
             }
         },
 

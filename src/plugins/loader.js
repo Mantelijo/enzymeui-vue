@@ -39,6 +39,7 @@ import Breadcrumb from "../components/base/Breadcrumb";
 import Accordion from "../components/base/Accordion/Accordion";
 import AccordionItem from "../components/base/Accordion/AccordionItem";
 import Dropdown from "../components/base/Dropdown";
+import Navbar from "../components/base/Navbar";
 
 // Charts
 import ChartsComponent from '../components/charts/Chart';
@@ -69,6 +70,7 @@ export default {
         Vue.component(AccordionItem.name, AccordionItem);
         Vue.component(Dropdown.name, Dropdown);
         Vue.component(ChartsComponent.name, ChartsComponent);
+        Vue.component(Navbar.name, Navbar);
 
         // Font awesome icon component
         Vue.component('fa', FontAwesomeIcon);

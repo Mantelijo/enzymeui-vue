@@ -9,6 +9,9 @@
         color:color-yiq($color);
         background-color: $color;
     }
+
+    @include define-fill-color(gray-#{$number}, $color);
+    @include define-stroke-color(gray-#{$number}, $color);
 }
 
 // Light backgrounds
@@ -16,4 +19,32 @@
     .bg-#{$name}-light{
         background-color: change_color($color, $lightness:85%);
     }
+
+    @include define-fill-color($name, $color);
+    @include define-stroke-color($name, $color);
 }
+
+// Font sizing utilities
+.font-size-50{
+    font-size: $font-size-base * 0.5;
+}
+.font-size-75{
+    font-size: $font-size-base * 0.75;
+}
+.font-size-100{
+    font-size: $font-size-base * 1;
+}
+.font-size-125{
+    font-size: $font-size-base * 1.25;
+}
+.font-size-150{
+    font-size: $font-size-base * 1.5;
+}
+.font-size-200{
+    font-size: $font-size-base * 2;
+}
+
+.cursor-pointer{
+    cursor:pointer;
+}
+

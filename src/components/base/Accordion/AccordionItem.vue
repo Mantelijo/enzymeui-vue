@@ -1,5 +1,5 @@
 <template>
-    <div class="accordion-item card">
+    <div class="accordion-item card shadow-none">
         <div class="card-header" @click="toggle">
             <slot name="default"></slot>
         </div>

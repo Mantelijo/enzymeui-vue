@@ -2,8 +2,8 @@
     <div :class="['radio', {'disabled':disabled}]">
         <input :value="radioValue" :name="name" :id="id" v-model="model" type="radio" :aria-checked="model" :disabled="disabled"/>
         <div class="input-container">
-            <span :class="['checkbox-indicator', {'m-0':noLabel}]" @click="indicatorClick"></span>
-            <label class="radio-label" :for="id">
+            <span :class="['radio-indicator', {'m-0':noLabel}]" @click="indicatorClick"></span>
+            <label class="radio-label" :for="id" ref="label">
                 <span  class="radio-label-text">
                     <slot>{{label}}</slot>
                 </span>
@@ -83,7 +83,6 @@
             // Check if label is not empty
             if(!this.$scopedSlots.hasOwnProperty('default') && this.label.length === 0){
                 this.noLabel = true;
-                this.noMarginIndicator = true;
             }
         }
     }

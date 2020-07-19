@@ -45,7 +45,7 @@
                 <p>You can use additional html in your alerts!</p>
                 <b>You can put any kind of html inside me!</b>
                 <div class="text-left mt-3">
-                    <img style="max-width: 300px;" src="https://source.unsplash.com//Lr-KZKYzaj8/320x400">
+                    <img class="img-fluid" style="max-width: 100%;" src="https://source.unsplash.com//Lr-KZKYzaj8/320x400">
                 </div>
             </Alert>
         </Card>
