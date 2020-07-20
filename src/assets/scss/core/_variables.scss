@@ -1,8 +1,3 @@
-// Custom Checkboxes
-$checkbox-size:1.25rem; // Must be in rem
-$checkbox-border-radius:4px;
-// Margin between text and checkbox
-$checkbox-text-margin:0.35rem;
 
 // Content and navbar paddings (Space between sidebar)
 $navbar-content-padding:1.5rem;
@@ -818,7 +813,7 @@ $navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;
 // Dropdown menu container and contents.
 
 $dropdown-min-width:                10rem !default;
-$dropdown-padding-y:                .5rem !default;
+$dropdown-padding-y:                0rem !default;
 $dropdown-spacer:                   .125rem !default;
 $dropdown-font-size:                $font-size-base !default;
 $dropdown-color:                    $body-color !default;
@@ -1229,3 +1224,6 @@ $switch-bg:$primary;
 // Checkbox
 $checkbox-color:$primary;
 $checkbox-tick-transition: $transition-base-no-all;
+$checkbox-size:1.25rem; // Must be in rem
+$checkbox-border-radius:4px;
+$checkbox-text-margin:0.35rem;

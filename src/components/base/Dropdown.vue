@@ -11,7 +11,7 @@
             <slot name="button"></slot>
         </div>
 
-        <transition :enter-active-class="noAnimation?'':'animated fadeIn faster'" :leave-active-class="noAnimation?'':'animated fadeOut faster' ">
+        <transition :enter-active-class="noAnimation?'':''" :leave-active-class="noAnimation?'':'' ">
             <div ref="menu" v-if="!closed" :class="['dropdown-menu', {'show':!closed}, menuClasses]">
                 <slot></slot>
             </div>
@@ -69,6 +69,12 @@
                 required:false,
                 default:false,
                 description: 'If provided as true - no animation for dropdown menu will be made',
+            },
+            poppperConfig:{
+                type:Object,
+                required:false,
+                default:()=>{},
+                description: 'Popper js configuration that will be passed to popper object. This configuration will be prioritized over default values'
             }
         },
 
@@ -104,6 +110,7 @@
                     // On next tick (to make sure $refs are instantiated) recalculate position of dropdown
                     this.$nextTick(() => {
                         createPopper(this.$refs["button"], this.$refs["menu"], {
+                            ...this.poppperConfig,
                             placement: 'bottom-start',
                             modifiers: [
                                 {

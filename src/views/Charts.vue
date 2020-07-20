@@ -112,9 +112,11 @@
                                 data: dataGenerator(100, 1000, 12),
                                 backgroundColor:'rgba(40,167,69,0.1)',
                                 borderColor: 'rgba(40,167,69,0.8)',
+                                pointHoverBackgroundColor: 'rgba(40,167,69,0.8)',
+                                pointHoverBorderColor: 'rgba(40,167,69,0.8)',
                                 pointBackgroundColor: 'transparent',
                                 pointBorderColor: 'transparent',
-                                lineTension: 0.5,
+                                lineTension: 0,
                             }
                         ],
                     },

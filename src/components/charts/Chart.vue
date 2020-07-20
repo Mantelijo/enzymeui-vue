@@ -15,6 +15,9 @@
                 type:Object,
                 required:true,
                 description: 'Chart.js constructor configuration object. Please see chartjs.org for more information.'
+            },
+            height:{
+                required:false,
             }
         },
 
@@ -36,7 +39,8 @@
 
         render(h){
             return h('canvas', {
-                ref:'chart'
+                ref:'chart',
+                style:[{height:this.height}]
             });
         }
     }

@@ -11,16 +11,20 @@
                 </div>
             </div>
             <div class="mt-3 w-100 position-relative">
-                <Chart :config="chartConfig"/>
+                <Chart :config="chartConfig" />
             </div>
         </div>
     </Card>
 </template>
 
 <script>
+    /**
+     * This is a helper component, used to generate charts for demo
+     */
     export default {
         name: "ChartWidgetSmall",
 
+        // chartConfig - chart js configuration object
         props:['chartConfig']
     }
 </script>
