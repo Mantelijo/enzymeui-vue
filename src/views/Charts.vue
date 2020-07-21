@@ -61,6 +61,29 @@
                 </ChartWidgetSmall>
             </div>
         </div>
+
+<!--        Micro chart examples-->
+        <div class="row mb-5">
+            <div class="col-sm-4">
+                <ChartWidgetSmall2 :chart-config="widgetChartSmall1">
+                    <template #title>Total followers</template>
+                    <template #numbers>410k</template>
+                </ChartWidgetSmall2>
+            </div>
+            <div class="col-sm-4">
+                <ChartWidgetSmall2 :chart-config="widgetChartSmall2">
+                    <template #title>Total followers</template>
+                    <template #numbers>410k</template>
+                </ChartWidgetSmall2>
+            </div>
+            <div class="col-sm-4">
+                <ChartWidgetSmall2 :chart-config="widgetChartSmall3">
+                    <template #title>Total followers</template>
+                    <template #numbers>410k</template>
+                </ChartWidgetSmall2>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-sm-6">
                 <Card class="gradient-primary-white border-0">
@@ -86,9 +109,11 @@
 
 <script>
     import ChartWidgetSmall from "../widgets/ChartWidgetSmall";
+    import ChartWidgetSmall2 from "../widgets/ChartWidgetSmall2";
     export default {
         name: "Charts",
-        components: {ChartWidgetSmall},
+        components: {ChartWidgetSmall2, ChartWidgetSmall},
+
         data() {
 
             // Demo helper
@@ -100,6 +125,61 @@
                 }
 
                 return data;
+            }
+
+            const dateLabelGenerator = (from, step, amount, format)=>{
+                let current = new Date(from);
+                let result = [];
+
+                for(let i=0; i<=amount;i++){
+                    current = new Date(current.getTime() + step);
+                    result.push(format(new Date(current.getTime())));
+                }
+
+                return result;
+            }
+
+            const lineChartGenerator = (amount, backgroundColor, borderColor, min, max, options = {}) =>{
+                return {
+                    type: 'line',
+                    data:{
+                        labels:dateLabelGenerator(new Date('2020-02-07'), 1000*24*3600, amount, (d)=>d.getDate().toString()),
+                        datasets:[{
+                            ...options,
+                            data:dataGenerator(min, max, amount),
+                            borderColor,
+                            backgroundColor,
+                            pointBackgroundColor: 'transparent',
+                            pointBorderColor: 'transparent',
+                            lineTension: .5,
+                        }],
+                    },
+                    options:{
+                        ...options,
+                        tooltips: {
+                            mode: 'nearest',
+                            intersect: false,
+                        },
+                        // Hide axes for smaller charts
+                        scales: {
+                            xAxes: [{
+                                display: false,
+                                scaleLabel: {
+                                    display: false,
+                                },
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    display: false,
+                                    beginAtZero: true
+                                },
+                                gridLines: {
+                                    display: false,
+                                },
+                            }],
+                        },
+                    }
+                }
             }
 
             return {
@@ -121,6 +201,7 @@
                         ],
                     },
                     options: {
+                        aspectRatio:3,
                         layout: {
                             padding: 5,
                         },
@@ -161,6 +242,7 @@
                         ],
                     },
                     options: {
+                        aspectRatio:3,
                         layout: {
                             padding: 5,
                         },
@@ -201,6 +283,7 @@
                         ],
                     },
                     options: {
+                        aspectRatio:3,
                         layout: {
                             padding: 5,
                         },
@@ -228,6 +311,10 @@
                         }
                     }
                 },
+
+                widgetChartSmall1: lineChartGenerator(24, '#ffefef','#000', 10, 43 ,{borderWidth:1}),
+                widgetChartSmall2: lineChartGenerator(12, '#ffefef','#000', 10, 43 ,{borderWidth:1}),
+                widgetChartSmall3: lineChartGenerator(54, '#ffefef','#000', 10, 43 ,{borderWidth:1}),
 
                 config: {
                     type: 'bar',
