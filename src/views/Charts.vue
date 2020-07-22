@@ -64,22 +64,22 @@
 
 <!--        Micro chart examples-->
         <div class="row mb-5">
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-5 mb-sm-0">
                 <ChartWidgetSmall2 :chart-config="widgetChartSmall1">
                     <template #title>Total followers</template>
-                    <template #numbers>410k</template>
+                    <template #numbers>410K</template>
                 </ChartWidgetSmall2>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-5 mb-sm-0">
                 <ChartWidgetSmall2 :chart-config="widgetChartSmall2">
-                    <template #title>Total followers</template>
-                    <template #numbers>410k</template>
+                    <template #title>Active users</template>
+                    <template #numbers>0.12M</template>
                 </ChartWidgetSmall2>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 ">
                 <ChartWidgetSmall2 :chart-config="widgetChartSmall3">
-                    <template #title>Total followers</template>
-                    <template #numbers>410k</template>
+                    <template #title>App installs</template>
+                    <template #numbers>123K</template>
                 </ChartWidgetSmall2>
             </div>
         </div>

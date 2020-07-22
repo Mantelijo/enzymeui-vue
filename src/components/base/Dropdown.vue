@@ -70,7 +70,7 @@
                 default:false,
                 description: 'If provided as true - no animation for dropdown menu will be made',
             },
-            poppperConfig:{
+            popperConfig:{
                 type:Object,
                 required:false,
                 default:()=>{},
@@ -103,6 +103,7 @@
 
             // Position dropdown menu correctly when it's opened
             position(){
+                console.log(this.popperConfig);
                 if(this.closed === false) {
                     let yOffset = this.noOffset? 0:this.yOffset;
                     let xOffset = 0;
@@ -110,7 +111,6 @@
                     // On next tick (to make sure $refs are instantiated) recalculate position of dropdown
                     this.$nextTick(() => {
                         createPopper(this.$refs["button"], this.$refs["menu"], {
-                            ...this.poppperConfig,
                             placement: 'bottom-start',
                             modifiers: [
                                 {
@@ -120,6 +120,7 @@
                                     },
                                 },
                             ],
+                            ...this.popperConfig,
                         });
                     })
                 }

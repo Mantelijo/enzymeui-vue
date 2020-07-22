@@ -2,14 +2,14 @@
     <Card>
         <div class="d-flex flex-row align-items-center">
             <div class="col-4 d-flex flex-column">
-                <div class="font-size-75 font-weight-bold color-gray-500">
+                <div class="font-size-100 font-weight-bold color-gray-500">
                     <slot name="title"></slot>
                 </div>
                 <div class="font-size-150 font-weight-bold">
                     <slot name="numbers"></slot>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-8 p-0">
                 <Chart :config="chartConfig"/>
             </div>
         </div>

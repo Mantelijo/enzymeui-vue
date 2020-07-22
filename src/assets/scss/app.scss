@@ -114,3 +114,10 @@ $scrollbar-size:0.6rem;
 @import "core/modal";
 
 @import "utilities";
+
+// Adding grays to root for usage in css
+:root{
+    @each $name, $color in $grays{
+        --gray-#{$name}: #{$color};
+    }
+}
