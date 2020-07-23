@@ -20,26 +20,26 @@ import '../directives/click-outside';
 import { createPopper } from '@popperjs/core';
 
 // Base components
-import Alert from "../components/base/Alert";
-import Badge from "../components/base/Badge";
-import Button from "../components/base/Button";
-import Card from "../components/base/Card";
+import Alert from "../components/alert/Alert";
+import Badge from "../components/badge/Badge";
+import Button from "../components/button/Button";
+import Card from "../components/card/Card";
 import Collapse from "../components/collapse/Collapse";
-import Input from "../components/base/Input";
-import Modal from "../components/base/Modal";
-import Pagination from "../components/base/Pagination";
-import ProgressBar from "../components/base/ProgressBar";
-import Select from "../components/base/Select";
-import TagInput from "../components/base/TagInput";
-import Checkbox from "../components/base/Checkbox";
-import Radio from "../components/base/Radio";
-import Nav from "../components/base/Navs/Nav";
-import NavItem from "../components/base/Navs/NavItem";
-import Breadcrumb from "../components/base/Breadcrumb";
-import Accordion from "../components/base/Accordion/Accordion";
-import AccordionItem from "../components/base/Accordion/AccordionItem";
-import Dropdown from "../components/base/Dropdown";
-import Navbar from "../components/base/Navbar";
+import Input from "../components/input/Input";
+import Modal from "../components/modal/Modal";
+import Pagination from "../components/pagination/Pagination";
+import ProgressBar from "../components/progressbar/ProgressBar";
+import Select from "../components/select/Select";
+import TagInput from "../components/taginput/TagInput";
+import Checkbox from "../components/checkbox/Checkbox";
+import Radio from "../components/radio/Radio";
+import Nav from "../components/navs/Nav";
+import NavItem from "../components/navs/NavItem";
+import Breadcrumb from "../components/breadcrumb/Breadcrumb";
+import Accordion from "../components/accordion/Accordion";
+import AccordionItem from "../components/accordion/AccordionItem";
+import Dropdown from "../components/dropdown/Dropdown";
+import Navbar from "../components/navbar/Navbar";
 
 // Charts
 import ChartsComponent from '../components/charts/Chart';
@@ -48,7 +48,7 @@ window.popper = createPopper;
 
 export default {
     install(Vue){
-        // Base components
+        // All components
         Vue.component(Alert.name, Alert);
         Vue.component(Badge.name, Badge);
         Vue.component(Button.name, Button);

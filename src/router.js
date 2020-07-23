@@ -17,6 +17,10 @@ const router = new VueRouter({
     routes:[
         {
             path:'/',
+            component:Dashboard,
+        },
+        {
+            path:'/charts',
             component:Charts,
         },
         {

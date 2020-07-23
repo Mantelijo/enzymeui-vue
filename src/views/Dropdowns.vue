@@ -12,7 +12,6 @@
                     <div class="dropdown-item">Item3</div>
                 </div>
             </Dropdown>
-
             <Dropdown class="mr-5" :menu-classes="['p-4', 'dropdown-menu-lg']" manual-close ref="dropdown1">
                 <template slot="button">
                     <Button type="secondary" still>Magical</Button>
@@ -31,7 +30,6 @@
                 </div>
 
             </Dropdown>
-
             <Dropdown class="mr-5">
                 <template slot="button">
                     <Button type="primary" still>Dropdowns</Button>
@@ -51,10 +49,8 @@
 </template>
 
 <script>
-    import Dropdown from "../components/base/Dropdown";
     export default {
         name: "Dropdowns",
-        components: {Dropdown}
     }
 </script>
 

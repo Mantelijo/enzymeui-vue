@@ -3,7 +3,41 @@
         <!-- Notification container -->
         <ToastNotificationsContainer/>
         <!-- Sidebar -->
-        <Sidebar></Sidebar>
+        <Sidebar>
+            <!--Mobile Close Sidebar Button-->
+            <div v-if="" class="sidebar-mobile-close">
+                <div class="pt-2 pb-2 d-flex flex-row justify-content-end">
+                    <Button @click="$sidebar.close()" type="primary" size="sm"><fa icon="times"></fa></Button>
+                </div>
+            </div>
+
+            <div class="sidebar-brand d-flex justify-content-center ">
+                <b class="font-size-150">Templatium</b>
+            </div>
+
+            <ul class="nav flex-column sidebar-items">
+                <li
+                    :class="['nav-item', 'sidebar-item', {'active':$route.path === link.path}]"
+                    v-for="(link,i) in links"
+                    :key="i"
+                    @click="navigateToPath(link.path, $event)"
+                >
+                    <a
+                        class="sidebar-link d-flex flex-row align-items-center w-100 h-100"
+                        @click="navigateToPath(link.path, $event)"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-default" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"/>
+                            <rect x="3" y="12" width="6" height="8" rx="1" />
+                            <rect x="9" y="8" width="6" height="12" rx="1" />
+                            <rect x="15" y="4" width="6" height="16" rx="1" />
+                            <line x1="4" y1="20" x2="18" y2="20" />
+                        </svg>
+                        <div class="ml-3">{{link.name}}</div>
+                    </a>
+                </li>
+            </ul>
+        </Sidebar>
         <div :class="['app-container', {'sidebar-open':!sidebarClosed}]">
             <!-- This will be shown only on mobile as black transparent clickable content overlay. See src/assets/scss/core/_sidebar.scss -->
             <SidebarContentOverlay :show="!sidebarClosed"></SidebarContentOverlay>
@@ -156,6 +190,53 @@
             return {
                 // State of sidebar
                 sidebarClosed: false,
+                links:[
+                    {
+                        name:'Dashboard',
+                        path:'/',
+                        icon:'',
+                    },
+                    {
+                        name:'Charts',
+                        path:'/charts',
+                        icon:'',
+                    },
+                    {
+                        name:'Dropdowns',
+                        path:'/dropdowns',
+                        icon:'',
+                    },
+                    {
+                        name:'Alerts',
+                        path:'/alerts',
+                        icon:'',
+                    },
+                    {
+                        name:'Buttons',
+                        path:'/buttons',
+                        icon:'',
+                    },
+                    {
+                        name:'Components',
+                        path:'/components',
+                        icon:'',
+                    },
+                    {
+                        name:'Forms',
+                        path:'/forms',
+                    },
+                    {
+                        name:'Typography',
+                        path:'/typography',
+                    },
+                ]
+            }
+        },
+
+        methods:{
+            navigateToPath(path, e){
+                e.stopPropagation();
+                this.$router.push({path});
             }
         },
 

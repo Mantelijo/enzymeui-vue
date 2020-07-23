@@ -1,110 +1,25 @@
 <template>
     <div :class="['sidebar', closed?'closed':'', ]">
-
-        <!--Mobile Close Sidebar Button-->
-        <div  v-if="!closed" class="sidebar-mobile-close">
-            <div class="pt-2 pb-2 d-flex flex-row justify-content-end">
-                <Button @click="$sidebar.close()" type="primary" size="sm"><fa icon="times"></fa></Button>
-            </div>
-        </div>
-
-        <div class="sidebar-brand d-flex justify-content-center ">
-            <img src="../../assets/img/logo.png">
-        </div>
-
-        <ul class="nav flex-column sidebar-items">
-            <li :class="['nav-item', 'sidebar-link', {'active':linkActive(link.path)}]" v-for="(link,i) in links" :key="i" @click="navigateTo(link.path)">
-                <span class="icon" v-if="link.icon !== ''">
-                    <fa :icon="link.icon"></fa>
-                </span>
-                {{ link.name }}
-            </li>
-        </ul>
+        <slot></slot>
     </div>
 </template>
 
 <script>
-
-    import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faTimes, faFileAlt, faFont} from '@fortawesome/free-solid-svg-icons';
-
-    library.add(faTimes);
-
+    /**
+     * Use $sidebar global variable in any component to control state of sidebar.
+     * Available methods:
+     *      $sidebar.close()
+     *      $sidebar.open()
+     *      $sidebar.toggle()
+     * See src/components/sidebar/plugin.js for more info.
+     */
     export default {
         name: "Sidebar",
 
         data(){
             return {
+                // Initial state is open sidebar.
                 closed:false,
-                links:[
-                    {
-                        name:'Charts',
-                        path:'/',
-                        icon:'',
-                    },
-                    {
-                        name:'Dropdowns',
-                        path:'/dropdowns',
-                        icon:'',
-                    },
-                    {
-                        name:'Alerts',
-                        path:'/alerts',
-                        icon:'',
-                    },
-                    {
-                        name:'Buttons',
-                        path:'/buttons',
-                        icon:'',
-                    },
-                    {
-                        name:'Components',
-                        path:'/components',
-                        icon:'',
-                    },
-                    {
-                        name:'Forms',
-                        path:'/forms',
-                        icon:faFileAlt,
-                    },
-                    {
-                        name:'Typography',
-                        path:'/typography',
-                        icon:faFont,
-                    },
-                ]
-            }
-        },
-
-        methods:{
-            // Navigate to link
-            navigateTo(path){
-                console.log(path);
-
-                // Navigate to route
-                this.$router.push(path);
-
-                // And hide sidebar if we are on mobile
-                if(window.innerWidth < 768){
-                    this.$sidebar.close();
-                }
-            },
-
-            // Determine if link class should be set to active
-            linkActive(path){
-                return path === this.activePath;
-            }
-        },
-
-        computed:{
-            // Currently active path
-            activePath(){
-                return this.$route.path;
-            },
-
-            // Computed property of sidebar visibility
-            sidebarVisible(){
-                return this.$sidebar.sidebarVisible;
             }
         },
 
@@ -130,10 +45,8 @@
 
             // Open/Close on touch
             document.addEventListener('DOMContentLoaded', ()=>{
-
                 let body = document.body;
                 let start = {}, end = {};
-
 
                 body.addEventListener('touchstart', (touchEvent)=>{
                     let t = touchEvent.changedTouches[0];

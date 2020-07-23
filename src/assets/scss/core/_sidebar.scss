@@ -1,21 +1,21 @@
-.sidebar{
+.sidebar {
 
     width: $sidebar-width;
     position: fixed;
     top: 0;
     height: 100%;
     left: 0;
-    background-color: $sidebar-background ;
+    background-color: $sidebar-background;
     box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.1);
     transition: $transition-base;
     z-index: $zindex-sidebar;
 
-    &.closed{
+    &.closed {
         // Adding -10px to fully hide all box-shadow
         left: -$sidebar-width - 10px;
     }
 
-    .sidebar-mobile-close{
+    .sidebar-mobile-close {
         display: none !important;
 
         @media screen and (max-width: map_get($grid-breakpoints, 'md')) {
@@ -23,34 +23,45 @@
         }
     }
 
-    .sidebar-items{
-        line-height: 25px;
+    .sidebar-items {
         font-weight: 400;
         color: $sidebar-color;
 
-        .sidebar-link{
-            cursor: pointer;
-            padding: 10px 0px;
-            padding-left: 25px;
+        .sidebar-item {
+            padding: $sidebar-item-padding;
 
-            &:hover{
-                background: rgba(0,0,0,0.1);
+            .sidebar-link {
+                padding: $sidebar-link-padding;
+                cursor: pointer;
+                border-radius: $sidebar-link-border-radius;
+                font-weight: $sidebar-link-font-weight;
+
+                &:hover {
+                    background: $sidebar-link-hover-bg;
+                    color: color_yiq($sidebar-link-hover-bg);
+                }
             }
 
-            &.active{
-                background: transparentize($primary, 0.8);
+            &.active {
+                .sidebar-link {
+                    background: $sidebar-link-active-bg;
+                    color: color_yiq($sidebar-link-active-bg);
+                    svg{
+                        stroke: color_yiq($sidebar-link-active-bg);
+                    }
+                }
             }
         }
     }
 
-    .sidebar-brand{
+    .sidebar-brand {
         height: $navbar-height;
         padding: $navbar-padding;
     }
 
 }
 
-.sidebar-content-overlay{
+.sidebar-content-overlay {
     position: fixed;
     width: 100%;
     height: 100%;
