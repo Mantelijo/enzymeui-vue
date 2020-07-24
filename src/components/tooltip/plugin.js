@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { createPopper } from '@popperjs/core';
-
+import Tooltip from './Tooltip';
 /**
  * Tooltip plugin usage:
  * 1. Create tooltip component and bind unique id parameter to it or you can pass an object with id of tooltip and placement
@@ -13,6 +13,9 @@ import { createPopper } from '@popperjs/core';
  */
 const TooltipPlugin = {
     install(Vue){
+
+        // Register component
+        Vue.component(Tooltip.name, Tooltip);
 
         // Popper.js functionality
         Vue.directive('tooltip', {

@@ -21,7 +21,7 @@
                                 <div class="font-size-75 color-gray-600">{{task.subtext}}</div>
                             </div>
                             <div class="col-2 my-sm-0 my-2">
-                                <Badge :type="task.badgeType" pill>{{task.badgeText}}</Badge>
+                                <Badge inverse :type="task.badgeType" pill>{{task.badgeText}}</Badge>
                             </div>
                         </div>
                     </div>

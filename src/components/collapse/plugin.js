@@ -59,6 +59,13 @@ const CollapsePlugin = {
                         this.collapses[id].show = false;
                     }
                 },
+
+                getState(id){
+                    if (id in this.collapses) {
+                        return this.collapses[id].show;
+                    }
+                    return null;
+                },
             }
         });
     }

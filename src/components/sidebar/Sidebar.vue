@@ -66,7 +66,8 @@
                     if(diffX > diffY && start.x <= 50 && diffX > 50){
                         this.$sidebar.open();
                     }
-                    else{
+                    // Only left to right swipes allowed to close sidebar
+                    if(diffX > 50 && start.x > end.x){
                         this.$sidebar.close();
                     }
                 });

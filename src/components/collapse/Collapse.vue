@@ -16,6 +16,8 @@
      * Collapse can be toggled in 2 ways:
      * 1. Using v-collapse directive and providing collapse element id
      * 2. By using collapse component instance and utilizing toggle, open, close methods
+     *
+     * You can listen to @open and @close events on component for additional functionality about collapse display state
      */
 
     // Animation time in miliseconds
@@ -100,11 +102,13 @@
             // Open collapse
             open(){
                 this.show = true;
+                this.$emit('open');
             },
 
             // Close collapse
             close(){
                 this.show = false;
+                this.$emit('close');
             },
 
             // Toggle collapse

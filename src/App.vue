@@ -4,37 +4,48 @@
         <ToastNotificationsContainer/>
         <!-- Sidebar -->
         <Sidebar>
-            <!--Mobile Close Sidebar Button-->
-            <div v-if="" class="sidebar-mobile-close">
-                <div class="pt-2 pb-2 d-flex flex-row justify-content-end">
-                    <Button @click="$sidebar.close()" type="primary" size="sm"><fa icon="times"></fa></Button>
-                </div>
+            <div class="sidebar-brand d-flex justify-content-center align-items-center">
+                <b class="font-size-150 logo-text">Templatium</b>
             </div>
 
-            <div class="sidebar-brand d-flex justify-content-center ">
-                <b class="font-size-150">Templatium</b>
-            </div>
-
+            <!-- Sidebar menu items -->
             <ul class="nav flex-column sidebar-items">
                 <li
-                    :class="['nav-item', 'sidebar-item', {'active':$route.path === link.path}]"
+                    :class="['nav-item', 'sidebar-item']"
                     v-for="(link,i) in links"
                     :key="i"
-                    @click="navigateToPath(link.path, $event)"
                 >
-                    <a
-                        class="sidebar-link d-flex flex-row align-items-center w-100 h-100"
+                    <!-- Simple link to route -->
+                    <span
+                        v-if="link.children === undefined"
+                        :class="['sidebar-link d-flex flex-row align-items-center w-100 h-100', , {'active':$route.path === link.path}]"
                         @click="navigateToPath(link.path, $event)"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-default" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z"/>
-                            <rect x="3" y="12" width="6" height="8" rx="1" />
-                            <rect x="9" y="8" width="6" height="12" rx="1" />
-                            <rect x="15" y="4" width="6" height="16" rx="1" />
-                            <line x1="4" y1="20" x2="18" y2="20" />
-                        </svg>
+                        <div v-if="link.icon !== undefined" v-html="link.icon"></div>
                         <div class="ml-3">{{link.name}}</div>
-                    </a>
+                    </span>
+
+                    <!-- Link with Collapse containing children -->
+                    <div v-else >
+                        <span class="sidebar-link d-flex flex-row align-items-center w-100 h-100" v-collapse="link.collapseId">
+                            <div v-if="link.icon !== undefined" v-html="link.icon"></div>
+                            <div class="ml-3">{{link.name}}</div>
+                        </span>
+                        <Collapse :id="link.collapseId" @open="link.collapseOpen = true" @close="link.collapseOpen = false">
+                            <div
+                                v-for="child in link.children"
+                                :class="['pl-5 sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === child.path}]"
+                                @click="navigateToPath(child.path, $event)"
+                            >
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-default" width="10" height="10" viewBox="0 0 24 24" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="9" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3">{{child.name}}</div>
+                            </div>
+                        </Collapse>
+                    </div>
                 </li>
             </ul>
         </Sidebar>
@@ -182,6 +193,8 @@
 </template>
 
 <script>
+    import icons from './helpers/sidebar-icons';
+    import {generateKey} from "./helpers/helpers";
 
     export default {
         name: 'app',
@@ -194,40 +207,84 @@
                     {
                         name:'Dashboard',
                         path:'/',
-                        icon:'',
+                        icon: icons.Dashboard,
                     },
                     {
                         name:'Charts',
                         path:'/charts',
-                        icon:'',
+                        icon: icons.Charts,
                     },
                     {
-                        name:'Dropdowns',
-                        path:'/dropdowns',
-                        icon:'',
-                    },
-                    {
-                        name:'Alerts',
-                        path:'/alerts',
-                        icon:'',
-                    },
-                    {
-                        name:'Buttons',
-                        path:'/buttons',
-                        icon:'',
+                        name:'Data Tables',
+                        path:'/tables',
+                        icon: icons.Tables,
                     },
                     {
                         name:'Components',
                         path:'/components',
-                        icon:'',
+                        icon: icons.Components,
+                        collapseId: generateKey(),
+                        collapseOpen:false,
+                        children:[
+                            {
+                                name:'Alerts',
+                                path:'/alerts',
+                            },
+                            {
+                                name:'Buttons',
+                                path:'/buttons',
+                            },
+                            {
+                                name:'Badges',
+                                path:'/badges',
+                            },
+                            {
+                                name:'Breadcrumbs',
+                                path:'/breadcrumbs',
+                            },
+                            {
+                                name:'Collapse',
+                                path:'/collapses',
+                            },
+                            {
+                                name:'Dropdowns',
+                                path:'/dropdowns',
+                            },
+                            {
+                                name:'Modals',
+                                path:'/modals',
+                            },
+                            {
+                                name:'Pagination',
+                                path:'/pagination',
+                            },
+                            {
+                                name:'Progress',
+                                path:'/progress',
+                            },
+                            {
+                                name:'Tabs',
+                                path:'/tabs',
+                            },
+                            {
+                                name:'Toasts',
+                                path:'/toasts',
+                            },
+                            {
+                                name:'Tooltips',
+                                path:'/tooltips',
+                            },
+                        ]
                     },
                     {
                         name:'Forms',
                         path:'/forms',
+                        icon: icons.Forms,
                     },
                     {
                         name:'Typography',
                         path:'/typography',
+                        icon: icons.Typography,
                     },
                 ]
             }
@@ -236,6 +293,12 @@
         methods:{
             navigateToPath(path, e){
                 e.stopPropagation();
+
+                // Close sidebar on mobile devices on sidebar link click
+                if(window.innerWidth < 768){
+                    this.$sidebar.close();
+                }
+
                 this.$router.push({path});
             }
         },
@@ -261,5 +324,11 @@
 
     .fade-leave-to {
         opacity: 0;
+    }
+
+    .logo-text{
+        background: linear-gradient(45deg, var(--primary),var(--secondary) );
+        background-clip: text;
+        color: transparent;
     }
 </style>

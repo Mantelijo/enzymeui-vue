@@ -11,14 +11,14 @@
                 <div class="col-12">
                     <Input  placeholder="Basic input with info text" info-text="Some basic informative info text"  label="Input label"></Input>
                 </div>
-                <div class="col-6">
+                <div class="col-sm-6">
                     <Input  placeholder="Basic input with error" invalid error-text="Sample error text" >
                         <template v-slot:label>
                             <label class="text-danger">Error input label</label>
                         </template>
                     </Input>
                 </div>
-                <div class="col-6">
+                <div class="col-sm-6">
                     <Input  placeholder="Basic input with success" :invalid="false">
                         <template v-slot:label>
                             <label class="text-success">Success input label</label>

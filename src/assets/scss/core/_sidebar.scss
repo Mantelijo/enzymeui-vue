@@ -10,6 +10,9 @@
     transition: $transition-base;
     z-index: $zindex-sidebar;
 
+    // Allow more than full height content in sidebar menu
+    overflow-y: auto;
+
     &.closed {
         // Adding -10px to fully hide all box-shadow
         left: -$sidebar-width - 10px;
@@ -40,10 +43,8 @@
                     background: $sidebar-link-hover-bg;
                     color: color_yiq($sidebar-link-hover-bg);
                 }
-            }
 
-            &.active {
-                .sidebar-link {
+                &.active {
                     background: $sidebar-link-active-bg;
                     color: color_yiq($sidebar-link-active-bg);
                     svg{
