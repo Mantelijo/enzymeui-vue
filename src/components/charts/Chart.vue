@@ -2,6 +2,8 @@
     /**
      *  Simple ChartJS wrapper
      */
+
+    // Importing without moment js dependency
     import ChartJS from 'chart.js';
 
     // Hide legend by default

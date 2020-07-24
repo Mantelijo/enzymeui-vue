@@ -18,14 +18,14 @@
                     <!-- Simple link to route -->
                     <span
                         v-if="link.children === undefined"
-                        :class="['sidebar-link d-flex flex-row align-items-center w-100 h-100', , {'active':$route.path === link.path}]"
+                        :class="['sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === link.path}]"
                         @click="navigateToPath(link.path, $event)"
                     >
                         <div v-if="link.icon !== undefined" v-html="link.icon"></div>
                         <div class="ml-3">{{link.name}}</div>
                     </span>
 
-                    <!-- Link with Collapse containing children -->
+                    <!-- Link with children links which will be placed in collapse -->
                     <div v-else >
                         <span class="sidebar-link d-flex flex-row align-items-center w-100 h-100" v-collapse="link.collapseId">
                             <div v-if="link.icon !== undefined" v-html="link.icon"></div>
