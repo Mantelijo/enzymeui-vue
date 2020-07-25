@@ -32,7 +32,6 @@
     border: $nav-conten-border;
     border-top:none;
     @include border-bottom-radius($nav-tabs-border-radius);
-    box-shadow: $card-box-shadow;
 }
 
 .nav-column{

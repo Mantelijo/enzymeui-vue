@@ -1,24 +1,25 @@
-# admintemplate
+# [Templatium](https://templatium.com) 
 
-## Project setup
+Templatium is vue.js based ui component toolkit/dashboard template. 
+
+To install project dependencies run
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+For documentation visit [Docs](https://templatium.com/docs)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Templatium uses `vue-cli` therefore usual `npm` workflow scripts are available
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### Usage
+- `npm run serve` - to build and serve development application
+- `npm run build` - to build production bundle
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Check out `vue.config.js` file for more configuration options
+
+#### Useful links
+- [vue.js](https://vuejs.org/)
+- [vue rotuer](https://router.vuejs.org/)
+- [vue cli](https://cli.vuejs.org/)
+
+

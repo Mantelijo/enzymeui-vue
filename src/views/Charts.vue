@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h2 class="mb-4"><a href="https://www.chartjs.org/" target="_blank">Chart.js</a> charts</h2>
         <div class="row">
 <!--            Widget chart 1-->
             <div class="col-sm-4">
@@ -86,33 +87,25 @@
 
         <div class="row">
             <div class="col-sm-6">
-                <Card class="gradient-primary-white border-0">
-                    <div>
-                        <h3 class="text-white">Monthly revenue</h3>
-                    </div>
-                    <div>
-                        <Chart :config="config"/>
-                    </div>
-                </Card>
+                <ChartBigSessions/>
+            </div>
+            <div class="col-sm-6">
+                <ChartBigPageViews/>
             </div>
         </div>
-        <Nav class="mt-5">
-            <NavItem title="Swx">
-                <div>Test test</div>
-            </NavItem>
-            <NavItem title="Swx2">
-                <div>Test test sdfsdsdf</div>
-            </NavItem>
-        </Nav>
     </div>
 </template>
 
 <script>
     import ChartWidgetSmall from "../widgets/ChartWidgetSmall";
     import ChartWidgetSmall2 from "../widgets/ChartWidgetSmall2";
+    import charts from "../helpers/charts";
+    import ChartBigSessions from "../widgets/ChartBigSessions";
+    import ChartBigPageViews from "../widgets/ChartBigPageViews";
     export default {
         name: "Charts",
-        components: {ChartWidgetSmall2, ChartWidgetSmall},
+
+        components: {ChartBigPageViews, ChartBigSessions, ChartWidgetSmall2, ChartWidgetSmall},
 
         data() {
 
@@ -208,6 +201,12 @@
                         tooltips: {
                             mode: 'nearest',
                             intersect: false,
+                            displayColors:false,
+                            callbacks:{
+                                label(tooltipInterface, data){
+                                    return `${tooltipInterface.value} visitors`;
+                                },
+                            }
                         },
                         // Hide axes for smaller charts
                         scales: {
@@ -316,67 +315,8 @@
                 widgetChartSmall2: lineChartGenerator(12, '#ffefef','#000', 10, 43 ,{borderWidth:1}),
                 widgetChartSmall3: lineChartGenerator(54, '#ffefef','#000', 10, 43 ,{borderWidth:1}),
 
-                config: {
-                    type: 'bar',
-                    data: {
-                        labels: ['Jan', 'Feb', 'Mat', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                        datasets: [
-                            {
-                                data: [
-                                    5443,
-                                    7434,
-                                    6993,
-                                    4902,
-                                    4108,
-                                    5923,
-                                    7898,
-                                    5443,
-                                    7434,
-                                    6993,
-                                    4902,
-                                    4108,
-                                    5923,
-                                    7898,
-                                ],
-                                backgroundColor: '#fff',
-                                borderColor: '#fff',
-                            },
-                            {
-                                data: [
-                                    55443,
-                                    57434,
-                                    46993,
-                                    64902,
-                                    74108,
-                                    25923,
-                                    47898,
-                                    35443,
-                                    57434,
-                                    66993,
-                                    74902,
-                                    84108,
-                                    55923,
-                                    47898,
-                                ],
-                                backgroundColor: '#fff',
-                                borderColor: '#fff',
-                            }
-                        ]
-                    },
-                    options: {
-                        tooltips: {
-                            mode: 'nearest',
-                            intersect: false,
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        },
-                    }
-                }
+                bigChart:charts.lineChartSessions,
+                bigChart2:charts.lineChartPageViews,
             }
         },
     }

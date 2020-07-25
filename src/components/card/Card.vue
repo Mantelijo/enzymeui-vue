@@ -1,6 +1,6 @@
 <template>
     <div :class="['card', type]">
-        <div class="card-header" v-if="$slots['header']">
+        <div :class="['card-header', ...headerClasses]" v-if="$slots['header']">
             <slot name="header"></slot>
         </div>
         <div :class="['card-body', ...bodyClasses]">
@@ -25,7 +25,13 @@
                 required:false,
                 default:()=>[],
                 description: 'Additional classes applied to card-body'
-            }
+            },
+            headerClasses:{
+                type: String | Array,
+                required:false,
+                default:()=>[],
+                description: 'Additional classes applied to card-header'
+            },
         }
     }
 </script>

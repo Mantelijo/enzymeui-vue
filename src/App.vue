@@ -193,7 +193,7 @@
 </template>
 
 <script>
-    import icons from './helpers/sidebar-icons';
+    import icons from './helpers/icons';
     import {generateKey} from "./helpers/helpers";
 
     export default {

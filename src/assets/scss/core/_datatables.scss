@@ -26,6 +26,7 @@
                     padding:0.05rem;
                     transition: $transition-base;
                     cursor: pointer;
+                    display: block;
                     &:hover, &.active{
                         background-color: $gray-400;
                         color:$gray-900;

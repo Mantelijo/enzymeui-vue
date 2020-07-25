@@ -3,15 +3,16 @@
         <Card>
             <template slot="header">Collapse</template>
 
+            <!-- Simple collapse examples -->
             <p class="mb-3">Collapse with <code>v-collapse</code> directive</p>
             <Button v-collapse="'collapse'">
                 Collapse
             </Button>
             <Collapse id="collapse">
-                <Card class="mt-4" slot="default">
+                <Card class="mt-4" header-classes="d-flex flex-row align-items-center" slot="default">
                     <template slot="header">
                         Collapsed card
-                        <Badge type="secondary" inverse>It's cool</Badge>
+                        <Badge class="ml-3" type="secondary" inverse>It's cool</Badge>
                     </template>
                     Some great collapse stuff
                     <Button v-tooltip="{id:'tooltip', placement:'top'}" type="secondary" size="sm">Hover over me
@@ -28,10 +29,10 @@
                 Collapse
             </Button>
             <Collapse ref="referenced-collapse">
-                <Card class="mt-4" slot="default">
+                <Card class="mt-4" header-classes="d-flex flex-row align-items-center" slot="default">
                     <template slot="header">
                         Collapsed card
-                        <Badge type="secondary" inverse>It's cool</Badge>
+                        <Badge class="ml-3" type="secondary" inverse>It's cool</Badge>
                     </template>
                     Some great collapse stuff
                     <Button v-tooltip="{id:'tooltip2', placement:'top'}" type="secondary" size="sm">Hover over me
@@ -43,8 +44,9 @@
             </Collapse>
         </Card>
 
+        <!-- Accordion examples -->
         <Card class="mt-5">
-            <template slot="header">
+            <template slot="header" >
                 Accordion example
             </template>
             <h5 class="mt-1 mb-3">Simple accordion</h5>

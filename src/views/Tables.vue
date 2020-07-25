@@ -49,6 +49,7 @@
                 </div>
             </div>
         </Card>
+        <!-- Example 2 -->
         <Card body-classes="p-0" class="mt-5">
             <template v-slot:header>
                 <div class="d-flex align-items-center justify-content-between">

@@ -57,4 +57,10 @@ export default {
             <line x1="10" y1="4" x2="10" y2="20" />
         </svg>
     `,
+    Triangle: `
+       <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-caret-down fa-w-10 sort-icon">
+           <path data-v-abf7e44e="" data-v-7a2409dd="" fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" class="">
+           </path>
+       </svg>
+    `,
 }

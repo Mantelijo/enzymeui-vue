@@ -77,6 +77,13 @@
                         badgeText: 'Required',
                         checkbox: false,
                     },
+                    {
+                        title: 'IPO day',
+                        subtext: 'Deadline: October 21st',
+                        badgeType: 'success',
+                        badgeText: 'Success',
+                        checkbox: false,
+                    },
                 ],
             }
         }

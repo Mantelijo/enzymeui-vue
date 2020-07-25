@@ -10,9 +10,9 @@
 </template>
 
 <script>
-
-    // bs-tooltip-auto class is used in order to automatically
-
+    /**
+     * To show tooltip you have to use v-tooltip directive and pass tooltip id property on element which will trigger tooltip display
+     */
     export default {
         name: "Tooltip",
 
