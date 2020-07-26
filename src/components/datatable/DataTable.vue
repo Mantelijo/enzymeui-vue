@@ -56,7 +56,7 @@
                     v-for="(row, key) in displayData"
                 >
                     <slot name="default" :row="row" :row-key="data.indexOf(row)" :row-key-viewport="key">
-                        <Cell v-for="cellData in objectToValuesArray(row)">{{cellData}}</Cell>
+                        <Cell v-for="(cellData, key) in objectToValuesArray(row)" :key="key">{{cellData}}</Cell>
                     </slot>
                 </tr>
             </tbody>
