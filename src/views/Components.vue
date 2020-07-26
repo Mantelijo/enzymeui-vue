@@ -569,13 +569,8 @@
 <script>
 
     // Uses directives/plugin.js
-
-    import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faChevronLeft, faChevronRight, faHome, faCaretUp, faCaretDown} from '@fortawesome/free-solid-svg-icons'
     import Tooltip from "../components/tooltip/Tooltip";
     import tableData from '@/data/tables.js'
-
-    library.add(faChevronLeft, faChevronRight, faHome, faCaretUp, faCaretDown);
 
     export default {
         name: "Components",

@@ -42,32 +42,24 @@
                 <div class="col-12">
                     <Input  placeholder="Basic input"  label="Input with prepend and icon">
                         <template v-slot:prepend>
-                            <div class="input-group-text">
-                                <fa icon="user-check" class="text-primary"></fa>
-                            </div>
+                            <div class="input-group-text text-primary" v-html="icons.UserCheck"></div>
                         </template>
                     </Input>
                 </div>
                 <div class="col-12">
                     <Input  placeholder="Basic input"  label="Input with append and icon">
                         <template v-slot:append>
-                            <div class="input-group-text">
-                                <fa icon="user-check" class="text-primary"></fa>
-                            </div>
+                            <div class="input-group-text text-primary" v-html="icons.UserCheck"></div>
                         </template>
                     </Input>
                 </div>
                 <div class="col-12">
                     <Input placeholder="Basic input with info text" info-text="Some basic informative info text"  label="Input with prepend and append">
                         <template v-slot:prepend>
-                            <div class="input-group-text">
-                                <fa icon="user-check" class="text-primary"></fa>
-                            </div>
+                            <div class="input-group-text text-primary" v-html="icons.UserCheck"></div>
                         </template>
                         <template v-slot:append>
-                            <div class="input-group-text">
-                                <fa icon="user-check" class="text-primary"></fa>
-                            </div>
+                            <div class="input-group-text text-primary" v-html="icons.UserCheck"></div>
                         </template>
                     </Input>
                 </div>
@@ -165,7 +157,10 @@
                                 <div class="w-75">{{item.name}}</div>
                                 <div class="small">({{item.role}})</div>
                                 <div v-if="isSelected" class="ml-auto">
-                                    <fa icon="check" class="color-gray-500"></fa>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="color-gray-500" width="15" height="15" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z"/>
+                                        <path d="M5 12l5 5l10 -10" />
+                                    </svg>
                                 </div>
                             </div>
                         </template>
@@ -187,14 +182,13 @@
 </template>
 
 <script>
-    import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faCheck, faUserCheck} from '@fortawesome/free-solid-svg-icons'
-    library.add(faCheck, faUserCheck);
+    import icons from "../helpers/icons";
     export default {
         name: "Forms",
 
         data(){
             return {
+                icons,
                 textarea:'',
                 tags:['JavaScript', 'Tag-input', 'JSX', 'Vue.js'],
                 checkboxes:['second', 'fourth'],

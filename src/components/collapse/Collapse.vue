@@ -102,13 +102,11 @@
             // Open collapse
             open(){
                 this.show = true;
-                this.$emit('open');
             },
 
             // Close collapse
             close(){
                 this.show = false;
-                this.$emit('close');
             },
 
             // Toggle collapse
@@ -133,6 +131,18 @@
             // Show collapse initially
             if(this.showInitially){
                 this.show = true;
+            }
+        },
+
+        watch:{
+            // Emit events to parent on display change
+            show:function(val){
+                if(val){
+                    this.$emit('open');
+                }
+                else{
+                    this.$emit('close');
+                }
             }
         }
     }

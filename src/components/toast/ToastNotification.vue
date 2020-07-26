@@ -16,9 +16,7 @@
                         class="ml-2 mb-1 close"
                         data-dismiss="toast"
                         aria-label="Close">
-                <span aria-hidden="true">
-                    <fa class="toast-close-icon" icon="times"></fa>
-                </span>
+                <span aria-hidden="true" class="font-size-150">&times;</span>
                 </button>
             </div>
             <div class="toast-body" v-if="data.body" v-html="data.body"></div>
@@ -27,10 +25,7 @@
 </template>
 
 <script>
-    import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faTimes} from '@fortawesome/free-solid-svg-icons';
 
-    library.add(faTimes);
     export default {
         name: "ToastNotification",
 

@@ -16,7 +16,6 @@
      *  .modal-header
      *  .modal-body
      *  .modal-header
-     *  default slot is automaticallu
      */
     export default {
         name: "Modal",

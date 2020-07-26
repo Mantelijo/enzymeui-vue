@@ -2,24 +2,16 @@
     <div>
         <h2 class="mb-4">Welcome back, Jolly!</h2>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 mb-5">
                 <ChartBigSessions/>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 mb-5">
                 <ChartBigPageViews/>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-sm-7">
-                <TaskList/>
-            </div>
-            <div class="col-sm-5">
-                <Messages/>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <Card body-classes="p-0" class="mt-5">
+                <Card body-classes="p-0" class="mb-5">
                     <template v-slot:header>
                         <div class="d-flex align-items-center justify-content-between">
                             <span>Customers Database</span>
@@ -51,7 +43,7 @@
                     </div>
                     <div class="d-flex flex-wrap pt-3 pb-4 align-items-end mx-4 justify-content-end">
 
-                        <div class="mr-4">
+                        <div class="mr-sm-4 mb-sm-0 mb-3">
                             <p class="mb-2 small">Rows per page</p>
                             <Select  :data="[5, 10, 15, 25, 100]" :selected="dataTablePerPage"
                                      @change="dataTablePerPage = $event,dataTablePage = 1"></Select>
@@ -68,6 +60,14 @@
                         </div>
                     </div>
                 </Card>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7 mb-5">
+                <TaskList/>
+            </div>
+            <div class="col-sm-5">
+                <Messages/>
             </div>
         </div>
     </div>

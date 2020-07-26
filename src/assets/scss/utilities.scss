@@ -9,6 +9,12 @@
         color:color-yiq($color);
         background-color: $color;
     }
+    .hover-bg-gray-#{$number}{
+        &:hover{
+            color:color-yiq($color);
+            background-color: $color;
+        }
+    }
 
     @include define-fill-color(gray-#{$number}, $color);
     @include define-stroke-color(gray-#{$number}, $color);

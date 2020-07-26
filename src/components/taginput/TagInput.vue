@@ -8,7 +8,7 @@
         <div :class="['tag-input', 'form-control', 'input', {'focused':inputFocused}]" @click="focusInput">
             <span :class="['tag', `tag-${type}`]" v-for="(tag,i) in tags" :key="key(i)">
                 <span class="tag-text">{{tag}}</span>
-                <span ref="close" class="tag-close" @click="remove($event, i)"><fa icon="times"></fa></span>
+                <span ref="close" class="tag-close" @click="remove($event, i)" v-html="closeIcon"></span>
             </span>
             <input
                     @focus="inputFocused=true"
@@ -49,12 +49,7 @@
             label: label text for tag input
             info-text: smaller info text for tag input
      */
-
-    import {library} from "@fortawesome/fontawesome-svg-core";
-    import {faTimes} from "@fortawesome/free-solid-svg-icons";
-
-    library.add(faTimes);
-
+    import icons from "../../helpers/icons";
     export default {
         name: "TagInput",
 
@@ -89,6 +84,7 @@
 
         data(){
             return {
+                closeIcon:icons.Times,
                 tags:[],
                 inputText:'',
                 inputFocused:false,

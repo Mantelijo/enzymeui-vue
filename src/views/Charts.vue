@@ -86,7 +86,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 mb-5 mb-sm-0">
                 <ChartBigSessions/>
             </div>
             <div class="col-sm-6">

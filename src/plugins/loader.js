@@ -1,12 +1,6 @@
 // Styles
 import '../assets/scss/app.scss';
 
-// Animate.css
-import 'animate.css/animate.css';
-
-// Misc
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
 // Custom plugins
 import SidebarPlugin from "../components/sidebar/plugin";
 import TooltipPlugin from "../components/tooltip/plugin";
@@ -71,9 +65,6 @@ export default {
         Vue.component(Dropdown.name, Dropdown);
         Vue.component(ChartsComponent.name, ChartsComponent);
         Vue.component(Navbar.name, Navbar);
-
-        // Font awesome icon component
-        Vue.component('fa', FontAwesomeIcon);
 
         // Plugins
         Vue.use(SidebarPlugin);

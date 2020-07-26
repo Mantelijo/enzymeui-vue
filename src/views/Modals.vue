@@ -8,7 +8,7 @@
             <div class="modal-header">
                 <h5 class="modal-title m-0">Modal title</h5>
                 <button @click="showModal = false" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><fa icon="times"></fa></span>
+                    <span aria-hidden="true" class="font-size-150">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -38,7 +38,7 @@
             <div class="modal-header">
                 <h5 class="modal-title m-0">Really long content one</h5>
                 <button @click="showModal3 = false" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><fa icon="times"></fa></span>
+                    <span aria-hidden="true" class="font-size-150">&times;</span>
                 </button>
             </div>
             <div class="modal-body">

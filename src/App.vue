@@ -29,9 +29,15 @@
                     <div v-else >
                         <span class="sidebar-link d-flex flex-row align-items-center w-100 h-100" v-collapse="link.collapseId">
                             <div v-if="link.icon !== undefined" v-html="link.icon"></div>
-                            <div class="ml-3">{{link.name}}</div>
+                            <div class="ml-3 d-flex align-items-center">
+                                <div>{{link.name}}</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" :style="[link.collapseOpen === true?{transform:'rotate(180deg)'}:{},]" class="stroke-default ml-2" width="15" height="15" viewBox="0 0 24 24" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                  <path stroke="none" d="M0 0h24v24H0z"/>
+                                  <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </div>
                         </span>
-                        <Collapse :id="link.collapseId" @open="link.collapseOpen = true" @close="link.collapseOpen = false">
+                        <Collapse :id="link.collapseId" @open="links[i].collapseOpen = true" @close="links[i].collapseOpen = false">
                             <div
                                 v-for="child in link.children"
                                 :class="['pl-5 sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === child.path}]"
@@ -201,6 +207,7 @@
 
         data() {
             return {
+                icons,
                 // State of sidebar
                 sidebarClosed: false,
                 links:[

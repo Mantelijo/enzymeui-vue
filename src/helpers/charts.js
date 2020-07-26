@@ -1,5 +1,5 @@
 /**
- * Chart config helper for demo
+ * Chart config helper for demos
  */
 export default {
     lineChartSessions:{

@@ -25,9 +25,7 @@
                         v-model="inputValue"
                         v-show="showFilterInput">
                 <slot name="handle" :dropdown-open="!dropdownStateClosed">
-                    <div>
-                        <fa class="select-dropdown-handle" icon="chevron-down"></fa>
-                    </div>
+                    <div class="select-dropdown-handle" v-html="icons.ChevronDown"></div>
                 </slot>
             </div>
             <div ref="items">
@@ -54,10 +52,7 @@
      *
      * is-searchable only works when data contains String or Number values. If data Array contains Objects - it will break.
      */
-    import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
-    library.add(faChevronDown);
-
+    import icons from "../../helpers/icons";
     export default {
         name: "Select",
         props: {
@@ -82,6 +77,8 @@
 
         data() {
             return {
+                icons,
+
                 // Filtering input value
                 inputValue: '',
 
