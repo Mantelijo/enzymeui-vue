@@ -95,6 +95,7 @@ $scrollbar-size:0.6rem;
 // Custom library
 @import "core/mixins/loadmixins";
 
+@import "core/accordion";
 @import "core/sidebar";
 @import "core/navbar";
 @import "core/buttons";

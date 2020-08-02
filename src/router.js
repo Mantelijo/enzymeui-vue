@@ -24,6 +24,7 @@ import Modals from "./views/Modals";
 
 
 const router = new VueRouter({
+    base: '/demo/',
     mode: 'history',
     routes:[
         {

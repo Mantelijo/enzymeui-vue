@@ -1,8 +1,8 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let plugins = [];
+// plugins = [new BundleAnalyzerPlugin];
 
-plugins = [new BundleAnalyzerPlugin];
 
 module.exports = {
     configureWebpack:{
@@ -16,6 +16,6 @@ module.exports = {
     // Disable output file hashing
     filenameHashing:false,
     assetsDir: 'assets/',
-    publicPath: '/',
-    lintOnSave: false
+    lintOnSave: false,
+    publicPath:'demo/',
 };
