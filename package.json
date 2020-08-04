@@ -12,12 +12,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/vue-fontawesome": "^0.1.8",
     "@popperjs/core": "^2.0.6",
-    "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
     "core-js": "^3.4.3",
     "node-sass": "^4.13.0",
-    "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
