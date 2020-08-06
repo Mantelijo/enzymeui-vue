@@ -1,8 +1,4 @@
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 let plugins = [];
-// plugins = [new BundleAnalyzerPlugin];
-
 
 module.exports = {
     configureWebpack:{
@@ -17,5 +13,5 @@ module.exports = {
     filenameHashing:false,
     assetsDir: 'assets/',
     lintOnSave: false,
-    publicPath:'demo/',
+    publicPath:'/',
 };
