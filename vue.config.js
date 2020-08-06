@@ -13,5 +13,5 @@ module.exports = {
     filenameHashing:false,
     assetsDir: 'assets/',
     lintOnSave: false,
-    publicPath:'/',
+    publicPath:'',
 };
