@@ -198,7 +198,7 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   #f7f8fa !default;
+$body-bg:                   #f2f2f2 !default;
 $body-color:                $gray-900 !default;
 
 
@@ -514,7 +514,7 @@ $input-disabled-bg:                     $gray-200 !default;
 $input-color:                           $gray-700 !default;
 $input-border-color:                    $gray-300 !default;
 $input-border-width:                    $input-btn-border-width !default;
-$input-box-shadow:                      0 1px 1px rgba($black, .75) !default;
+    $input-box-shadow:                      0 1px 1px rgba($black, .75) !default;
 
 $input-border-radius:                   $border-radius !default;
 $input-border-radius-lg:                $border-radius-lg !default;
@@ -832,6 +832,7 @@ $dropdown-item-padding-y:           .25rem !default;
 $dropdown-item-padding-x:           1.5rem !default;
 
 $dropdown-header-color:             $gray-600 !default;
+$dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x !default;
 
 // Dropdown menu custom sizes
 $dropdown-menu-sizes: (

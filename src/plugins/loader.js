@@ -12,6 +12,7 @@ import DataTable from "../components/datatable/plugin";
 import '../directives/click-outside';
 
 import { createPopper } from '@popperjs/core';
+window.popper = createPopper;
 
 // Base components
 import Alert from "../components/alert/Alert";
@@ -38,7 +39,6 @@ import Navbar from "../components/navbar/Navbar";
 // Charts
 import ChartsComponent from '../components/charts/Chart';
 
-window.popper = createPopper;
 
 export default {
     install(Vue){
