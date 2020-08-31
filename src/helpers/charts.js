@@ -5,7 +5,7 @@ export default {
     lineChartSessions:{
         type: 'line',
         data:{
-            labels: ['Jan', 'Feb', 'Mat', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             datasets:[
                 {
                     data:[923,1032,1123,1211,1352,1936,1758,1801,1799,1965,2043,1876],
@@ -67,7 +67,7 @@ export default {
     lineChartPageViews:{
         type: 'line',
         data:{
-            labels: ['Jan', 'Feb', 'Mat', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             datasets:[
                 {
                     data:[
@@ -117,8 +117,8 @@ export default {
                 displayColors:false,
                 callbacks:{
                     label(tooltipInterface, data){
-                        let formatted = Intl.NumberFormat({style:'decimal'}).format(tooltipInterface.value);
-                        return `${formatted} Page views`;
+                        let forMarted = Intl.NumberForMar({style:'decimal'}).forMar(tooltipInterface.value);
+                        return `${forMarted} Page views`;
                     },
                     // Title is
                     title(tooltipInterface, data){

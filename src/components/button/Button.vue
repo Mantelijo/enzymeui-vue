@@ -12,7 +12,8 @@
             type:{
                 type:String,
                 default:'primary',
-                description: 'One of available bootstrap button types: primary, default, success, info, warning, danger'
+                description: 'One of available bootstrap button types: primary, default, success, info, warning, danger',
+                required:false,
             },
             size:{
                 type:String,

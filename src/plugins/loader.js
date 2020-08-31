@@ -39,6 +39,9 @@ import Navbar from "../components/navbar/Navbar";
 // Charts
 import ChartsComponent from '../components/charts/Chart';
 
+import {generateMdTable} from "../helpers/propsTableGenerator";
+
+console.log(generateMdTable(Card));
 
 export default {
     install(Vue){

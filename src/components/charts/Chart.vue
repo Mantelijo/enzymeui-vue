@@ -20,6 +20,7 @@
             },
             height:{
                 required:false,
+                type: Number,
             }
         },
 

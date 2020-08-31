@@ -1,5 +1,5 @@
 <template>
-    <div :class="['card', type]">
+    <div :class="['card', cardClasses]">
         <div :class="['card-header', ...headerClasses]" v-if="$slots['header']">
             <slot name="header"></slot>
         </div>
@@ -16,15 +16,15 @@
     export default {
         name: "Card",
         props:{
-            type:{
+            cardClasses:{
                 type:String,
-                description:'Card type'
+                description:'Additional classes applied to .card'
             },
             bodyClasses:{
                 type: String | Array,
                 required:false,
                 default:()=>[],
-                description: 'Additional classes applied to card-body'
+                description: 'Additional classes applied to .card-body'
             },
             headerClasses:{
                 type: String | Array,

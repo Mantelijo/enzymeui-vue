@@ -148,7 +148,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     .collapse-holder{
         overflow: hidden;
         transition: height 200ms ease;

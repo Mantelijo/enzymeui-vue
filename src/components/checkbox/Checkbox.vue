@@ -89,12 +89,6 @@ import {generateKey} from "../../helpers/helpers";
                 type:Boolean,
                 required:false,
                 description: 'If set to true - checkbox will appear as switch'
-            },
-            edgySwitch:{
-                type:Boolean,
-                required:false,
-                default:false,
-                description: 'If set to true - edgy styles will be used and border radius will be removed for switch',
             }
         },
 

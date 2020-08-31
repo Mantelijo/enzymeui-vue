@@ -27,7 +27,7 @@
             },
 
             closable:{
-                type:[Boolean, String],
+                type:Boolean,
                 default:false,
                 required:false,
                 description: 'If set to true - close button will be displayed and alert will be closable',
