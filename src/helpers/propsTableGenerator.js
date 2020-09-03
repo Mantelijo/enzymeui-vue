@@ -17,7 +17,9 @@ export function generateMdTable(VueComponent){
 
     // // Remove excluded
     headersExclude.forEach(h=>{
-        headers.splice(headers.indexOf(h), 1);
+        if(headers.indexOf(h) !== -1) {
+            headers.splice(headers.indexOf(h), 1);
+        }
     });
 
     headers.sort();
@@ -40,7 +42,7 @@ export function generateMdTable(VueComponent){
             // To html entities
             col = col.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
                 return '&#'+i.charCodeAt(0)+';';
-            });
+            }).replace(/\r\n|\n|\t|\s{2,}/gm, '');
 
             row.push(col);
         });

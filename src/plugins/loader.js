@@ -12,7 +12,9 @@ import DataTable from "../components/datatable/plugin";
 import '../directives/click-outside';
 
 import { createPopper } from '@popperjs/core';
-window.popper = createPopper;
+if(window !== undefined) {
+    window.popper = createPopper;
+}
 
 // Base components
 import Alert from "../components/alert/Alert";
@@ -41,7 +43,7 @@ import ChartsComponent from '../components/charts/Chart';
 
 import {generateMdTable} from "../helpers/propsTableGenerator";
 
-console.log(generateMdTable(Card));
+console.log(generateMdTable(Dropdown));
 
 export default {
     install(Vue){

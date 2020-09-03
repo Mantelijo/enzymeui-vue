@@ -47,7 +47,7 @@
                 required:false,
                 default:false,
                 description: `If set to true dropdown menu will be opened on button click,
-                but closing must be handled automatically by developer. Recommended way of
+                but closing must be handled manually by developer. Recommended way of
                 closing is adding ref (dropdownRefName) in parent and calling close function: this.$refs.dropdownRefName.close()
                 Useful when you want to display something like form, or other content that should be clickable but should not close
                 the dropdown menu`
