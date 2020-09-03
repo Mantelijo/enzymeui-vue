@@ -12,7 +12,7 @@ import DataTable from "../components/datatable/plugin";
 import '../directives/click-outside';
 
 import { createPopper } from '@popperjs/core';
-if(window !== undefined) {
+if(typeof window !== 'undefined') {
     window.popper = createPopper;
 }
 
