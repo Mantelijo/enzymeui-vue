@@ -816,7 +816,7 @@ $dropdown-border-radius:            $border-radius !default;
 $dropdown-border-width:             $border-width !default;
 $dropdown-inner-border-radius:      subtract($dropdown-border-radius, $dropdown-border-width) !default;
 $dropdown-divider-bg:               $gray-200 !default;
-$dropdown-divider-margin-y:         $nav-divider-margin-y !default;
+$dropdown-divider-margin-y:         0 !default;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
 
 $dropdown-link-color:               $gray-900 !default;
@@ -832,7 +832,7 @@ $dropdown-item-padding-y:           .25rem !default;
 $dropdown-item-padding-x:           1.5rem !default;
 
 $dropdown-header-color:             $gray-600 !default;
-$dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x !default;
+$dropdown-header-padding:           map_get($spacers, 2) $dropdown-item-padding-x !default;
 
 // Dropdown menu custom sizes
 $dropdown-menu-sizes: (

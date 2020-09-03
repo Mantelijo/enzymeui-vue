@@ -12,7 +12,8 @@
 
         @each $size, $width in $dropdown-menu-sizes{
             &.dropdown-menu-#{$size}{
-                width: $width;
+                max-width: $width;
+                width: 90vw;
             }
         }
 
