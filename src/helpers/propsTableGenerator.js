@@ -36,7 +36,7 @@ export function generateMdTable(VueComponent){
                     col = col.toString();
                     col = col.replace('function', '').replace('() { [native code] }', '');
                 }
-                col = col.toString();
+                col = col!==null? col.toString(): 'null';
             }
 
             // To html entities
