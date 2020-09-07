@@ -4,9 +4,10 @@
         Modals
     </template>
     <div>
-        <Modal :open="showModal" @backdrop-clicked="showModal = false">
+        <Modal :open="showModal" @exited-modal="showModal = false">
             <div class="modal-header">
                 <h5 class="modal-title m-0">Modal title</h5>
+
                 <button @click="showModal = false" type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="font-size-150">&times;</span>
                 </button>
@@ -18,7 +19,7 @@
                     Default slot content will be wrapped inside <code>.modal-content</code> which you can customize via <code>saas</code> files
                 </p>
                 <p>
-                    You have to manage the display of modals manually. <code>@backdrop-clicked</code> event will be emitted when user clicks on modal backdrop.
+                    You have to manage the display of modals manually. <code>@exited-modal</code> event will be emitted when user clicks on modal backdrop.
                     You can use this event to hide modal, or ignore the event if you want to manage display of modal in another way.
                 </p>
             </div>
@@ -27,14 +28,14 @@
                 <button type="button" class="btn btn-primary">This button does nothing</button>
             </div>
         </Modal>
-        <Modal class="modal-xl" :open="showModal2" @backdrop-clicked="showModal2 = false">
+        <Modal class="modal-xl" :open="showModal2" @exited-modal="showModal2 = false">
             <div class="modal-header"><h5 class="modal-title m-0">Real big one</h5></div>
             <div class="modal-body">
                 This is an xl modal with <code>.modal-xl</code> applied to <code>Modal</code> component
                 <div>Close it by clicking outside the modal content</div>
             </div>
         </Modal>
-        <Modal :open="showModal3" @backdrop-clicked="showModal3 = false">
+        <Modal :open="showModal3" @exited-modal="showModal3 = false" dialog-size="">
             <div class="modal-header">
                 <h5 class="modal-title m-0">Really long content one</h5>
                 <button @click="showModal3 = false" type="button" class="close" data-dismiss="modal" aria-label="Close">
