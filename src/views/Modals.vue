@@ -7,8 +7,7 @@
         <Modal :open="showModal" @exited-modal="showModal = false">
             <div class="modal-header">
                 <h5 class="modal-title m-0">Modal title</h5>
-
-                <button @click="showModal = false" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button @click="showModal = false" type="button" class="close outline-none" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="font-size-150">&times;</span>
                 </button>
             </div>
@@ -23,19 +22,19 @@
                     You can use this event to hide modal, or ignore the event if you want to manage display of modal in another way.
                 </p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer border-0">
                 <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal" @click="showModal = false">Close Modal</button>
                 <button type="button" class="btn btn-primary">This button does nothing</button>
             </div>
         </Modal>
-        <Modal class="modal-xl" :open="showModal2" @exited-modal="showModal2 = false">
+        <Modal class="modal-xl" :open="showModal2" @exited-modal="showModal2 = false" :dialog-size="'modal-xl'">
             <div class="modal-header"><h5 class="modal-title m-0">Real big one</h5></div>
             <div class="modal-body">
                 This is an xl modal with <code>.modal-xl</code> applied to <code>Modal</code> component
                 <div>Close it by clicking outside the modal content</div>
             </div>
         </Modal>
-        <Modal :open="showModal3" @exited-modal="showModal3 = false" dialog-size="">
+        <Modal :open="showModal3" @exited-modal="showModal3 = false">
             <div class="modal-header">
                 <h5 class="modal-title m-0">Really long content one</h5>
                 <button @click="showModal3 = false" type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -54,9 +53,24 @@
                 Quisque molestie magna a libero volutpat pellentesque. Maecenas bibendum turpis nec nunc rhoncus, eu blandit ex cursus. Mauris quis volutpat mi. Curabitur quis accumsan risus. Aenean rutrum augue libero, sed laoreet sem consequat eu. Phasellus imperdiet porta ornare. Phasellus non pharetra felis. Fusce et luctus dui. Etiam mollis lacus at urna porta tempus. Nulla lobortis, sapien non malesuada auctor, tortor tellus porttitor elit, in placerat eros lacus ut leo. Morbi id mattis nibh.
             </div>
         </Modal>
-        <Button class="mr-3" @click="showModal = !showModal">Click me</Button>
-        <Button class="mr-3" @click="showModal3 = !showModal3">Modal with really long content</Button>
-        <Button @click="showModal2 = !showModal2">Launch XL modal</Button>
+        <Modal :open="showModal4" dialog-size="modal-lg">
+            <div class="modal-body">
+                <div class="font-size-150 font-weight-bold text-center">
+                    Sign up
+                </div>
+                <div class="font-size-100 color-gray-600 text-center">
+                    And receive some awesome perks!
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </Modal>
+
+        <Button class="mr-3 my-3" @click="showModal = !showModal">Click me</Button>
+        <Button class="mr-3 my-3" @click="showModal3 = !showModal3">Modal with really long content</Button>
+        <Button class="mr-3 my-3"  @click="showModal2 = !showModal2">Launch XL modal</Button>
+        <Button class="mr-3 my-3"  @click="showModal4 = !showModal4">Registration modal</Button>
     </div>
 </Card>
 </template>
@@ -70,11 +84,11 @@
                 showModal:false,
                 showModal2:false,
                 showModal3:false,
+                showModal4:false,
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
-
 </style>

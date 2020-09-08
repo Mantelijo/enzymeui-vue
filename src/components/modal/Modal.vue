@@ -73,7 +73,6 @@
                         'modal-xl',
                     ].indexOf(val) !== -1
                 },
-                default:'',
                 description: 'Custom optional size classes for .modal-dialog. Available ones: modal-sm, modal-lg, modal-xl.',
             }
         },
@@ -93,7 +92,6 @@
                 this.showModal = false;
 
                 setTimeout(()=>{
-                    this.internalOpen = false;
                     this.$emit('exited-modal', true);
                 }, durationFloat)
             }
@@ -117,8 +115,10 @@
                 else{
                     document.body.classList.remove('modal-open');
 
+                    this.internalOpen = false;
+
                     // Animate exit
-                    this.exitModal();
+                    this.$nextTick(this.exitModal);
                 }
             }
         },
