@@ -32,7 +32,7 @@
  *      open prop
  */
 
-import {getTransitionDurationInMs} from "@/helpers/helpers";
+import {getTransitionDurationInMs} from "../../helpers/helpers";
 
     export default {
         name: "Modal",
