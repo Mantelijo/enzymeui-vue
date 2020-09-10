@@ -5,7 +5,7 @@
             ref="modal"
             class="modal d-block fade"
             tabindex="-1"
-            @click.self="closeModal"
+            @click.self="backdropClick"
             @keydown.esc="closeModal">
             <div :class="[
                 'modal-dialog',
@@ -48,7 +48,7 @@ import {getTransitionDurationInMs} from "../../helpers/helpers";
         props:{
             open:{
                 type:Boolean,
-                required:true,
+                required:false,
                 default:false,
                 description: 'Control for showing modal. If set to true - modal will be displayed. If false - modal will be hidden.'
             },
@@ -75,10 +75,22 @@ import {getTransitionDurationInMs} from "../../helpers/helpers";
                     ].indexOf(val) !== -1
                 },
                 description: 'Custom optional size classes for .modal-dialog. Available ones: modal-sm, modal-lg, modal-xl.',
+            },
+            disableBackdropExit:{
+                type:Boolean,
+                required:false,
+                default:false,
+                description: 'If set to true - modal will not be closed when user clicks on modal backdrop. Modal visibility must be managed manually by open prop or openModal/closeModal methods',
             }
         },
 
         methods:{
+            backdropClick(){
+                if(!this.disableBackdropExit){
+                    this.closeModal();
+                }
+            },
+
             closeModal(){
                 document.body.classList.remove('modal-open');
 
