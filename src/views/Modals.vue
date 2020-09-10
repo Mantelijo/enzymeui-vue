@@ -4,7 +4,7 @@
         Modals
     </template>
     <div>
-        <Modal :open="showModal" @exited-modal="showModal = false">
+        <Modal :open="showModal" @closed="showModal = false">
             <div class="modal-header">
                 <h5 class="modal-title m-0">Modal title</h5>
                 <button @click="showModal = false" type="button" class="close outline-none" data-dismiss="modal" aria-label="Close">
@@ -18,7 +18,7 @@
                     Default slot content will be wrapped inside <code>.modal-content</code> which you can customize via <code>saas</code> files
                 </p>
                 <p>
-                    You have to manage the display of modals manually. <code>@exited-modal</code> event will be emitted when user clicks on modal backdrop.
+                    You have to manage the display of modals manually. <code>@closed</code> event will be emitted when user clicks on modal backdrop.
                     You can use this event to hide modal, or ignore the event if you want to manage display of modal in another way.
                 </p>
             </div>
@@ -27,14 +27,14 @@
                 <button type="button" class="btn btn-primary">This button does nothing</button>
             </div>
         </Modal>
-        <Modal class="modal-xl" :open="showModal2" @exited-modal="showModal2 = false" :dialog-size="'modal-xl'">
+        <Modal class="modal-xl" :open="showModal2" @closed="showModal2 = false" :dialog-size="'modal-xl'">
             <div class="modal-header"><h5 class="modal-title m-0">Real big one</h5></div>
             <div class="modal-body">
                 This is an xl modal with <code>.modal-xl</code> applied to <code>Modal</code> component
                 <div>Close it by clicking outside the modal content</div>
             </div>
         </Modal>
-        <Modal :open="showModal3" @exited-modal="showModal3 = false">
+        <Modal :open="showModal3" @closed="showModal3 = false">
             <div class="modal-header">
                 <h5 class="modal-title m-0">Really long content one</h5>
                 <button @click="showModal3 = false" type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -53,24 +53,40 @@
                 Quisque molestie magna a libero volutpat pellentesque. Maecenas bibendum turpis nec nunc rhoncus, eu blandit ex cursus. Mauris quis volutpat mi. Curabitur quis accumsan risus. Aenean rutrum augue libero, sed laoreet sem consequat eu. Phasellus imperdiet porta ornare. Phasellus non pharetra felis. Fusce et luctus dui. Etiam mollis lacus at urna porta tempus. Nulla lobortis, sapien non malesuada auctor, tortor tellus porttitor elit, in placerat eros lacus ut leo. Morbi id mattis nibh.
             </div>
         </Modal>
-        <Modal :open="showModal4" dialog-size="modal-lg">
-            <div class="modal-body">
+        <Modal ref="modal4" :open="showModal4">
+            <div class="modal-body p-5">
                 <div class="font-size-150 font-weight-bold text-center">
                     Sign up
                 </div>
                 <div class="font-size-100 color-gray-600 text-center">
                     And receive some awesome perks!
                 </div>
-                <div>
-
+                <div class="mt-4">
+                    <form>
+                        <Input placeholder="John Doe">
+                            <template #label>Full name</template>
+                        </Input>
+                        <Input placeholder="john@doe.com">
+                            <template #label>Email address</template>
+                        </Input>
+                        <Input placeholder="Password" type="password">
+                            <template #label>Account password</template>
+                        </Input>
+                        <div class=" mt-4 d-flex flex-row justify-content-between align-items-center">
+                            <Checkbox>
+                                <span class="font-size-75">I Accept to our terms and conditions</span>
+                            </Checkbox>
+                            <Button>Register now</Button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </Modal>
 
-        <Button class="mr-3 my-3" @click="showModal = !showModal">Click me</Button>
-        <Button class="mr-3 my-3" @click="showModal3 = !showModal3">Modal with really long content</Button>
-        <Button class="mr-3 my-3"  @click="showModal2 = !showModal2">Launch XL modal</Button>
-        <Button class="mr-3 my-3"  @click="showModal4 = !showModal4">Registration modal</Button>
+        <Button class="mr-3 my-3" @click="showModal = true">Click me</Button>
+        <Button class="mr-3 my-3" @click="showModal3 = true">Modal with really long content</Button>
+        <Button class="mr-3 my-3"  @click="showModal2 = true">Launch XL modal</Button>
+        <Button class="mr-3 my-3"  @click="$refs.modal4.openModal()">Registration modal</Button>
     </div>
 </Card>
 </template>

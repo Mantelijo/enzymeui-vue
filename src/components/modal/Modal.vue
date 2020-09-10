@@ -3,10 +3,10 @@
         <div class="modal-backdrop show"></div>
         <div
             ref="modal"
-            :class="['modal', 'fade', 'd-block', {'show':showModal} ]"
+            class="modal d-block fade"
             tabindex="-1"
-            @click.self="exitModal"
-            @keydown.esc="exitModal">
+            @click.self="closeModal"
+            @keydown.esc="closeModal">
             <div :class="[
                 'modal-dialog',
                 {'modal-dialog-scrollable':dialogScrollable},
@@ -20,27 +20,28 @@
     </div>
 </template>
 
-<script>
-    /**
-     *  Use these bootstrap classes when creating modals for structure:
-     *  .modal-header
-     *  .modal-body
-     *  .modal-header
-     *  Emitted events:
-     *      @exited-modal(true) - is emitted when modal is closed
-     *  Control of display:
-     *      open prop
-     */
+<script>/**
+ *  Use these bootstrap classes when creating modals:
+ *  .modal-header
+ *  .modal-body
+ *  .modal-header
+ *  Emitted events:
+ *      @closed(true) - is emitted when modal is closed by either escape button or click on backdrop.
+ *      This event should be implemented in order to listen to modal state changes and set :open prop to false.
+ *  Control of display:
+ *      open prop
+ */
+
+import {getTransitionDurationInMs} from "@/helpers/helpers";
+
     export default {
         name: "Modal",
 
         data(){
             return{
-                // This handles the modal transition animation
-                showModal:false,
-
                 // Internal component representation of open prop. Defers value of prop on exit in order to show animation
                 internalOpen: false,
+                transitionDuration: null,
             }
         },
 
@@ -78,47 +79,48 @@
         },
 
         methods:{
-            exitModal(){
+            closeModal(){
+                document.body.classList.remove('modal-open');
+
                 // Calculate transition duration to show exit animation
-                let duration = window.getComputedStyle(this.$refs.modal).transitionDuration;
-                let durationFloat = 0;
-                if(typeof duration === 'string'){
-                    durationFloat = parseFloat(duration);
-                    if(duration.indexOf('ms') === -1 && duration.indexOf('s') !== -1){
-                        durationFloat *= 1000;
-                    }
+                if(this.transitionDuration === null) {
+                    this.transitionDuration = getTransitionDurationInMs(this.$refs.modal);
                 }
 
-                this.showModal = false;
+                // Transition classes
+                this.$refs.modal.classList.remove('show');
 
+                // Allow for transition to finish
                 setTimeout(()=>{
-                    this.$emit('exited-modal', true);
-                }, durationFloat)
-            }
+                    this.$emit('closed', true);
+                    this.internalOpen = false;
+                }, this.transitionDuration)
+            },
+
+            openModal(){
+                this.internalOpen = true;
+
+                // Add scroll lock for body when modal is open
+                document.body.classList.add('modal-open');
+
+                this.$nextTick(()=>{
+                    // Focus modal on open in order to make esc button work
+                    this.$refs.modal.focus();
+
+                    // Transition classes
+                    this.$refs.modal.classList.add('show');
+                });
+            },
+
         },
 
         watch:{
             open(val){
                 if(val === true){
-                    // Add scroll lock for body when modal is open
-                    document.body.classList.add('modal-open');
-
-                    this.internalOpen = val;
-
-                    this.$nextTick(()=>{
-                        // Animation kicks in here once modal is rendered in dom and show class is added
-                        this.showModal = true;
-                        // Focus modal on open in order to make esc button work
-                        this.$refs.modal.focus();
-                    });
+                    this.openModal();
                 }
                 else{
-                    document.body.classList.remove('modal-open');
-
-                    this.internalOpen = false;
-
-                    // Animate exit
-                    this.$nextTick(this.exitModal);
+                    this.closeModal();
                 }
             }
         },

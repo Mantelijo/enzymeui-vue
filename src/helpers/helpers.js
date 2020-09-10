@@ -12,3 +12,14 @@ export const ascSortReturn = (a, b)=>{
     return a > b? 1:-1;
 };
 
+export const getTransitionDurationInMs = (el) =>{
+    let duration = window.getComputedStyle(el).transitionDuration;
+    let durationFloat = 0;
+    if(typeof duration === 'string'){
+        durationFloat = parseFloat(duration);
+        if(duration.indexOf('ms') === -1 && duration.indexOf('s') !== -1){
+            durationFloat *= 1000;
+        }
+    }
+    return durationFloat;
+}
