@@ -103,7 +103,6 @@
 
             // Position dropdown menu correctly when it's opened
             position(){
-                console.log(this.popperConfig);
                 if(this.closed === false) {
                     let yOffset = this.noOffset? 0:this.yOffset;
                     let xOffset = 0;

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <transition name="shift" mode="out-in">C
+        <transition name="nav" mode="out-in">C
             <slot name="default" v-if="active"></slot>
         </transition>
     </div>
@@ -33,18 +33,17 @@
     }
 </script>
 
-<style scoped>
-    .shift-enter{
-        transform: translateX(-20px);
+<style>
+    .nav-enter{
         opacity: 0;
     }
-    .shift-enter-active{
+    .nav-enter-active{
         transition: all 300ms;
     }
-    .shift-leave-active{
-        transition: transform 0s;
+    .nav-leave-active{
+        opacity: 1;
     }
-    .shift-leave-to{
-        transform: translateX(1000px);
+    .nav-leave-to{
+        opacity: 0;
     }
 </style>

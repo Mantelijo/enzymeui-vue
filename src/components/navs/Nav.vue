@@ -1,4 +1,4 @@
-<template>
+    <template>
     <div :class="[{'nav-column':navColumn}]">
         <div :class="['nav', 'nav-tabs', {'nav-fill': navFill}, {'flex-column':navColumn}]">
             <div

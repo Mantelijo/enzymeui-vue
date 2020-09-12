@@ -67,6 +67,7 @@ const ToastNotifications = {
                  */
                 optionsTransformers(){
                     return {
+                        // Timeout value should be integer
                         timeout(val){
                             if(typeof val === 'string'){
                                 return parseInt(val);
@@ -98,7 +99,10 @@ const ToastNotifications = {
                 // Removes toast notification
                 // OptionsObject is options object provided in this.add()
                 remove(optionsObject){
-                    this.all = this.all.filter((options)=>options !== optionsObject);
+                    this.all = this.all.filter((options)=> {
+                        console.log(options === optionsObject);
+                        return options !== optionsObject
+                    });
                     this.$nextTick(this.updateRerenderTime);
                 },
 
@@ -108,8 +112,8 @@ const ToastNotifications = {
                 },
 
                 updateRerenderTime(){
-                    // Prevent key regeneration for multiple times per second
-                    if(this.lastRenderKeyTime + 1000 < (new Date).getTime()) {
+                    // Prevent key regeneration for multiple times per second except when it was the last item
+                    if(this.lastRenderKeyTime + 1000 < (new Date).getTime() || this.all.length === 0) {
                         this.lastRenderKeyTime = generateKey();
                     }
                 }
