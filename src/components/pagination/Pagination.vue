@@ -43,13 +43,13 @@
                 type:Number,
                 required:true,
                 default:1,
-                description: 'Total number of pages'
+                description: 'Total number of pages.'
             },
             value:{
                 type:Number,
                 required:false,
                 default:1,
-                description: 'Currently selected page'
+                description: 'Currently selected page number.'
             },
             size:{
                 type:String,
@@ -62,25 +62,25 @@
                     // Disable errors on non provided values
                     return true;
                 },
-                description: 'Sized bootstrap pagination: lg or sm for large and small respectively',
+                description: 'Sized bootstrap pagination: lg or sm for large and small respectively.',
             },
             threshold:{
                 type:Number,
                 default:1,
                 required:false,
-                description: 'Threshold defines how many page buttons should be shown around the current page button when it is in the middle',
+                description: 'Threshold defines how many page buttons should be shown around the current page button when it is in the middle.',
             },
             showFirstPage:{
                 type:Boolean,
                 required:false,
-                default:true,
-                description: 'If set to true first page button will be shown always',
+                default:false,
+                description: 'If set to true first page button will be shown always.',
             },
             showLastPage:{
                 type:Boolean,
                 required:false,
-                default:true,
-                description: 'If set to true last page button will be shown always',
+                default:false,
+                description: 'If set to true last page button will be shown always.',
             },
             disabledPages:{
                 type:Array,
@@ -89,7 +89,7 @@
                 validator(val){
                     return Array.isArray(val);
                 },
-                description: 'Array of page numbers which should be disabled',
+                description: 'Array of page numbers which should be disabled.',
             }
         },
 
@@ -167,7 +167,6 @@
         watch:{
             // When current page is changed we want to recalculate middle pages
             value(val){
-                console.log("Reacalc called", val);
                 this.$nextTick(this.recalculateMiddle);
             }
         },

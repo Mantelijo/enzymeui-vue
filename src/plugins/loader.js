@@ -43,7 +43,7 @@ import ChartsComponent from '../components/charts/Chart';
 
 import {generateMdTable} from "../helpers/propsTableGenerator";
 
-console.log(generateMdTable(ProgressBar));
+console.log(generateMdTable(Pagination));
 
 export default {
     install(Vue){
