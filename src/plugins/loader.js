@@ -43,7 +43,7 @@ import ChartsComponent from '../components/charts/Chart';
 
 import {generateMdTable} from "../helpers/propsTableGenerator";
 
-console.log(generateMdTable(Pagination));
+console.log(generateMdTable(SidebarPlugin));
 
 export default {
     install(Vue){

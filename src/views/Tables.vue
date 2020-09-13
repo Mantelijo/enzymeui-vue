@@ -113,7 +113,7 @@
                 dataTableHeaders: [
                     null,
                     'Name',
-                    'Surname',
+                    'Email',
                     'Phone',
                     'Website',
                     'Status',

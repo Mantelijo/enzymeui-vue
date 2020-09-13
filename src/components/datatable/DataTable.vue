@@ -85,7 +85,7 @@
             data:{
                 type:Array,
                 required:true,
-                description: 'Array of Array (rows x cols) data points that will be rendered as table rows. Array elements can be of any type, they will be provided as scoped slot prop in row slot.',
+                description: 'Array of Arrays (rows x cols) data points that will be rendered as table rows. Array elements can be of any type, they will be provided as scoped slot prop in row slot.',
             },
             headers:{
                 type:Array,
