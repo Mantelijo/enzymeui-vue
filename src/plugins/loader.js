@@ -43,7 +43,7 @@ import ChartsComponent from '../components/charts/Chart';
 
 import {generateMdTable} from "../helpers/propsTableGenerator";
 
-console.log(generateMdTable(Radio));
+console.log(generateMdTable(ProgressBar));
 
 export default {
     install(Vue){
