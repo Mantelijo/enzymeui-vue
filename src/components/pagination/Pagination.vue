@@ -3,7 +3,7 @@
 
         <div class="page-item" @click="previous" v-if="$slots['previous']">
             <span class="page-link">
-                <slot name="previous"></slot>
+                <slot name="previous">prev</slot>
             </span>
         </div>
 
@@ -28,7 +28,7 @@
         </div>
         <div class="page-item" @click="next" v-if="$slots['next']">
             <span class="page-link">
-                <slot name="next"></slot>
+                <slot name="next">next</slot>
             </span>
         </div>
     </div>
