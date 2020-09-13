@@ -70,17 +70,17 @@
                 required:false,
                 description: 'Threshold defines how many page buttons should be shown around the current page button when it is in the middle.',
             },
-            showFirstPage:{
+            dontShowFirstPage:{
                 type:Boolean,
                 required:false,
                 default:false,
-                description: 'If set to true first page button will be shown always.',
+                description: 'If set to true first page button will be hidden.',
             },
-            showLastPage:{
+            dontShowLastPage:{
                 type:Boolean,
                 required:false,
                 default:false,
-                description: 'If set to true last page button will be shown always.',
+                description: 'If set to true last page button will be hidden.',
             },
             disabledPages:{
                 type:Array,
@@ -103,12 +103,12 @@
         computed:{
             // First block for pagination
             showFirst(){
-                return !this.displayPages.includes(1) && this.showFirstPage;
+                return !this.displayPages.includes(1) && !this.dontShowFirstPage;
             },
 
             // Last block for pagination
             showLast(){
-                return !this.displayPages.includes(this.pages) && this.showLastPage;
+                return !this.displayPages.includes(this.pages) && !this.dontShowLastPage;
             },
 
             currentPage(){
