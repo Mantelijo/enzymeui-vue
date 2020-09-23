@@ -12,6 +12,7 @@ export const ascSortReturn = (a, b)=>{
     return a > b? 1:-1;
 };
 
+// Does exactly what the title says
 export const getTransitionDurationInMs = (el) =>{
     let duration = window.getComputedStyle(el).transitionDuration;
     let durationFloat = 0;

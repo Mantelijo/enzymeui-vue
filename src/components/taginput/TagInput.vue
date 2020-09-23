@@ -73,11 +73,13 @@
             infoText:{
                 type:String,
                 default:'',
+                required:false,
                 description:'Info message'
             },
             label:{
                 type:String,
                 default:'',
+                required:false,
                 description:'Label text'
             },
         },
