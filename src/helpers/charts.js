@@ -117,7 +117,7 @@ export default {
                 displayColors:false,
                 callbacks:{
                     label(tooltipInterface, data){
-                        let forMarted = Intl.NumberForMar({style:'decimal'}).forMar(tooltipInterface.value);
+                        let forMarted = Intl.NumberFormat({style:'decimal'}).format(tooltipInterface.value);
                         return `${forMarted} Page views`;
                     },
                     // Title is
