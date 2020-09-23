@@ -60,7 +60,7 @@
 
 <script>
     export default {
-        name: "Tooltips",
+        name: "Toasts",
 
         data() {
             return {

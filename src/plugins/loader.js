@@ -43,7 +43,8 @@ import ChartsComponent from '../components/charts/Chart';
 
 import {generateMdTable} from "../helpers/propsTableGenerator";
 
-console.log(generateMdTable(TagInput));
+import tooltip from '../components/tooltip/Tooltip.vue';
+console.log(generateMdTable(tooltip));
 
 export default {
     install(Vue){
