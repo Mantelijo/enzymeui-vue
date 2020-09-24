@@ -6,7 +6,8 @@
             align-items: center;
 
             .breadcrumb-divider{
-                stroke:$breadcrumb-divider-color;
+                // Set to inherit color from current scope
+                stroke:currentColor;
             }
         }
 

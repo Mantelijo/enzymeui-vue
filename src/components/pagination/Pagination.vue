@@ -1,7 +1,7 @@
 <template>
     <div :class="['pagination', size.length>0?`pagination-${size}`:'']">
 
-        <div class="page-item" @click="previous" v-if="$slots['previous']">
+        <div class="page-item" @click="previous">
             <span class="page-link">
                 <slot name="previous">prev</slot>
             </span>
@@ -26,7 +26,7 @@
         <div class="page-item" v-if="this.showLast">
             <span @click="change(pages)" class="page-link">{{pages}}</span>
         </div>
-        <div class="page-item" @click="next" v-if="$slots['next']">
+        <div class="page-item" @click="next">
             <span class="page-link">
                 <slot name="next">next</slot>
             </span>
