@@ -44,7 +44,7 @@ import ChartsComponent from '../components/charts/Chart';
 import {generateMdTable} from "../helpers/propsTableGenerator";
 
 import tooltip from '../components/tooltip/Tooltip.vue';
-console.log(generateMdTable(tooltip));
+console.log(generateMdTable(Breadcrumb));
 
 export default {
     install(Vue){

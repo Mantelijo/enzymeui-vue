@@ -8,7 +8,7 @@
                 <component
                     :is="getItemComponent(item)"
                     :[href(item)]="item.link"
-                    class="breadcrumb-link"
+                    :class="['breadcrumb-link', ...linkClasses]"
                 >
                     {{item.page}}
                     <!-- Separator -->
@@ -44,6 +44,11 @@
                     return true;
                 },
                 description: 'Array of objects which contain keys page for page name and link (optional) and active to indicate if page should be marked as active (optional)',
+            },
+            linkClasses: {
+                type: String | Array,
+                required: false,
+                description: 'Additional classes that will be provided to .breadcrumb-link elements'
             },
         },
 
