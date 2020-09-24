@@ -10,23 +10,23 @@
 
             <!-- Sidebar menu items -->
             <ul class="nav flex-column sidebar-items">
-                <li
-                    :class="['nav-item', 'sidebar-item']"
-                    v-for="(link,i) in links"
-                    :key="i"
-                >
-                    <!-- Simple link to route -->
-                    <span
-                        v-if="link.children === undefined"
-                        :class="['sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === link.path}]"
-                        @click="navigateToPath(link.path, $event)"
+                    <li
+                            :class="['nav-item', 'sidebar-item']"
+                            v-for="(link,i) in links"
+                            :key="i"
                     >
+                        <!-- Simple link to route -->
+                        <span
+                                v-if="link.children === undefined"
+                                :class="['sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === link.path}]"
+                                @click="navigateToPath(link.path, $event)"
+                        >
                         <div v-if="link.icon !== undefined" v-html="link.icon"></div>
                         <div class="ml-3">{{link.name}}</div>
                     </span>
 
-                    <!-- Link with children links which will be placed in collapse -->
-                    <div v-else >
+                        <!-- Link with children links which will be placed in collapse -->
+                        <div v-else >
                         <span class="sidebar-link d-flex flex-row align-items-center w-100 h-100" v-collapse="link.collapseId">
                             <div v-if="link.icon !== undefined" v-html="link.icon"></div>
                             <div class="ml-3 d-flex align-items-center">
@@ -37,23 +37,23 @@
                                 </svg>
                             </div>
                         </span>
-                        <Collapse :id="link.collapseId" @open="links[i].collapseOpen = true" @close="links[i].collapseOpen = false">
-                            <div
-                                v-for="child in link.children"
-                                :class="['pl-5 sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === child.path}]"
-                                @click="navigateToPath(child.path, $event)"
-                            >
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-default" width="10" height="10" viewBox="0 0 24 24" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="12" cy="12" r="9" />
-                                    </svg>
+                            <Collapse :id="link.collapseId" @open="links[i].collapseOpen = true" @close="links[i].collapseOpen = false">
+                                <div
+                                        v-for="child in link.children"
+                                        :class="['pl-5 sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === child.path}]"
+                                        @click="navigateToPath(child.path, $event)"
+                                >
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-default" width="10" height="10" viewBox="0 0 24 24" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="9" />
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">{{child.name}}</div>
                                 </div>
-                                <div class="ml-3">{{child.name}}</div>
-                            </div>
-                        </Collapse>
-                    </div>
-                </li>
-            </ul>
+                            </Collapse>
+                        </div>
+                    </li>
+                </ul>
         </Sidebar>
         <div :class="['app-container', {'sidebar-open':!sidebarClosed}]">
             <!-- This will be shown only on mobile as black transparent clickable content overlay. See src/assets/scss/core/_sidebar.scss -->

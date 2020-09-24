@@ -3,7 +3,7 @@
         <ol class="breadcrumb">
             <li
                 :class="['breadcrumb-item', {'active':item.active}]"
-                v-for="item in items"
+                v-for="(item, key) in items"
             >
                 <component
                     :is="getItemComponent(item)"
@@ -11,6 +11,11 @@
                     class="breadcrumb-link"
                 >
                     {{item.page}}
+                    <!-- Separator -->
+                    <svg v-if="key+1 !== numberOfItems" xmlns="http://www.w3.org/2000/svg" class="breadcrumb-divider" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <polyline points="9 6 15 12 9 18"></polyline>
+                    </svg>
                 </component>
             </li>
         </ol>
@@ -40,6 +45,12 @@
                 },
                 description: 'Array of objects which contain keys page for page name and link (optional) and active to indicate if page should be marked as active (optional)',
             },
+        },
+
+        computed:{
+            numberOfItems(){
+                return this.items.length;
+            }
         },
 
         methods:{

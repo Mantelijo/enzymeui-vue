@@ -73,8 +73,7 @@ $scrollbar-size:0.6rem;
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/card";
-// Bootstrap breadcrumb is not used
-//@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/breadcrumb";
 @import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/jumbotron";
