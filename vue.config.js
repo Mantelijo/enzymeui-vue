@@ -13,5 +13,7 @@ module.exports = {
     filenameHashing:false,
     assetsDir: 'assets/',
     lintOnSave: false,
+
+    // This determines where the asses
     publicPath:'/',
 };

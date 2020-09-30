@@ -5,7 +5,7 @@
         <!-- Sidebar -->
         <Sidebar>
             <div class="sidebar-brand d-flex justify-content-center align-items-center">
-                <b class="font-size-150 logo-text">Templatium</b>
+                <b class="font-size-150 logo-text">Enzyme UI</b>
             </div>
 
             <!-- Sidebar menu items -->
