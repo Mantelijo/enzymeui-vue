@@ -18,6 +18,7 @@
                     {'form-control-lg': size === 'lg'},
                     {'form-control-sm': size === 'sm'},
                 ]"
+                 :type="type"
                  :placeholder="placeholder"
                  :value="value"
                  v-on="events">
