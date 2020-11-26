@@ -18,7 +18,7 @@
                                     ['selected', 'status'].indexOf(key.toString().toLowerCase()) !== -1?'d-flex justify-content-center':'',
                                 ]"
                                 :class="[
-                                    {'bg-info-light':dataTable[rowKey].Selected===true},
+                                    {'bg-gray-200':dataTable[rowKey].Selected===true},
                                 ]">
                             <Badge v-if="key.toString().toLowerCase() === 'status' || key === 4" pill :type="getPillByStatus(cellData)">
                                 {{cellData}}
@@ -68,7 +68,7 @@
                                     ['selected', 'status'].indexOf(key.toString().toLowerCase()) !== -1?'d-flex justify-content-center':'',
                                 ]"
                                 :class="[
-                                    {'bg-info-light':dataTable[rowKey].Selected===true},
+                                    {'bg-gray-200':dataTable[rowKey].Selected===true},
                                 ]">
                             <Badge v-if="key.toString().toLowerCase() === 'status' || key === 4" pill :type="getPillByStatus(cellData)">
                                 {{cellData}}

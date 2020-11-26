@@ -1,8 +1,6 @@
 <template>
     <div>
-        <transition name="nav" mode="out-in">C
-            <slot name="default" v-if="active"></slot>
-        </transition>
+        <slot name="default" v-if="active"></slot>
     </div>
 </template>
 

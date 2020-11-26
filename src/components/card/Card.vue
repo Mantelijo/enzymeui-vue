@@ -18,19 +18,19 @@
         props:{
             cardClasses:{
                 type:String,
-                description:'Additional classes applied to .card'
+                description:'Additional classes applied to .card container.'
             },
             bodyClasses:{
                 type: String | Array,
                 required:false,
                 default:()=>[],
-                description: 'Additional classes applied to .card-body'
+                description: 'Additional classes applied to .card-body.'
             },
             headerClasses:{
                 type: String | Array,
                 required:false,
                 default:()=>[],
-                description: 'Additional classes applied to card-header'
+                description: 'Additional classes applied to .card-header.'
             },
         }
     }
