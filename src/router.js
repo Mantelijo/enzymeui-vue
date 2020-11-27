@@ -21,6 +21,7 @@ import Badges from "./views/Badges";
 import Pagination from "./views/Pagination";
 import Progress from "./views/Progress";
 import Modals from "./views/Modals";
+import FileDropzone from "@/views/FileDropzone";
 
 
 const router = new VueRouter({
@@ -98,6 +99,10 @@ const router = new VueRouter({
         {
             path:'/modals',
             component: Modals,
+        },
+        {
+            path:'/dropzone',
+            component: FileDropzone,
         },
     ],
 });

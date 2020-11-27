@@ -24,3 +24,25 @@ export const getTransitionDurationInMs = (el) =>{
     }
     return durationFloat;
 }
+
+// Formats bytes with size string
+export const formatFileSize = (bytes) =>{
+    let prefixes = [
+        'b',
+        'kb',
+        'mb',
+        'gb',
+        'tb',
+    ];
+
+    let multiplier = 1024;
+    let currentPrefix = 0;
+    let size = bytes;
+    let precision = 2;
+    while (bytes > multiplier && prefixes[currentPrefix] !== 'tb'){
+        bytes /=multiplier;
+        size = bytes;
+        currentPrefix++;
+    }
+    return `${Math.round(size*Math.pow(10, precision))/Math.pow(10, precision)} ${prefixes[currentPrefix]}`;
+}

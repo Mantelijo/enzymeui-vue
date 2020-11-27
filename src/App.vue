@@ -281,6 +281,10 @@
                                 name:'Tooltips',
                                 path:'/tooltips',
                             },
+                            {
+                                name:'File Dropzone',
+                                path:'/dropzone',
+                            },
                         ]
                     },
                     {

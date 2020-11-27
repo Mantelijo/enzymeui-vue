@@ -37,6 +37,7 @@ import Accordion from "../components/accordion/Accordion";
 import AccordionItem from "../components/accordion/AccordionItem";
 import Dropdown from "../components/dropdown/Dropdown";
 import Navbar from "../components/navbar/Navbar";
+import Dropzone from "../components/dropzone/Dropzone";
 
 // Charts
 import ChartsComponent from '../components/charts/Chart';
@@ -66,6 +67,7 @@ export default {
         Vue.component(Dropdown.name, Dropdown);
         Vue.component(ChartsComponent.name, ChartsComponent);
         Vue.component(Navbar.name, Navbar);
+        Vue.component(Dropzone.name, Dropzone);
 
         // Plugins
         Vue.use(SidebarPlugin);
