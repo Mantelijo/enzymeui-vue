@@ -1,5 +1,6 @@
 $dropzone-bg: $primary;
 
+
 .dropzone{
     position: relative;
     border: 2px dashed $dropzone-bg;
@@ -11,11 +12,6 @@ $dropzone-bg: $primary;
 
     // Hide file input and make it occupy entire width
     input[type='file']{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        opacity: 0;
+        display: none;
     }
 }
