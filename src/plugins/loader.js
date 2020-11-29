@@ -41,9 +41,6 @@ import Dropzone from "../components/dropzone/Dropzone";
 
 // Charts
 import ChartsComponent from '../components/charts/Chart';
-import {generateMdTable} from "./../helpers/propsTableGenerator";
-
-console.log(generateMdTable(Dropzone));
 
 export default {
     install(Vue){
