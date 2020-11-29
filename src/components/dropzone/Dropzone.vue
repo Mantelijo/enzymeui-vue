@@ -2,7 +2,7 @@
     <div :class="['dropzone p-5 rounded', {'active':active}]" ref="dropzone" @click="browseFilesOnClick?clickFile():null;">
         <input type="file" multiple @change="handleFileInput" ref="fileInput" />
         <div class="dropzone-content">
-            <slot :items="files" :active="active" :remove-file="removeFile" :browse="clickFile">
+            <slot :files="files" :active="active" :remove-file-by-index="removeFileByIndex" :browse="clickFile">
                 <div class="d-flex flex-column align-items-center text-center">
                     <div v-if="!active">
                         <p class="cursor-pointer m-0">
@@ -12,7 +12,7 @@
                             <b>{{file.name}}</b>
                             &nbsp;
                             <span>{{formatFileSize(file.size)}}</span>
-                            <span @click="removeFile(key, $event)" class="hover-underline cursor-pointer">(remove)</span>
+                            <span @click="removeFileByIndex(key, $event)" class="hover-underline cursor-pointer">(remove)</span>
                         </div>
                     </div>
                     <div v-else>
@@ -114,7 +114,7 @@ export default {
         },
 
         // Remove file from current items list based on provided index
-        removeFile(index, event = null){
+        removeFileByIndex(index, event = null){
             if(event !== null){
                 event.stopPropagation();
             }
