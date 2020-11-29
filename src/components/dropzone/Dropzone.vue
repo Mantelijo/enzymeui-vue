@@ -12,9 +12,7 @@
                             <b>{{file.name}}</b>
                             &nbsp;
                             <span>{{formatFileSize(file.size)}}</span>
-                            &nbsp;
-
-                            <span @click="removeFile(key)" class="hover-underline cursor-pointer">(remove)</span>
+                            <span @click="removeFile(key, $event)" class="hover-underline cursor-pointer">(remove)</span>
                         </div>
                     </div>
                     <div v-else>
@@ -27,8 +25,14 @@
 </template>
 
 <script>
-import {formatFileSize} from "@/helpers/helpers";
+import {formatFileSize} from "./../../helpers/helpers";
 
+/**
+ * Dropzone allows you to drag and drop files which you can later use for uploading.
+ *
+ * properties:
+ *  browseFilesOnClick - Boolean value wh
+ */
 export default {
     name: "Dropzone",
 
@@ -87,6 +91,8 @@ export default {
         handleDrop(e){
             e.preventDefault();
 
+            this.active = false;
+
             let files = e.dataTransfer.files;
 
             if(files.length > 0){
@@ -108,9 +114,18 @@ export default {
         },
 
         // Remove file from current items list based on provided index
-        removeFile(index){
+        removeFile(index, event = null){
+            if(event !== null){
+                event.stopPropagation();
+            }
             this.files = this.files.filter(item=>this.files.indexOf(item) !== index);
         },
+    },
+
+    watch:{
+        files:function(files){
+            this.$emit('change', files);
+        }
     },
 
     mounted(){
