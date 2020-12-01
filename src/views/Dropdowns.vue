@@ -14,7 +14,7 @@
             </Dropdown>
             <Dropdown class="mr-5" :menu-classes="['p-4', 'dropdown-menu-lg']" manual-close ref="dropdown1">
                 <template slot="button">
-                    <Button type="secondary" still>Magical</Button>
+                    <Button type="secondary" still>Manually closable</Button>
                 </template>
                 <div>
                     <div class="mb-3">
@@ -32,7 +32,7 @@
             </Dropdown>
             <Dropdown class="mr-5">
                 <template slot="button">
-                    <Button type="primary" still>Dropdowns</Button>
+                    <Button type="success" still>With header</Button>
                 </template>
                 <div>
                     <div class="dropdown-header">Available dropdown menu sizes</div>

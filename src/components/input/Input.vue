@@ -1,5 +1,9 @@
 <template>
-  <div class="form-group">
+  <div :class="[
+        'form-group',
+        {'valid':invalid === false},
+        {'error':invalid === true},
+    ]">
     <div v-if="$slots['label'] || label.length>0" class="input-label">
       <slot name="label">
         <span v-if="label.length>0">{{ label }}</span>
@@ -81,7 +85,7 @@ export default {
     invalid: {
       type: Boolean,
       default: null,
-      description: 'Whether input is invalid and error message must be shown',
+      description: 'Whether input is invalid and error message must be shown. By default it is set to null so no styling is added.',
       required: false,
     },
     errorText: {

@@ -3,16 +3,6 @@
     transition: $transition-base !important;
     letter-spacing: 0.8px;
     font-weight: bold;
-    box-shadow: ($btn-normal-box-shadow);
-
-    &:hover{
-        transform: translateY(-1px);
-        @include box-shadow($btn-box-shadow);
-    }
-
-    &:active{
-        transform: translateY(0px);
-    }
 
     // Icons spacing
     svg{
@@ -38,20 +28,33 @@
         border-radius: 0px;
     }
 
-    @each $key, $val in $theme-colors{
-        &.btn-outline-lightbg-#{$key}{
-            background-color: change_color($val, $lightness:95%);
-            color:$val;
-            border-color:$val;
-            box-shadow: none;
+
+}
+
+
+@each $key, $val in $theme-colors{
+    &.btn-outline-light-bg-#{$key}{
+        background-color: change_color($val, $lightness:95%);
+        color:$val;
+        border-color:$val;
+
+        &:active, &:hover, &:focus{
+            background: $val;
+            color:color-yiq($val);
+        }
+
+        &:focus{
+            box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($val), $val, 15%), .5);
         }
     }
-
 }
 
 // Remove box shadow for outline
 @each $key, $val in $theme-colors{
     .btn-outline-#{$key}{
-        box-shadow: none;
+        &:focus{
+            background: $val;
+            color:color-yiq($val);
+        }
     }
 }

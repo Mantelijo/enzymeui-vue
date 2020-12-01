@@ -47,16 +47,16 @@
 
         <Card class="mt-5">
             <template v-slot:header>
-                Outline buttons
+                Outline light background buttons
             </template>
             <div class="showcase-wrapper">
-                <Button class="demo-btn" type="outline-lightbg-default">Default</Button>
-                <Button class="demo-btn" type="outline-lightbg-primary">Primary</Button>
-                <Button class="demo-btn" type="outline-lightbg-secondary">Secondary</Button>
-                <Button class="demo-btn" type="outline-lightbg-success">Success</Button>
-                <Button class="demo-btn" type="outline-lightbg-info">Info</Button>
-                <Button class="demo-btn" type="outline-lightbg-warning">Warning</Button>
-                <Button class="demo-btn" type="outline-lightbg-danger">Danger</Button>
+                <Button class="demo-btn" type="outline-light-bg-default">Default</Button>
+                <Button class="demo-btn" type="outline-light-bg-primary">Primary</Button>
+                <Button class="demo-btn" type="outline-light-bg-secondary">Secondary</Button>
+                <Button class="demo-btn" type="outline-light-bg-success">Success</Button>
+                <Button class="demo-btn" type="outline-light-bg-info">Info</Button>
+                <Button class="demo-btn" type="outline-light-bg-warning">Warning</Button>
+                <Button class="demo-btn" type="outline-light-bg-danger">Danger</Button>
             </div>
         </Card>
 

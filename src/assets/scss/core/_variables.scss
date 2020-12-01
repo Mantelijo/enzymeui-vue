@@ -89,7 +89,7 @@ $primary:       #703B9D !default;
 $secondary:     #F2522E !default;
 $success:       $green !default;
 $info:          $cyan !default;
-$warning:       #ffd369 !default;
+$warning: #ffcb49 !default;
 $danger:        #fe346e !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
@@ -424,10 +424,9 @@ $input-btn-font-family:       null !default;
 $input-btn-font-size:         0.875rem !default;
 $input-btn-line-height:       $line-height-base !default;
 
-$input-btn-focus-width:       0rem !default;
+$input-btn-focus-width:       0.25rem !default;
 $input-btn-focus-color:       rgba($component-active-bg, .25) !default;
-//$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
-$input-btn-focus-box-shadow:  none !default;
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 
 $input-btn-padding-y-sm:      .2rem !default;
 $input-btn-padding-x-sm:      .75rem !default;
@@ -525,7 +524,7 @@ $input-focus-bg:                        $input-bg !default;
 $input-focus-border-color:              $gray-400 !default;
 $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
-$input-focus-box-shadow:                1px 1px 4px -1px $gray-400 !default;
+$input-focus-box-shadow:                0px 0px 4px -1px $gray-500 !default;
 
 $input-placeholder-color:               $gray-600 !default;
 $input-plaintext-color:                 $body-color !default;
@@ -555,7 +554,7 @@ $form-grid-gutter-width:                10px !default;
 $form-group-margin-bottom:              1rem !default;
 
 $input-group-addon-color:               $input-color !default;
-$input-group-addon-bg:                  $gray-200 !default;
+$input-group-addon-bg:                  transparent !default;
 $input-group-addon-border-color:        $input-border-color !default;
 
 $custom-forms-transition:               background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
