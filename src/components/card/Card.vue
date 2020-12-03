@@ -6,7 +6,7 @@
         <div :class="['card-body', ...bodyClasses]">
             <slot></slot>
         </div>
-        <div class="card-footer" v-if="$slots['footer']">
+        <div :class="['card-footer', ...footerClasses]" v-if="$slots['footer']">
             <slot name="footer"></slot>
         </div>
     </div>
@@ -32,6 +32,12 @@
                 default:()=>[],
                 description: 'Additional classes applied to .card-header.'
             },
+            footerClasses:{
+                type: String | Array,
+                required:false,
+                default:()=>[],
+                description: 'Additional classes applied to .card-footer.'
+            }
         }
     }
 </script>

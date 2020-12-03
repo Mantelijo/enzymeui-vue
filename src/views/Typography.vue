@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col">
                 <blockquote class="blockquote">
-                    Default bootstrap typography system is used in pair with Nunito font
+                    Default bootstrap typography system is used in pair with NunitoSans font
                 </blockquote>
             </div>
         </div>

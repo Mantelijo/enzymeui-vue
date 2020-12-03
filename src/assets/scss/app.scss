@@ -1,19 +1,19 @@
 // Loading fonts
 @font-face {
-    font-family: 'Nunito';
-    src: url("./../fonts/Nunito-Regular.ttf");
+    font-family: 'NunitoSans';
+    src: url("./../fonts/NunitoSans-Regular.ttf");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
-    font-family: 'Nunito';
-    src: url("./../fonts/Nunito-Bold.ttf");
+    font-family: 'NunitoSans';
+    src: url("./../fonts/NunitoSans-Bold.ttf");
     font-style: normal;
     font-weight: bold;
 }
 
 *{
-    font-family: Nunito;
+    font-family: 'NunitoSans';
 }
 
 // Scrollbar

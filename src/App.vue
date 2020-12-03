@@ -217,6 +217,11 @@
                         icon: icons.Dashboard,
                     },
                     {
+                        name:'Analytics Dashboard',
+                        path:'/analytics-demo',
+                        icon: icons.ChartPie,
+                    },
+                    {
                         name:'Charts',
                         path:'/charts',
                         icon: icons.Charts,

@@ -137,6 +137,7 @@
     .select-dropdown-handle {
         color: $gray-500;
         transition: $transition-base;
+        margin-left: 0.5rem;
     }
 
     &.menu-open {

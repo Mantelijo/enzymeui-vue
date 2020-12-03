@@ -21,13 +21,18 @@ import Badges from "./views/Badges";
 import Pagination from "./views/Pagination";
 import Progress from "./views/Progress";
 import Modals from "./views/Modals";
-import FileDropzone from "@/views/FileDropzone";
+import FileDropzone from "./views/FileDropzone";
+import AnalyticsDashboard from "./views/AnalyticsDashboard";
 
 
 const router = new VueRouter({
     base: '/demo/',
     mode: 'history',
     routes:[
+        {
+            path:'/analytics-demo',
+            component:AnalyticsDashboard,
+        },
         {
             path:'/',
             component:Dashboard,
