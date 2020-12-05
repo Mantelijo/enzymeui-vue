@@ -90,5 +90,74 @@ export default {
           <path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a.9 .9 0 0 0 -1 -.8" />
           <path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5" />
         </svg>
-    `
+    `,
+    Facebook: `
+        <svg xmlns="http://www.w3.org/2000/svg"  width="${size}" height="${size}" class="stroke-default"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+        </svg>
+    `,
+    Twitter: `
+        <svg xmlns="http://www.w3.org/2000/svg"  width="${size}" height="${size}" class="stroke-default"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+        </svg>
+    `,
+    Reddit: `
+        <svg xmlns="http://www.w3.org/2000/svg"  width="${size}" height="${size}" class="stroke-default"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M12 8c2.648 0 5.028 .826 6.675 2.14a2.5 2.5 0 0 1 2.326 4.36c0 3.59 -4.03 6.5 -9 6.5c-4.875 0 -8.845 -2.8 -9 -6.294l-1 -.206a2.5 2.5 0 0 1 2.326 -4.36c1.646 -1.313 4.026 -2.14 6.674 -2.14z" />
+          <path d="M12 8l1-5 6 1" />
+          <circle cx="19" cy="4" r="1" />
+          <circle cx="9" cy="13" r=".5" fill="currentColor" />
+          <circle cx="15" cy="13" r=".5" fill="currentColor" />
+          <path d="M10 17c.667 .333 1.333 .5 2 .5s1.333 -.167 2 -.5" />
+        </svg>
+    `,
+    YCombinator: `
+        <svg xmlns="http://www.w3.org/2000/svg"  width="${size}" height="${size}" class="stroke-default"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <rect x="4" y="4" width="16" height="16" rx="2" />
+          <path d="M8 7.002l4 5.998l4 -6" />
+          <line x1="12" y1="17" x2="12" y2="13" />
+        </svg>
+    `,
+    Pinterest: `
+        <svg xmlns="http://www.w3.org/2000/svg"  width="${size}" height="${size}" class="stroke-default"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <line x1="8" y1="20" x2="12" y2="11" />
+          <path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" />
+          <circle cx="12" cy="12" r="9" />
+        </svg>
+    `,
+    Users: `
+        <svg xmlns="http://www.w3.org/2000/svg"  class="stroke-current"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="9" cy="7" r="4" />
+          <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+        </svg>
+    `,
+    Eye: `
+        <svg xmlns="http://www.w3.org/2000/svg"  class="stroke-current"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="2" />
+          <path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+        </svg>
+    `,
+    Activity: `
+        <svg xmlns="http://www.w3.org/2000/svg"  class="stroke-current"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 12h4l3 8l4 -16l3 8h4" />
+        </svg>
+    `,
+    Cash: `
+        <svg xmlns="http://www.w3.org/2000/svg"  class="stroke-current"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <rect x="7" y="9" width="14" height="10" rx="2" />
+          <circle cx="14" cy="14" r="2" />
+          <path d="M17 9v-2a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v6a2 2 0 0 0 2 2h2" />
+        </svg>
+    `,
 }
