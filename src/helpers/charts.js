@@ -42,7 +42,6 @@ export default {
                     label(tooltipInterface, data){
                         return `${tooltipInterface.value} Sessions`;
                     },
-                    // Title is
                     title(tooltipInterface, data){
                         tooltipInterface = tooltipInterface[0];
                         let year = (new Date).getFullYear() - (tooltipInterface.datasetIndex+1)*1;

@@ -1,14 +1,46 @@
 <template>
     <div>
+        <h1 class="mb-4">Website traffic analytics</h1>
+        <Breadcrumb :items="[{page:'Home', link:'/'}, {page:'Analytics', active:true}]"/>
         <div class="row">
+            <!-- Page visits chart -->
             <div class="col-sm-6">
                 <Card>
-                    Chart 1
+                    <div class="mb-4">
+                        <div class="font-size-100 color-gray-600">
+                            Page views
+                        </div>
+                        <div class="font-weight-bold font-size-200 ">
+                            456'245
+                        </div>
+                        <div class="d-flex flex-row align-items-center mt-2">
+                            <div class="d-flex flex-row align-items-center mr-2">
+                                <div class="text-success bg-success-light rounded-circle p-1" style="width:2rem;height:2rem;" v-html="icons.ArrowUp"></div>
+                                <div class="ml-1 font-weight-bold text-success font-size-75">
+                                    +429.12%
+                                </div>
+                            </div>
+                            <div class="font-size-100 color-gray-600">
+                                Page views
+                            </div>
+                        </div>
+                    </div>
+                    <Chart :config="chart1Config" />
                 </Card>
             </div>
+
+            <!-- Device usage chart -->
             <div class="col-sm-6">
                 <Card>
-                    Chart 2
+                    <div class="mb-4">
+                        <div class="font-size-100 color-gray-600">
+                            Views by device
+                        </div>
+                        <div class="font-weight-bold font-size-200 ">
+                            December 5th - 29th
+                        </div>
+                    </div>
+                    <Chart :config="chart2Config" />
                 </Card>
             </div>
         </div>
@@ -101,13 +133,13 @@
                 <Card>
                     <template #default>
                         <div class="row align-items-center align-content-center">
-                            <div class="col-6">
+                            <div class="col-6 justify-content-center">
                                 <div
                                     style="height: 100px;width:100px;display: block"
                                     :class="[`bg-${item.color}-light rounded p-3 text-${item.color}`]"
                                     v-html="item.icon"></div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-xl-6">
                                 <div class="font-size-125 font-weight-bold">{{ item.title }}</div>
                                 <div class="font-size-75 color-gray-600">
                                     In the last 7 day
@@ -131,7 +163,85 @@ export default {
     name: "AnalyticsDashboard",
 
     data() {
+
+        let visitsData = [];
+        for (let i=0;i<12;i++){
+            visitsData[i] = Math.ceil(Math.random()*50000 +Math.max(5000, Math.random()*3000));
+        }
+
         return {
+            chart1Config: {
+                type:'bar',
+                data:{
+                    labels:['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    datasets:[
+                        {
+                            data:visitsData,
+                            backgroundColor:'#703B9D',
+                        }
+                    ]
+                },
+                options:{
+                    scales:{
+                        yAxes:[{
+                            ticks:{
+                                beginAtZero: true,
+                                maxTicksLimit: 10,
+                            }
+                        }],
+                        xAxes:[{
+                            gridLines:{
+                                display:false,
+                            }
+                        }]
+                    },
+                    tooltips:{
+                        displayColors:false,
+                        callbacks: {
+                            label(tooltipInterface, data){
+                                let n =Intl.NumberFormat({style:'decimal'}).format(tooltipInterface.value);
+                                return `${n} page views`;
+                            }
+                        }
+                    }
+                }
+            },
+
+            chart2Config:{
+                type:'doughnut',
+                data:{
+                    labels:['Mobile', 'Desktop', 'Tablet', 'Crawlers'],
+                    datasets:[{
+                        data: [
+                            37,
+                            43,
+                            13,
+                            7,
+                        ],
+                        backgroundColor:[
+                            '#ffc107',
+                            '#28a745',
+                            '#703B9D',
+                            '#F2522E',
+                            '#fe346e',
+                        ],
+                        borderColor:'transparent'
+                    }],
+                },
+                options:{
+                    tooltips:{
+                        displayColors:false,
+                        callbacks: {
+                            label(tooltipInterface, data){
+                                let n = data.datasets[0].data[tooltipInterface.index];
+                                let label = data.labels[tooltipInterface.index];
+                                return `${label} ${n}%`;
+                            }
+                        }
+                    }
+                }
+            },
+
             mostVisitedPagesTable: {
                 headers: [
                     'Page',
@@ -196,6 +306,9 @@ export default {
     },
 
     computed:{
+        icons(){
+            return icons;
+        }
     }
 }
 </script>
