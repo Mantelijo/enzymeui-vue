@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="font-size-100 color-gray-600">
-                                Page views
+                                in the last 12 months
                             </div>
                         </div>
                     </div>
