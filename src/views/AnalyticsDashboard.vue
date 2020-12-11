@@ -135,7 +135,7 @@
                         <div class="row align-items-center align-content-center">
                             <div class="col-6 justify-content-center">
                                 <div
-                                    style="height: 100px;width:100px;display: block"
+                                    style="height: 80%;width:80%;display: block"
                                     :class="[`bg-${item.color}-light rounded p-3 text-${item.color}`]"
                                     v-html="item.icon"></div>
                             </div>
@@ -144,7 +144,7 @@
                                 <div class="font-size-75 color-gray-600">
                                     In the last 7 day
                                 </div>
-                                <div :class="[`mt-3 text-${item.color} font-size-200 font-weight-bold`]">
+                                <div :class="[`mt-3 text-${item.color} font-size-150 font-weight-bold`]">
                                     {{ item.value }}
                                 </div>
                             </div>
@@ -287,7 +287,7 @@ export default {
                 },
                 {
                     title:'Pageviews',
-                    value:"430'452",
+                    value:"43'459",
                     icon:icons.Eye,
                     color:'warning',
                 },
