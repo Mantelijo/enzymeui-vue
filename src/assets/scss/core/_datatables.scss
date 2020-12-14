@@ -4,6 +4,8 @@
     padding: 0;
     // hide border on div even if we add table-bordered (as we would get double border)
     border:none !important;
+    overflow-x: auto;
+
 
     table{
         border-collapse: collapse;
@@ -60,7 +62,4 @@
         }
     }
 
-    @include media-breakpoint-down(md){
-        overflow-x: auto;
-    }
 }

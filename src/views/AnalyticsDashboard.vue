@@ -128,7 +128,7 @@
                 </Card>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-sm-3 mt-5" v-for="item in infoCols">
                 <Card>
                     <template #default>
