@@ -15,5 +15,5 @@ module.exports = {
     lintOnSave: false,
 
     // This determines where the assests are
-    publicPath:'/demo',
+    publicPath:'/',
 };
