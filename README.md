@@ -1,6 +1,6 @@
 # [EnzymeUI](https://enzymeui.com) 
 
-EnzymeUI is vue.js based ui component toolkit/dashboard template. 
+EnzymeUI is vue.js and bootstrap based ui component library and admin dashboard template. 
 
 To install project dependencies run
 ```
