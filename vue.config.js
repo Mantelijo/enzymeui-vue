@@ -14,6 +14,6 @@ module.exports = {
     assetsDir: 'assets/',
     lintOnSave: false,
 
-    // This determines where the asses
-    publicPath:'/',
+    // This determines where the assests are
+    publicPath:'/demo',
 };
