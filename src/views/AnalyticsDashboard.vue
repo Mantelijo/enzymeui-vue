@@ -10,13 +10,13 @@
                         <div class="font-size-100 color-gray-600">
                             Page views
                         </div>
-                        <div class="font-weight-bold font-size-200 ">
+                        <div class="fw-bold font-size-200 ">
                             456'245
                         </div>
                         <div class="d-flex flex-row align-items-center mt-2">
-                            <div class="d-flex flex-row align-items-center mr-2">
+                            <div class="d-flex flex-row align-items-center me-2">
                                 <div class="text-success bg-success-light rounded-circle p-1" style="width:2rem;height:2rem;" v-html="icons.ArrowUp"></div>
-                                <div class="ml-1 font-weight-bold text-success font-size-75">
+                                <div class="ms-1 fw-bold text-success font-size-75">
                                     +429.12%
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                         <div class="font-size-100 color-gray-600">
                             Views by device
                         </div>
-                        <div class="font-weight-bold font-size-200 ">
+                        <div class="fw-bold font-size-200 ">
                             December 5th - 29th
                         </div>
                     </div>
@@ -65,12 +65,12 @@
                                     <span v-if="mostVisitedPagesTable.headers.indexOf(header) === 1">
                                     <span
                                         @click="sortAsc(header)"
-                                        :class="[sortedHeaders[header] === 'asc'?'color-gray-800 font-weight-bold':'color-gray-400', 'cursor-pointer']">
+                                        :class="[sortedHeaders[header] === 'asc'?'color-gray-800 fw-bold':'color-gray-400', 'cursor-pointer']">
                                         &#x2191;
                                     </span>
                                     <span
                                         @click="sortDesc(header)"
-                                        :class="[sortedHeaders[header] === 'desc'?'color-gray-800 font-weight-bold':'color-gray-400', 'cursor-pointer']">
+                                        :class="[sortedHeaders[header] === 'desc'?'color-gray-800 fw-bold':'color-gray-400', 'cursor-pointer']">
                                         &#x2193;
                                     </span>
                                 </span>
@@ -110,7 +110,7 @@
                             <Cell v-for="(item, itemKey) in row">
                                 <div v-if="itemKey === 0" class="d-flex flex-row align-content-center">
                                     <span v-html="item.icon"></span>
-                                    <span class="ml-3">
+                                    <span class="ms-3">
                                         <a href="#">{{item.url}}</a>
                                     </span>
                                 </div>
@@ -140,11 +140,11 @@
                                     v-html="item.icon"></div>
                             </div>
                             <div class="col-12 col-xl-6">
-                                <div class="font-size-125 font-weight-bold">{{ item.title }}</div>
+                                <div class="font-size-125 fw-bold">{{ item.title }}</div>
                                 <div class="font-size-75 color-gray-600">
                                     In the last 7 day
                                 </div>
-                                <div :class="[`mt-3 text-${item.color} font-size-150 font-weight-bold`]">
+                                <div :class="[`mt-3 text-${item.color} font-size-150 fw-bold`]">
                                     {{ item.value }}
                                 </div>
                             </div>

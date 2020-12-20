@@ -29,7 +29,7 @@
 .nav-content{
     background: $card-bg;
     padding: $nav-link-padding-x;
-    border: $nav-conten-border;
+    border: $nav-content-border;
     border-top:none;
     @include border-bottom-radius($nav-tabs-border-radius);
 }
@@ -63,7 +63,7 @@
     }
     .nav-content{
         flex-grow: 1;
-        border:$nav-conten-border;
+        border: $nav-content-border;
         border-bottom-left-radius: 0px;
     }
 }

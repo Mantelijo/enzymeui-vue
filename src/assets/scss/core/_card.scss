@@ -3,7 +3,7 @@
     box-shadow: $card-box-shadow;
     .card-header{
         font-weight: bold;
-        font-size: 18px;
+        font-size: $font-size-base*1.25;
         background: $card-header-bg;
     }
 }

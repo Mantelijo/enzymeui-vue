@@ -7,16 +7,15 @@
             aria-live="assertive"
             aria-atomic="true">
             <div :class="['toast-header', {'no-border':data.title.toString().length ===0}]">
-                <strong class="mr-auto" v-if="data.title">{{data.title}}</strong>
+                <strong class="me-auto" v-if="data.title">{{data.title}}</strong>
                 <small v-if="data.time">{{data.time}}</small>
                 <button
                         v-if="this.data.showCloseButton"
                         @click="remove"
                         type="button"
-                        class="ml-2 mb-1 close"
+                        class="ms-2 mb-1 btn-close"
                         data-dismiss="toast"
                         aria-label="Close">
-                <span aria-hidden="true" class="font-size-150">&times;</span>
                 </button>
             </div>
             <div class="toast-body" v-if="data.body" v-html="data.body"></div>

@@ -2,10 +2,10 @@
     <Card>
         <div class="d-flex flex-xl-row flex-column align-items-center">
             <div class="col-xl-4 d-flex flex-column ">
-                <div class="font-size-100 font-weight-bold color-gray-500">
+                <div class="font-size-100 fw-bold color-gray-500">
                     <slot name="title"></slot>
                 </div>
-                <div class="font-size-150 font-weight-bold">
+                <div class="font-size-150 fw-bold">
                     <slot name="numbers"></slot>
                 </div>
             </div>

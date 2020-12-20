@@ -2,7 +2,7 @@
     <div>
         <Card :body-classes="['d-flex']">
             <template slot="header">Dropdown examples</template>
-            <Dropdown class="mr-5">
+            <Dropdown class="me-5">
                 <template slot="button">
                     <Button type="primary" still>Simple</Button>
                 </template>
@@ -12,7 +12,7 @@
                     <div class="dropdown-item">Item3</div>
                 </div>
             </Dropdown>
-            <Dropdown class="mr-5" :menu-classes="['p-4', 'dropdown-menu-lg']" manual-close ref="dropdown1">
+            <Dropdown class="me-5" :menu-classes="['p-4', 'dropdown-menu-lg']" manual-close ref="dropdown1">
                 <template slot="button">
                     <Button type="secondary" still>Manually closable</Button>
                 </template>
@@ -24,13 +24,13 @@
                         <Input type="text" label="Name" placeholder="Enter your name" />
                         <Input type="text" label="Email" placeholder="Enter your name" />
                         <Input type="text" :valid="false" error-text="Some random error text" label="Error message" placeholder="Enter your name" />
-                        <Button class="mr-2" type="info" @click.prevent="$refs.dropdown1.close()">Save</Button>
+                        <Button class="me-2" type="info" @click.prevent="$refs.dropdown1.close()">Save</Button>
                         <Button type="danger" @click.prevent="$refs.dropdown1.close()">Close</Button>
                     </form>
                 </div>
 
             </Dropdown>
-            <Dropdown class="mr-5">
+            <Dropdown class="me-5">
                 <template slot="button">
                     <Button type="success" still>With header</Button>
                 </template>

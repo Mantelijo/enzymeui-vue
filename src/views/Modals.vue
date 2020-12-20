@@ -7,8 +7,7 @@
         <Modal :open="showModal" @closed="showModal = false">
             <div class="modal-header">
                 <h5 class="modal-title m-0">Modal title</h5>
-                <button @click="showModal = false" type="button" class="close outline-none" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" class="font-size-150">&times;</span>
+                <button @click="showModal = false" type="button" class="btn-close outline-none" data-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
@@ -23,7 +22,7 @@
                 </p>
             </div>
             <div class="modal-footer border-0">
-                <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal" @click="showModal = false">Close Modal</button>
+                <button type="button" class="btn btn-secondary me-3" data-dismiss="modal" @click="showModal = false">Close Modal</button>
                 <button type="button" class="btn btn-primary">This button does nothing</button>
             </div>
         </Modal>
@@ -37,8 +36,7 @@
         <Modal :open="showModal3" @closed="showModal3 = false">
             <div class="modal-header">
                 <h5 class="modal-title m-0">Really long content one</h5>
-                <button @click="showModal3 = false" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" class="font-size-150">&times;</span>
+                <button @click="showModal3 = false" type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
@@ -55,7 +53,7 @@
         </Modal>
         <Modal ref="modal4" :open="showModal4">
             <div class="modal-body p-5">
-                <div class="font-size-150 font-weight-bold text-center">
+                <div class="font-size-150 fw-bold text-center">
                     Sign up
                 </div>
                 <div class="font-size-100 color-gray-600 text-center">
@@ -83,10 +81,10 @@
             </div>
         </Modal>
 
-        <Button class="mr-3 my-3" @click="showModal = true">Click me</Button>
-        <Button class="mr-3 my-3" @click="showModal3 = true">Modal with really long content</Button>
-        <Button class="mr-3 my-3"  @click="showModal2 = true">Launch XL modal</Button>
-        <Button class="mr-3 my-3"  @click="$refs.modal4.openModal()">Registration modal</Button>
+        <Button class="me-3 my-3" @click="showModal = true">Click me</Button>
+        <Button class="me-3 my-3" @click="showModal3 = true">Modal with really long content</Button>
+        <Button class="me-3 my-3"  @click="showModal2 = true">Launch XL modal</Button>
+        <Button class="me-3 my-3"  @click="$refs.modal4.openModal()">Registration modal</Button>
     </div>
 </Card>
 </template>

@@ -41,14 +41,14 @@
 
                 &:hover {
                     background: $sidebar-link-hover-bg;
-                    color: color_yiq($sidebar-link-hover-bg);
+                    color: color-contrast($sidebar-link-hover-bg);
                 }
 
                 &.active {
                     background: $sidebar-link-active-bg;
-                    color: color_yiq($sidebar-link-active-bg);
+                    color: color-contrast($sidebar-link-active-bg);
                     svg{
-                        stroke: color_yiq($sidebar-link-active-bg);
+                        stroke: color-contrast($sidebar-link-active-bg);
                     }
                 }
             }

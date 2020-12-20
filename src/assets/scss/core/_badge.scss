@@ -8,10 +8,15 @@ $to-lighten:50%;
             &.badge-inverse{
                 color:$color;
                 @if $lightness >= 50% and $lightness <= 90{
-                    background: lighten($color, min(30%+$lightness%100, $to-lighten/3));
+                    $a: 30% + $lightness % 100;
+                    $b: $to-lighten / 3;
+                    @if($a > $b){
+                        $a: $b;
+                    }
+                    background: lighten($color, $a);
                     color:darken($color, 30%);
                     &:hover{
-                        background: darken(lighten($color, min(30%+$lightness%100, $to-lighten/3)), 10%);
+                        background: darken(lighten($color, $a), 10%);
                         color:darken($color, 30%);
                     }
                 }

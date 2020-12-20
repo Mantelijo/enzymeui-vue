@@ -47,20 +47,19 @@ $scrollbar-size:0.6rem;
     height: 100vh;
 }
 
-@import "~bootstrap/scss/functions";
-
-// Custom modified bootrstap variables
-@import "core/variables";
-@import "gradients";
+// Custom modified Bootstrap and new variables
+@import "variables";
 
 // Bootstrap library
+@import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
 @import "~bootstrap/scss/images";
-@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/containers";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/forms";
@@ -68,33 +67,28 @@ $scrollbar-size:0.6rem;
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/custom-forms";
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/card";
+//@import "~bootstrap/scss/accordion";
 @import "~bootstrap/scss/breadcrumb";
 @import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/badge";
-@import "~bootstrap/scss/jumbotron";
 @import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/progress";
-@import "~bootstrap/scss/media";
 @import "~bootstrap/scss/list-group";
 @import "~bootstrap/scss/close";
 @import "~bootstrap/scss/toasts";
 @import "~bootstrap/scss/modal";
-//@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/tooltip";
 @import "~bootstrap/scss/popover";
 @import "~bootstrap/scss/carousel";
 @import "~bootstrap/scss/spinners";
-@import "~bootstrap/scss/utilities";
-@import "~bootstrap/scss/print";
-
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities/api";
 
 // Custom library
 @import "core/mixins/loadmixins";
-
 @import "core/accordion";
 @import "core/sidebar";
 @import "core/navbar";
@@ -116,9 +110,7 @@ $scrollbar-size:0.6rem;
 @import "core/datatables";
 @import "core/modal";
 @import "core/dropzone";
-
 @import "core/hover-utilities";
-
 @import "utilities";
 
 // Adding grays to root for usage in css

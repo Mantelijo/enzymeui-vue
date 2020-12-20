@@ -1,5 +1,23 @@
 .accordion{
     .accordion-item{
+        border-radius: 0;
+
+        // Remove border from card styles
+        &.card{
+        }
+
+
+        &:first-child{
+            @include border-top-radius($card-border-radius);
+
+        }
+
+        &:last-child{
+            @include border-bottom-radius($card-border-radius);
+        }
+
+
+
         .card-header{
             cursor: pointer;
             &:hover{

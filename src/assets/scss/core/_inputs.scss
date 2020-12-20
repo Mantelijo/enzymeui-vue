@@ -1,3 +1,7 @@
+.input-container{
+    margin-bottom: map_get($spacers, 3);
+}
+
 .input {
 
     &.error {
@@ -65,7 +69,7 @@
 
     .tag {
         background: $tag-input-tag-bg;
-        color: color-yiq($tag-input-tag-bg);
+        color: color-contrast($tag-input-tag-bg);
         padding: 4px 10px;
         margin-right: 6px;
         margin-bottom: 3px;
@@ -98,7 +102,7 @@
         @each $type, $color in $theme-colors {
             &.tag-#{$type} {
                 background: $color;
-                color: color-yiq($color);
+                color: color-contrast($color);
 
                 .tag-close {
                     background: change_color($color, $lightness: 30%);

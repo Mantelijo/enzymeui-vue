@@ -4,8 +4,8 @@
         :[href]="link"
         :class="[
             'badge',
-            `badge-${type}`,
-            {'badge-pill':pill},
+            `bg-${type}`,
+            {'rounded-pill':pill},
             {'badge-inverse':inverse}
         ]"
     >

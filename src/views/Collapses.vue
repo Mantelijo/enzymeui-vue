@@ -12,7 +12,7 @@
                 <Card class="mt-4" header-classes="d-flex flex-row align-items-center" slot="default">
                     <template slot="header">
                         Collapsed card
-                        <Badge class="ml-3" type="secondary" inverse>It's cool</Badge>
+                        <Badge class="ms-3" type="secondary" inverse>It's cool</Badge>
                     </template>
                     Some great collapse stuff
                     <Button v-tooltip="{id:'tooltip', placement:'top'}" type="secondary" size="sm">Hover over me
@@ -32,7 +32,7 @@
                 <Card class="mt-4" header-classes="d-flex flex-row align-items-center" slot="default">
                     <template slot="header">
                         Collapsed card
-                        <Badge class="ml-3" type="secondary" inverse>It's cool</Badge>
+                        <Badge class="ms-3" type="secondary" inverse>It's cool</Badge>
                     </template>
                     Some great collapse stuff
                     <Button v-tooltip="{id:'tooltip2', placement:'top'}" type="secondary" size="sm">Hover over me

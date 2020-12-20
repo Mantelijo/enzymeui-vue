@@ -43,7 +43,7 @@
                     </div>
                     <div class="d-flex flex-wrap pt-3 pb-4 align-items-end mx-4 justify-content-end">
 
-                        <div class="mr-sm-4 mb-sm-0 mb-3">
+                        <div class="me-sm-4 mb-sm-0 mb-3">
                             <p class="mb-2 small">Rows per page</p>
                             <Select  :data="[5, 10, 15, 25, 100]" :selected="dataTablePerPage"
                                      @change="dataTablePerPage = $event,dataTablePage = 1"></Select>

@@ -37,16 +37,16 @@
                         <Select @change="toastType = $event" :data="toastTypes" :selected="toastType" is-searchable>
                             <template v-slot:placeholder="{selectedItem}">
                                 <div class="d-flex flex-row justify-content-between align-items-center">
-                                    <div :class="[`bg-${selectedItem.toString().toLowerCase()}`, 'rounded', 'mr-2']"
+                                    <div :class="[`bg-${selectedItem.toString().toLowerCase()}`, 'rounded', 'me-2']"
                                          style="width: 16px;height: 16px;"></div>
                                     {{selectedItem}}
                                 </div>
                             </template>
                             <template v-slot:default="{item}">
                                 <div class="d-flex flex-row justify-content-between align-items-center">
-                                    <div :class="[`bg-${item.toString().toLowerCase()}`, 'rounded', 'mr-2']"
+                                    <div :class="[`bg-${item.toString().toLowerCase()}`, 'rounded', 'me-2']"
                                          style="width: 16px;height: 16px;"></div>
-                                    <span class="mr-auto">{{item}}</span>
+                                    <span class="me-auto">{{item}}</span>
                                 </div>
                             </template>
                         </Select>

@@ -2,10 +2,10 @@
     <Card>
         <div class="d-flex flex-column align-items-center">
             <div class="d-flex flex-lg-row align-items-center flex-column justify-content-center">
-                <span class="font-size-125 font-weight-bold color-gray-800 mb-lg-0 mb-3 text-center">
+                <span class="font-size-125 fw-bold color-gray-800 mb-lg-0 mb-3 text-center">
                     <slot></slot>
                 </span>
-                <div class="d-flex flex-row align-items-center ml-lg-3 ml-sm-0" >
+                <div class="d-flex flex-row align-items-center ms-lg-3 ms-sm-0" >
                     <slot name="icon"></slot>
                     <slot name="icon-text"></slot>
                 </div>

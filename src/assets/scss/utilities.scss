@@ -1,17 +1,15 @@
-@import "core/variables";
-
 // Gray color utilities
 @each $number, $color in $grays{
     .color-gray-#{$number}{
         color:$color;
     }
     .bg-gray-#{$number}{
-        color:color-yiq($color);
+        color:color-contrast($color);
         background-color: $color;
     }
     .hover-bg-gray-#{$number}{
         &:hover{
-            color:color-yiq($color);
+            color:color-contrast($color);
             background-color: $color;
         }
     }

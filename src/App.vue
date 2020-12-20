@@ -22,16 +22,16 @@
                                 @click="navigateToPath(link.path, $event)"
                         >
                         <div v-if="link.icon !== undefined" v-html="link.icon"></div>
-                        <div class="ml-3">{{link.name}}</div>
+                        <div class="ms-3">{{link.name}}</div>
                     </span>
 
                         <!-- Link with children links which will be placed in collapse -->
                         <div v-else >
                         <span class="sidebar-link d-flex flex-row align-items-center w-100 h-100" v-collapse="link.collapseId">
                             <div v-if="link.icon !== undefined" v-html="link.icon"></div>
-                            <div class="ml-3 d-flex align-items-center">
+                            <div class="ms-3 d-flex align-items-center">
                                 <div>{{link.name}}</div>
-                                <svg xmlns="http://www.w3.org/2000/svg" :style="[link.collapseOpen === true?{transform:'rotate(180deg)'}:{},]" class="stroke-default ml-2" width="15" height="15" viewBox="0 0 24 24" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" :style="[link.collapseOpen === true?{transform:'rotate(180deg)'}:{},]" class="stroke-default ms-2" width="15" height="15" viewBox="0 0 24 24" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                   <path stroke="none" d="M0 0h24v24H0z"/>
                                   <polyline points="6 9 12 15 18 9" />
                                 </svg>
@@ -40,7 +40,7 @@
                             <Collapse :id="link.collapseId" @open="links[i].collapseOpen = true" @close="links[i].collapseOpen = false">
                                 <div
                                         v-for="child in link.children"
-                                        :class="['pl-5 sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === child.path}]"
+                                        :class="['ps-5 sidebar-link d-flex flex-row align-items-center w-100 h-100', {'active':$route.path === child.path}]"
                                         @click="navigateToPath(child.path, $event)"
                                 >
                                     <div>
@@ -48,7 +48,7 @@
                                             <circle cx="12" cy="12" r="9" />
                                         </svg>
                                     </div>
-                                    <div class="ml-3">{{child.name}}</div>
+                                    <div class="ms-3">{{child.name}}</div>
                                 </div>
                             </Collapse>
                         </div>
@@ -74,7 +74,7 @@
                             </svg>
                         </div>
                         <!--Search field-->
-                        <div class="ml-5 d-none d-sm-block" style="width:200px;">
+                        <div class="ms-5 d-none d-sm-block" style="width:200px;">
                             <Dropdown class="w-100" menu-classes="w-100">
                                 <template #button>
                                     <Input class="m-0" size="sm" placeholder="Search"></Input>
@@ -90,9 +90,9 @@
                                 </div>
                             </Dropdown>
                         </div>
-                        <div class="ml-auto d-flex flex-row justify-content-end align-items-center">
+                        <div class="ms-auto d-flex flex-row justify-content-end align-items-center">
                             <!--Notification bell-->
-                            <div class="cursor-pointer position-relative ml-4">
+                            <div class="cursor-pointer position-relative ms-4">
                                 <Dropdown size="md" menu-classes="dropdown-menu-sm" :popper-config="{placement:'bottom-end'}">
                                     <template #button>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="stroke-default" width="30"
@@ -120,7 +120,7 @@
                                             title: 'New Order ($12)'
                                         },
                                     ]">
-                                        <div class="d-flex flex-column justify-content-center mr-3">
+                                        <div class="d-flex flex-column justify-content-center me-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-success" width="20"
                                                  height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4CAF50"
                                                  fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -131,7 +131,7 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <div class="text-success font-size-100 font-weight-bold">{{title}}</div>
+                                            <div class="text-success font-size-100 fw-bold">{{title}}</div>
                                             <div class="color-gray-500 font-size-75">{{name}}</div>
                                         </div>
                                     </div>
@@ -141,12 +141,12 @@
                                 </Dropdown>
                             </div>
                             <!--User avatar with dropdown -->
-                            <div class="ml-5">
+                            <div class="ms-5">
                                 <Dropdown class="">
                                     <template #button>
                                         <div class="d-flex flex-row align-items-center justify-content-center cursor-pointer">
-                                            <div class="mr-3">
-                                                <div class="font-weight-bold">Jolly</div>
+                                            <div class="me-3">
+                                                <div class="fw-bold">Jolly</div>
                                                 <div class="font-size-75 color-gray-600">Admin</div>
                                             </div>
                                             <img style="max-width: 30px;" class="rounded-circle"
@@ -162,7 +162,7 @@
                                             <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
                                             <circle cx="12" cy="12" r="3"/>
                                         </svg>
-                                        <div class="ml-3 ">
+                                        <div class="ms-3 ">
                                             Settings
                                         </div>
                                     </div>
@@ -174,7 +174,7 @@
                                             <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"/>
                                             <path d="M7 12h14l-3 -3m0 6l3 -3"/>
                                         </svg>
-                                        <div class="ml-3 ">
+                                        <div class="ms-3 ">
                                             Logout
                                         </div>
                                     </div>
@@ -343,7 +343,7 @@
     }
 
     .logo-text{
-        background: linear-gradient(45deg, var(--primary),var(--secondary) );
+        background: linear-gradient(45deg, var(--bs-primary),var(--bs-secondary) );
         background-clip: text;
         color: transparent;
     }

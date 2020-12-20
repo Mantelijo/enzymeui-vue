@@ -123,7 +123,7 @@
             </div>
         </Card>
 
-        <Card class="mt-5">
+        <Card class="mt-5 mb-5">
             <template slot="header">Select dropdown</template>
             <div class="row">
                 <div class="col-6">
@@ -146,17 +146,17 @@
                     <Select :data="selectData1" @change="selectedItem1 = $event">
                         <template v-slot:placeholder="{selectedItem}">
                             <div v-if="selectedItem !== null" class="d-flex flex-row align-items-center">
-                                <img :src="selectedItem.img" class="img-fluid rounded-circle mr-4">
+                                <img :src="selectedItem.img" class="img-fluid rounded-circle me-4">
                                 <div>{{selectedItem.name}}</div>
                             </div>
                             <span v-else>Select something</span>
                         </template>
                         <template v-slot:default="{item, isSelected}">
                             <div class="d-flex flex-row align-items-center text-">
-                                <img :src="item.img" class="img-fluid rounded-circle mr-4">
+                                <img :src="item.img" class="img-fluid rounded-circle me-4">
                                 <div class="w-75">{{item.name}}</div>
                                 <div class="small">({{item.role}})</div>
-                                <div v-if="isSelected" class="ml-auto">
+                                <div v-if="isSelected" class="ms-auto">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="color-gray-500" width="15" height="15" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z"/>
                                         <path d="M5 12l5 5l10 -10" />

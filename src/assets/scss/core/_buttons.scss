@@ -40,11 +40,11 @@
 
         &:active, &:hover, &:focus{
             background: $val;
-            color:color-yiq($val);
+            color:color-contrast($val);
         }
 
         &:focus{
-            box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($val), $val, 15%), .5);
+            box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-contrast($val), $val, 15%), .5);
         }
     }
 }
@@ -54,7 +54,7 @@
     .btn-outline-#{$key}{
         &:focus{
             background: $val;
-            color:color-yiq($val);
+            color:color-contrast($val);
         }
     }
 }

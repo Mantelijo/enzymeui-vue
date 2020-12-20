@@ -136,6 +136,12 @@ import {getTransitionDurationInMs} from "../../helpers/helpers";
                 }
             }
         },
+
+        destroyed() {
+            // Remove overflow classes from body if modal component is destroyed
+            document.body.classList.remove('modal-open');
+
+        }
     }
 </script>
 

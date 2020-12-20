@@ -428,7 +428,7 @@
             </div>
             <div class="d-flex flex-wrap pt-3 pb-4 align-items-end mx-4 justify-content-end">
 
-                <div class="mr-4">
+                <div class="me-4">
                     <p class="mb-2 small">Rows per page</p>
                     <Select  :data="[5, 10, 15, 25, 100]" :selected="dataTablePerPage"
                             @change="dataTablePerPage = $event,dataTablePage = 1"></Select>
@@ -484,16 +484,16 @@
                             <Select @change="toastType = $event" :data="toastTypes" :selected="toastType" is-searchable>
                                 <template v-slot:placeholder="{selectedItem}">
                                     <div class="d-flex flex-row justify-content-between align-items-center">
-                                        <div :class="[`bg-${selectedItem.toString().toLowerCase()}`, 'rounded', 'mr-2']"
+                                        <div :class="[`bg-${selectedItem.toString().toLowerCase()}`, 'rounded', 'me-2']"
                                              style="width: 16px;height: 16px;"></div>
                                         {{selectedItem}}
                                     </div>
                                 </template>
                                 <template v-slot:default="{item}">
                                     <div class="d-flex flex-row justify-content-between align-items-center">
-                                        <div :class="[`bg-${item.toString().toLowerCase()}`, 'rounded', 'mr-2']"
+                                        <div :class="[`bg-${item.toString().toLowerCase()}`, 'rounded', 'me-2']"
                                              style="width: 16px;height: 16px;"></div>
-                                        <span class="mr-auto">{{item}}</span>
+                                        <span class="me-auto">{{item}}</span>
                                     </div>
                                 </template>
                             </Select>
@@ -528,7 +528,7 @@
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal" @click="showModal = false">Close Modal</button>
+                        <button type="button" class="btn btn-secondary me-3" data-dismiss="modal" @click="showModal = false">Close Modal</button>
                         <button type="button" class="btn btn-primary">This button does nothing</button>
                     </div>
                 </Modal>
@@ -558,8 +558,8 @@
                         Quisque molestie magna a libero volutpat pellentesque. Maecenas bibendum turpis nec nunc rhoncus, eu blandit ex cursus. Mauris quis volutpat mi. Curabitur quis accumsan risus. Aenean rutrum augue libero, sed laoreet sem consequat eu. Phasellus imperdiet porta ornare. Phasellus non pharetra felis. Fusce et luctus dui. Etiam mollis lacus at urna porta tempus. Nulla lobortis, sapien non malesuada auctor, tortor tellus porttitor elit, in placerat eros lacus ut leo. Morbi id mattis nibh.
                     </div>
                 </Modal>
-                <Button class="mr-3" @click="showModal = !showModal">Click me</Button>
-                <Button class="mr-3" @click="showModal3 = !showModal3">Modal with really long content</Button>
+                <Button class="me-3" @click="showModal = !showModal">Click me</Button>
+                <Button class="me-3" @click="showModal3 = !showModal3">Modal with really long content</Button>
                 <Button @click="showModal2 = !showModal2">Launch XL modal</Button>
             </div>
         </Card>

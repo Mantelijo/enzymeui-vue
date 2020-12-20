@@ -4,15 +4,15 @@
         <div class="p-4 hover-bg-gray-100" v-for="item in demo">
             <div class="d-flex flex-row align-items-center justify-content-between">
                 <Badge inverse class="p-2" pill>{{item.time}}</Badge>
-                <span class="color-gray-600 font-size-75 font-weight-bold">{{item.via}}</span>
+                <span class="color-gray-600 font-size-75 fw-bold">{{item.via}}</span>
             </div>
             <div class="d-flex flex-row mt-3 align-items-center justify-content-start">
                 <img :src="item.img" class="rounded-circle" style="max-width: 30px;">
-                <div class="ml-3">
+                <div class="ms-3">
                     <div class="font-size-100 ">{{item.name}}</div>
                     <div class="font-size-75 color-gray-600">{{item.items}}</div>
                 </div>
-                <div class="font-size-150 ml-auto text-success">{{item.amount}}</div>
+                <div class="font-size-150 ms-auto text-success">{{item.amount}}</div>
             </div>
         </div>
     </Card>

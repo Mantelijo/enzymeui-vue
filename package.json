@@ -1,6 +1,6 @@
 {
   "name": "enzymeui",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.0.6",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^5.0.0-beta1",
     "chart.js": "^2.9.3",
     "core-js": "^3.4.3",
     "node-sass": "^4.13.0",

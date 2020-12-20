@@ -16,7 +16,7 @@
                         </svg>
                     </template>
                     <template #icon-text>
-                        <span class="text-success font-size-150 font-weight-bold ml-3">+78%</span>
+                        <span class="text-success font-size-150 fw-bold ms-3">+78%</span>
                     </template>
                     <template #default>Site Visitors by hour</template>
                 </ChartWidgetSmall>
@@ -36,7 +36,7 @@
                         </svg>
                     </template>
                     <template #icon-text>
-                        <span class="text-info font-size-150 font-weight-bold ml-3">+64%</span>
+                        <span class="text-info font-size-150 fw-bold ms-3">+64%</span>
                     </template>
                     <template #default>New users by month</template>
                 </ChartWidgetSmall>
@@ -56,7 +56,7 @@
                         </svg>
                     </template>
                     <template #icon-text>
-                        <span class="text-danger font-size-150 font-weight-bold ml-3">-13%</span>
+                        <span class="text-danger font-size-150 fw-bold ms-3">-13%</span>
                     </template>
                     <template #default>Sales by month</template>
                 </ChartWidgetSmall>
