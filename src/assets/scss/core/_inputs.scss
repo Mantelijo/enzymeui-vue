@@ -6,10 +6,18 @@
 
     &.error {
         border-color: $danger;
+
+        &:focus{
+            box-shadow: $input-btn-focus-shadow-dimensions rgba($danger, $input-btn-focus-color-opacity);
+        }
     }
 
     &.valid {
         border-color: $success;
+
+        &:focus{
+            box-shadow: $input-btn-focus-shadow-dimensions rgba($success, $input-btn-focus-color-opacity);
+        }
     }
 
     &.blank {

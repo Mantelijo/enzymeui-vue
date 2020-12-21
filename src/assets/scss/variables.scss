@@ -211,6 +211,8 @@ $card-cap-padding-x:                $card-spacer-x;
 
 
 // Components
+$component-active-bg:         $primary;
+
 $border-radius:               .4rem;
 $border-radius-lg:            .5rem;
 $border-radius-sm:            .6rem;
@@ -227,7 +229,12 @@ $input-btn-padding-x:         1.1rem;
 $input-btn-font-family:       null;
 $input-btn-font-size:         0.875rem;
 
-$input-btn-focus-width:       0.20rem;
+$input-btn-focus-width:       0.15rem;
+$input-btn-focus-color-opacity: .25 !default;
+$input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity) !default;
+$input-btn-focus-shadow-dimensions: 0 0 0 $input-btn-focus-width;
+$input-btn-focus-box-shadow:    $input-btn-focus-shadow-dimensions $input-btn-focus-color !default;
+
 
 $input-btn-padding-y-sm:      .2rem;
 $input-btn-padding-x-sm:      .75rem;
