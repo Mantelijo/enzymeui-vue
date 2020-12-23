@@ -6,7 +6,8 @@
             'badge',
             `bg-${type}`,
             {'rounded-pill':pill},
-            {'badge-inverse':inverse}
+            {'badge-inverse':inverse},
+            'text-decoration-none',
         ]"
     >
         <slot></slot>
