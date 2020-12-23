@@ -5,7 +5,7 @@
     }
     .bg-gray-#{$number}{
         color:color-contrast($color);
-        background-color: $color;
+        background-color: $color !important;
     }
     .hover-bg-gray-#{$number}{
         &:hover{
@@ -21,7 +21,10 @@
 // Light backgrounds
 @each $name, $color in $theme-colors{
     .bg-#{$name}-light{
-        background-color: change_color($color, $lightness:85%);
+        background-color: $color !important;
+    }
+    .text-#{$name}-light{
+        color:color-contrast($color) !important;
     }
 
     @include define-fill-color($name, $color);

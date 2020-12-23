@@ -5,7 +5,6 @@
                 Normal buttons
             </template>
             <div class="showcase-wrapper">
-                <Button class="demo-btn" type="light">Light</Button>
                 <Button class="demo-btn" type="default">Default</Button>
                 <Button class="demo-btn" type="primary">Primary</Button>
                 <Button class="demo-btn" type="secondary">Secondary</Button>
@@ -21,7 +20,6 @@
                 Rounded buttons
             </template>
             <div class="showcase-wrapper">
-                <Button class="demo-btn" rounded type="light">Light</Button>
                 <Button class="demo-btn" rounded type="default">Default</Button>
                 <Button class="demo-btn" rounded type="primary">Primary</Button>
                 <Button class="demo-btn" rounded type="secondary">Secondary</Button>
@@ -37,7 +35,6 @@
                 Edgy buttons
             </template>
             <div class="showcase-wrapper">
-                <Button class="demo-btn" edgy type="light">Light</Button>
                 <Button class="demo-btn" edgy type="default">Default</Button>
                 <Button class="demo-btn" edgy type="primary">Primary</Button>
                 <Button class="demo-btn" edgy type="secondary">Secondary</Button>
@@ -53,7 +50,6 @@
                 Outline light background buttons
             </template>
             <div class="showcase-wrapper">
-                <Button class="demo-btn" type="outline-light-bg-light">Light</Button>
                 <Button class="demo-btn" type="outline-light-bg-default">Default</Button>
                 <Button class="demo-btn" type="outline-light-bg-primary">Primary</Button>
                 <Button class="demo-btn" type="outline-light-bg-secondary">Secondary</Button>
@@ -69,7 +65,6 @@
                 Outline buttons
             </template>
             <div class="showcase-wrapper">
-                <Button class="demo-btn" type="outline-light">Light</Button>
                 <Button class="demo-btn" type="outline-default">Default</Button>
                 <Button class="demo-btn" type="outline-primary">Primary</Button>
                 <Button class="demo-btn" type="outline-secondary">Secondary</Button>
@@ -85,7 +80,6 @@
                 Large buttons
             </template>
             <div class="showcase-wrapper">
-                <Button class="demo-btn" type="light" size="lg">Light</Button>
                 <Button class="demo-btn" type="default" size="lg">Default</Button>
                 <Button class="demo-btn" type="primary" size="lg">Primary</Button>
                 <Button class="demo-btn" type="secondary" size="lg">Secondary</Button>
@@ -101,7 +95,6 @@
                 Small buttons
             </template>
             <div class="showcase-wrapper">
-                <Button class="demo-btn" type="light" size="sm">Light</Button>
                 <Button class="demo-btn" type="default" size="sm">Default</Button>
                 <Button class="demo-btn" type="primary" size="sm">Primary</Button>
                 <Button class="demo-btn" type="secondary" size="sm">Secondary</Button>

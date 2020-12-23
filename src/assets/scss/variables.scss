@@ -77,6 +77,18 @@ $theme-colors: (
         "dark":       $dark
 );
 
+// Light shades
+$theme-colors-light: (
+        "default":    change_color($default, $lightness:85%),
+        "primary":    change_color($primary, $lightness:85%),
+        "secondary":  change_color($secondary, $lightness:85%),
+        "success":    change_color($success, $lightness:85%),
+        "info":       change_color($info, $lightness:85%),
+        "warning":    change_color($warning, $lightness:85%),
+        "danger":     change_color($danger, $lightness:85%),
+        "light":      change_color($light, $lightness:85%),
+        "dark":       change_color($dark, $lightness:85%),
+);
 
 // Spacing
 $spacer: 1rem;
@@ -163,10 +175,10 @@ $dropdown-padding-y:                0;
 
 $dropdown-divider-margin-y:         0;
 
-$dropdown-item-padding-y:           .25rem !default;
-$dropdown-item-padding-x:           1.5rem !default;
+$dropdown-item-padding-y:           .25rem;
+$dropdown-item-padding-x:           1.5rem;
 
-$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
+$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175);
 
 $dropdown-header-padding:           map_get($spacers, 2) $dropdown-item-padding-x;
 
@@ -211,11 +223,23 @@ $card-cap-padding-x:                $card-spacer-x;
 
 
 // Components
-$component-active-bg:         $primary;
+$border-width:                1px !default;
+$border-widths: (
+        0: 0,
+        1: 1px,
+        2: 2px,
+        3: 3px,
+        4: 4px,
+        5: 5px
+) !default;
+
+$border-color:                $gray-300 !default;
 
 $border-radius:               .4rem;
 $border-radius-lg:            .5rem;
 $border-radius-sm:            .6rem;
+
+$component-active-bg:         $primary;
 
 
 // Links
@@ -230,10 +254,10 @@ $input-btn-font-family:       null;
 $input-btn-font-size:         0.875rem;
 
 $input-btn-focus-width:       0.15rem;
-$input-btn-focus-color-opacity: .25 !default;
-$input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity) !default;
+$input-btn-focus-color-opacity: .25;
+$input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity);
 $input-btn-focus-shadow-dimensions: 0 0 0 $input-btn-focus-width;
-$input-btn-focus-box-shadow:    $input-btn-focus-shadow-dimensions $input-btn-focus-color !default;
+$input-btn-focus-box-shadow:    $input-btn-focus-shadow-dimensions $input-btn-focus-color;
 
 
 $input-btn-padding-y-sm:      .2rem;
@@ -252,23 +276,35 @@ $input-group-addon-bg:                  transparent;
 
 // Breadcrumbs
 $breadcrumb-divider:                none;
-$breadcrumb-font-size:              0.875rem !default;
-$breadcrumb-padding-y:              .25rem !default;
-$breadcrumb-padding-x:              0.75rem !default;
+$breadcrumb-font-size:              0.875rem;
+$breadcrumb-padding-y:              .25rem;
+$breadcrumb-padding-x:              0.75rem;
 
 
 // Tables
-$table-cell-padding-y:        .75rem !default;
-$table-cell-padding-x:        .75rem !default;
-$table-cell-padding-y-sm:     .3rem !default;
-$table-cell-padding-x-sm:     .3rem !default;
+$table-cell-padding-y:        .75rem;
+$table-cell-padding-x:        .75rem;
+$table-cell-padding-y-sm:     .3rem;
+$table-cell-padding-x-sm:     .3rem;
+
+$table-border-factor:         .1;
+$table-border-width:          $border-width;
+$table-border-color:          $border-color;
+
+$table-group-separator-color: $table-border-color;
 
 
 // Tooltips
-$tooltip-color:                     #444 !default;
-$tooltip-bg:                        $gray-100 !default;
+$tooltip-color:                     #444;
+$tooltip-bg:                        $gray-100;
 
-$tooltip-padding-y:                 .25rem !default;
-$tooltip-padding-x:                 .5rem !default;
+$tooltip-padding-y:                 .25rem;
+$tooltip-padding-x:                 .5rem;
 
 $tooltip-box-shadow: 0px 0px 4px -2px #444;
+
+
+// Alerts
+$alert-padding-y:                   $spacer*0.75;
+$alert-padding-x:                   $spacer;
+$alert-border-radius: 0.4rem;

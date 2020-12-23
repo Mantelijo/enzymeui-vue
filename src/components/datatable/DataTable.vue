@@ -1,5 +1,5 @@
 <template>
-    <div class="datatable" >
+    <div class="datatable">
         <table class="table" :key="key">
             <thead>
                 <tr class="datatable-row">

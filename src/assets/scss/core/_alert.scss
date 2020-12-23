@@ -5,13 +5,14 @@
     flex-direction: row;
 
     border-radius:0;
-    border-top-right-radius: 0.4rem;
-    border-bottom-right-radius: 0.4rem;
+    border-top-right-radius: $alert-border-radius;
+    border-bottom-right-radius: $alert-border-radius;
     border-left-width: 0.5rem;
 
     // Expand content to full width - close button
     .content{
         flex-grow:1;
+        align-self: center;
     }
 
     // Disable outline on click

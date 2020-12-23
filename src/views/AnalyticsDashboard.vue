@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="row mb-5">
-            <div class="col-sm-3 mt-5" v-for="item in infoCols">
+            <div class="col-lg-3 mt-5" v-for="item in infoCols">
                 <Card>
                     <template #default>
                         <div class="row align-items-center align-content-center">

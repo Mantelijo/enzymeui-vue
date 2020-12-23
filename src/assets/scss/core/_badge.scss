@@ -4,21 +4,23 @@ $to-lighten:50%;
 .badge{
     @each $type, $color in $theme-colors{
         $lightness: lightness($color);
-        &.badge-#{$type}{
+        &.bg-#{$type}{
             &.badge-inverse{
-                color:$color;
+                $bg:null;
+                $color:$color;
+                $bg_h:null;
+                $color_h:null;
+
                 @if $lightness >= 50% and $lightness <= 90{
                     $a: 30% + $lightness % 100;
                     $b: $to-lighten / 3;
                     @if($a > $b){
                         $a: $b;
                     }
-                    background: lighten($color, $a);
-                    color:darken($color, 30%);
-                    &:hover{
-                        background: darken(lighten($color, $a), 10%);
-                        color:darken($color, 30%);
-                    }
+                    $bg: lighten($color, $a);
+                    $color:darken($color, 30%);
+                    $bg_h: darken(lighten($color, $a), 10%);
+                    $color_h:darken($color, 30%);
                 }
                 @else if $lightness >= 90{
                     background: darken($color, $to-lighten/3);
@@ -26,11 +28,23 @@ $to-lighten:50%;
                     &:hover{
                         background: darken($color, $to-lighten/2);
                     }
+
+                    $bg: darken($color, $to-lighten/3);
+                    $color:lighten($color, 30%);
+                    $bg_h: darken($color, $to-lighten/2);
                 }
                 @else{
-                    background: lighten($color, $to-lighten);
-                    &:hover{
-                        background: lighten($color, $to-lighten/1.25);
+                    $bg: lighten($color, $to-lighten);
+                    $bg_h: lighten($color, $to-lighten/1.25);
+                }
+
+                background: $bg!important;
+                color:$color;
+
+                &:hover{
+                    background: $bg_h !important;
+                    @if($color_h != null){
+                        color: $color_h !important;
                     }
                 }
             }
