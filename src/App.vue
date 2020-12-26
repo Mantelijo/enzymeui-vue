@@ -63,7 +63,7 @@
                 </li>
                 <li class="nav-item dropdown-divider"></li>
                 <li class="nav-item sidebar-item">
-                    <a class="sidebar-link">Documentation</a>
+                    <a href="/docs" class="sidebar-link d-flex flex-row align-items-center w-100 h-100">Documentation</a>
                 </li>
             </ul>
         </Sidebar>

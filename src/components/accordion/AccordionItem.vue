@@ -1,10 +1,10 @@
 <template>
-    <div class="accordion-item card shadow-none">
-        <div class="card-header" @click="toggle">
-            <slot name="default"></slot>
+    <div class="accordion-item shadow-none">
+        <div :class="['accordion-header', {'collapsed':!isOpen}, ...headerClasses]" @click="toggle">
+            <slot name="default" :open="isOpen"></slot>
         </div>
         <Collapse ref="collapse">
-            <div class="card-body">
+            <div class="accordion-body">
                 <slot name="body"></slot>
             </div>
         </Collapse>
@@ -18,6 +18,21 @@
      */
     export default {
         name: "AccordionItem",
+
+        props:{
+            headerClasses:{
+                type:String|Array,
+                required:false,
+                default:()=>[],
+                description: 'Additional classes that will be added to .accordion-header element.'
+            }
+        },
+
+        data(){
+            return {
+                isOpen:false,
+            }
+        },
 
         methods:{
             toggle(){
@@ -42,7 +57,17 @@
             emitClick(state){
                 this.$emit('change', state);
             }
-        }
+        },
+
+        mounted(){
+            // Watch for collapse display value change from $refs
+            this.$watch(
+                ()=>this.$refs.collapse.show,
+                (val)=>{
+                    this.isOpen = val;
+                }
+            );
+        },
     }
 </script>
 

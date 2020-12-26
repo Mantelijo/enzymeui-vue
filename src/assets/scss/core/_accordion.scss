@@ -1,28 +1,47 @@
-.accordion{
-    .accordion-item{
-        border-radius: 0;
+.accordion {
 
-        // Remove border from card styles
-        &.card{
-        }
-
-
-        &:first-child{
-            @include border-top-radius($card-border-radius);
-
-        }
-
-        &:last-child{
-            @include border-bottom-radius($card-border-radius);
-        }
-
-
-
-        .card-header{
+    .accordion-item {
+        .accordion-header {
+            margin-bottom: 0;
+            padding: $accordion-button-padding-y $accordion-button-padding-x;
+            color:$accordion-color;
+            border: $accordion-border-width solid $accordion-border-color;
             cursor: pointer;
-            &:hover{
-                background: $gray-100;
+
+            &.collapsed{
+                border-bottom-width: 0;
+            }
+        }
+
+        .accordion-body {
+            border: solid $accordion-border-color;
+            border-width: 0 $accordion-border-width;
+        }
+
+        &:first-of-type {
+            .accordion-header {
+                @include border-top-radius($accordion-border-radius);
+            }
+        }
+
+        &:last-of-type {
+            .accordion-header {
+                // Only set a border-radius on the last item if the accordion is collapsed
+                &.collapsed {
+                    border-bottom-width: $accordion-border-width;
+                    @include border-bottom-radius($accordion-border-radius);
+                }
+            }
+
+            .accordion-body {
+                border-bottom-width: $accordion-border-width;
+                @include border-bottom-radius($accordion-border-radius);
             }
         }
     }
+}
+
+// Custom hover
+.accordion-header:hover{
+    background: $gray-100;
 }

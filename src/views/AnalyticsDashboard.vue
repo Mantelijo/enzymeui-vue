@@ -135,7 +135,7 @@
                         <div class="row align-items-center align-content-center">
                             <div class="col-6 justify-content-center">
                                 <div
-                                    style="height: 80%;width:80%;display: block"
+                                    style="height: 80%;width:80%;max-width:150px;display: block"
                                     :class="[`bg-${item.color}-light rounded p-3 text-${item.color}`]"
                                     v-html="item.icon"></div>
                             </div>
