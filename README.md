@@ -9,6 +9,8 @@ npm install
 
 For documentation visit [Docs](https://enzymeui.com/docs)
 
+For Demo visit [Demo](https://enzymeui.com/Demo)
+
 EnzymeUI uses `vue-cli` therefore usual `npm` workflow scripts are available
 
 #### Usage
